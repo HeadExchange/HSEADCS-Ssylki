@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_03_142929) do
   create_table "boards", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "used_id"
+    t.integer "user_id"
     t.boolean "private"
     t.string "share_url"
     t.datetime "created_at", null: false

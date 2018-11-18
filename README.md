@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Project Setup / Update
+
+Чтобы провести новые миграции нужно удалить базу.
+Добавлен новый таск, который можно запустить, чтобы всё поправилось.
+```rake db:seed```
