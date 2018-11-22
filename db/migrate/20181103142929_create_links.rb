@@ -3,7 +3,8 @@ class CreateLinks < ActiveRecord::Migration[5.2]
     create_table :links do |t|
       t.string :url
       t.string :title
-      t.string :image
+      t.file :image
+      t.integer :user_id
       t.integer :board_id
 
       t.timestamps

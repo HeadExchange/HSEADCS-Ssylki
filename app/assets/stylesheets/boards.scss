@@ -1,3 +1,49 @@
 // Place all the styles related to the Boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+main {
+  font-family: "Helvetica Neue", sans-serif;
+  width: 1178px;
+  margin: 140px 138px 0 126px;
+
+  a,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a,
+  a:visited:hover {
+    background-color: #fff;
+  }
+
+  .board_header {
+    width: 400px;
+    font-size: 44px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .board_description {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 30px;
+    margin-bottom: 130px;
+    width: 400px;
+  }
+
+  .board_settings {
+    position: absolute;
+    left: 20px;
+  }
+
+  .board_settings_element {
+    margin-bottom: 3px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+  }
+
+}

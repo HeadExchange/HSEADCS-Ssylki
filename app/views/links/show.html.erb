@@ -1,24 +1,35 @@
-<p id="notice"><%= notice %></p>
+<main>
 
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
+  <% if @link.image.try(:url) %>
+   <%= image_tag @link.image.url, width: '300px' %>
+  <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @link.title %>
-</p>
+  <p>
+    <strong>Url:</strong>
+    <%= @link.url %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @link.image %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @link.title %>
+  </p>
 
-<p>
-  <strong>Board:</strong>
-  <%= @link.board_id %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= @link.image %>
+  </p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+  <p>
+    <strong>User:</strong>
+    <%= @link.user_id %>
+  </p>
+
+  <p>
+    <strong>Board:</strong>
+    <%= @link.board_id %>
+  </p>
+
+  <%= link_to 'Edit', edit_link_path(@link) %> |
+  <%= link_to 'Back', links_path %>
+
+</main>

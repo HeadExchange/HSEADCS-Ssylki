@@ -1,9 +1,17 @@
 <header class="menubar">
   <div>
-  <%= link_to 'Boards', boards_path %>
-  <%= link_to 'Links', links_path %>
-  <%= link_to 'User', users_path %>
+  <!-- link_to 'Logo', welcome/index_path %> -->
+  <%= link_to 'Мои подборки', boards_path %>
+  <%= link_to 'Ссылки', links_path %>
   </div>
 
-  <a href="#" id="signInButton">Sign In</a>
+  <div class="new">
+    <div class="new_board"><%= link_to 'Добавить подборку', new_board_path %></div>
+    <div class="new_link"><%= link_to 'Добавить ссылку', new_link_path %></div>
+  </div>
+
+  <div class="avatar">
+    <%= link_to '@semilunar', users_path %>
+    <div class="avatar_image"></div>
+  </div>
 </header>

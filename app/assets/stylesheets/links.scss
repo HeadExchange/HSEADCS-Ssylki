@@ -1,3 +1,41 @@
 // Place all the styles related to the Links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.card_container {
+  display: flex;
+  width: 1188px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.card {
+  font-family: "Helvetica Neue", sans-serif;
+  width: 553px;
+  height: 428px;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  margin: 40px 0;
+}
+
+.link_title {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 28px;
+  margin: 14px 14px 12px 20px;
+}
+
+.link_url {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 10px 14px 25px 20px;
+}
+
+.link_settings {
+  margin-left: 20px;
+  display: flex;
+  width: 130px;
+  justify-content: space-between;
+}

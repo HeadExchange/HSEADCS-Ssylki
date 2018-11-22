@@ -1,42 +1,46 @@
-<%= form_with(model: board, local: true) do |form| %>
-  <% if board.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
+<main>
 
-      <ul>
-      <% board.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_with(model: board, local: true) do |form| %>
+    <% if board.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
+
+        <ul>
+        <% board.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :user_id %>
+      <%= form.number_field :user_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :private %>
+      <%= form.check_box :private %>
+    </div>
+
+    <div class="field">
+      <%= form.label :share_url %>
+      <%= form.text_field :share_url %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :private %>
-    <%= form.check_box :private %>
-  </div>
-
-  <div class="field">
-    <%= form.label :share_url %>
-    <%= form.text_field :share_url %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</main>

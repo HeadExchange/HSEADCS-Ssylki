@@ -1,33 +1,20 @@
-<p id="notice"><%= notice %></p>
+<main>
+  <section class="card_container">
+  <% @links.each do |link| %>
+  <div class="card">
+    <div class="link_image"><% if link.image.try(:url) %>
+  <%= image_tag link.image.url, width: '553px', height: '291px' %>
+<% end %></div>
+    <h2 class="link_title"><%= link.title %></h2>
+    <div class="link_url"><%= link.url %></div>
 
-<h1>Links</h1>
+    <div class="link_settings">
+      <div><%= link_to 'Изменить', edit_link_path(link) %></div>
+      <div><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %></div>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Url</th>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Board</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% end %>
 
-  <tbody>
-    <% @links.each do |link| %>
-      <tr>
-        <td><%= link.url %></td>
-        <td><%= link.title %></td>
-        <td><%= link.image %></td>
-        <td><%= link.board_id %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Link', new_link_path %>
+  </section>
+</main>

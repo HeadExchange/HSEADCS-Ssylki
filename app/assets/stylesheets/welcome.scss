@@ -1,0 +1,23 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Spectral');
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+*::-moz-selection {
+    background: rgba(0, 255, 255, .2);
+}
+
+*::selection {
+    background: rgba(0, 255, 255, .2);
+}
+
+.header_welcome {
+  font-size: 54px;
+  line-height: 40px;
+}
