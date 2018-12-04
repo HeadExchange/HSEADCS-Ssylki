@@ -3,6 +3,7 @@
 .menubar {
   box-sizing: border-box;
   position: fixed;
+  z-index: 134;
   top: 0;
   left: 0;
   display: flex;
@@ -10,13 +11,12 @@
   width: 100%;
   height: 60px;
   padding: 0 20px;
-  font-family: "Spectral", serf;
+  font-family: "Spectral", serif;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
 
   a,
   a:visited {
-    margin-right: 10px;
     font-size: 18px;
     line-height: 60px;
     text-decoration: none;
@@ -29,26 +29,55 @@
     }
   }
 
-  .avatar {
-    display: flex;
-  }
 
-  .avatar_image {
-    width: 36px;
-    height: 36px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    margin: auto;
-    margin-left: 5px;
-  }
+.menubar__left a {
+  margin-right: 35px;
+}
 
-  .new {
-    margin-left: 750px;
-    display: flex;
-    justify-content: space-between;
-  }
+.menubar__left a:last-child {
+  margin-right: 0;
+}
 
-  .new_board {
-    margin-right: 35px;
-  }
+/* test. it works */ .menubar__left a:active {
+   color: blue;
+}
+
+/* but nothing happens here */ .menubar__left a:visited {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #000;
+}
+
+.menubar__right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menubar__right a {
+  margin-right: 35px;
+}
+
+.menubar__right a:last-child {
+  margin-right: 0;
+}
+
+.avatar {
+  display: flex;
+}
+
+.avatar a {
+  margin-right: 10px;
+}
+
+.avatar a:last-child {
+  margin-right: 0;
+}
+
+.image__avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin: auto;
+  margin-left: 5px;
+}
 }

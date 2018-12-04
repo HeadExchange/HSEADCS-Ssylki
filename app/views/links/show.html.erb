@@ -1,4 +1,4 @@
-<main>
+<main class="main__show">
 
   <% if @link.image.try(:url) %>
    <%= image_tag @link.image.url, width: '300px' %>
@@ -10,26 +10,26 @@
   </p>
 
   <p>
-    <strong>Title:</strong>
+    <strong>Название:</strong>
     <%= @link.title %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>Обложка:</strong>
     <%= @link.image %>
   </p>
 
   <p>
-    <strong>User:</strong>
+    <strong>Пользователь:</strong>
     <%= @link.user_id %>
   </p>
 
   <p>
-    <strong>Board:</strong>
+    <strong>Подборка:</strong>
     <%= @link.board_id %>
   </p>
 
   <%= link_to 'Edit', edit_link_path(@link) %> |
-  <%= link_to 'Back', links_path %>
+  <%# <%= link_to 'Back', links_path %> %>
 
 </main>

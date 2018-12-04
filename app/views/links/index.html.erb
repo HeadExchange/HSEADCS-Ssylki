@@ -1,10 +1,13 @@
-<main>
+<section class="section__links_wrapper">
+
   <section class="card_container">
   <% @links.each do |link| %>
   <div class="card">
-    <div class="link_image"><% if link.image.try(:url) %>
-  <%= image_tag link.image.url, width: '553px', height: '291px' %>
-<% end %></div>
+    <div class="link_image">
+      <% if link.image.try(:url) %>
+        <%= image_tag link.image.url, width: '553px', height: '291px' %>
+      <% end %>
+    </div>
     <h2 class="link_title"><%= link.title %></h2>
     <div class="link_url"><%= link.url %></div>
 
@@ -17,4 +20,5 @@
   <% end %>
 
   </section>
-</main>
+
+</section>

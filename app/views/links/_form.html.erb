@@ -1,5 +1,5 @@
-<main>
-  
+
+
   <%= form_with(model: link, local: true) do |form| %>
     <% if link.errors.any? %>
       <div id="error_explanation">
@@ -23,9 +23,10 @@
       <%= form.text_field :title %>
     </div>
 
-    <div class="field">
-      <%= form.label :image %>
-      <%= form.file_field :image %>
+    <div class="field" style="background-color: #fff; border: none; height: 250px; text-align: center; width: 350px; line-height: 270px; position: relative; border-radius: 6px; border: 2px dashed #cccccc; margin: 40px 0;">
+        <%= image_tag 'upload.svg' %>
+        <!-- <div style="color: #cccccc">Загрузите изображение</div> -->
+        <%= form.file_field :image %>
     </div>
 
       <div class="field">
@@ -35,12 +36,12 @@
 
     <div class="field">
       <%= form.label :board_id %>
-      <%= form.number_field :board_id %>
+      <% @boards = Board.all %>
+      <%= select_tag "boards", options_from_collection_for_select(@boards, "id", "title"), id: "dropdown" %>
     </div>
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit value="Сохранить"%>
     </div>
-  <% end %>
 
-</main>
+  <% end %>

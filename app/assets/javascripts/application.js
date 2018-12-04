@@ -10,7 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require select2
 //= require_tree .
+
+// $(function() {
+//   function test(param) {
+//     console.log('test')
+//   }
+// })
+
+
+
+
+
+  $(function() {
+    console.log( "ready!" );
+
+    $("#dropdown").select2({
+        placeholder: "Выберите подборку",
+        allowClear: true
+    })
+
+});

@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-main {
+.main {
   font-family: "Helvetica Neue", sans-serif;
   width: 1178px;
-  margin: 140px 138px 0 126px;
+  margin: 100px 138px 0 126px;
 
   a,
   a:visited {
@@ -46,4 +46,8 @@ main {
     font-size: 14px;
   }
 
+}
+
+textarea {
+  resize: none;
 }

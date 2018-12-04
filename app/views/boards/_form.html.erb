@@ -1,5 +1,3 @@
-<main>
-
   <%= form_with(model: board, local: true) do |form| %>
     <% if board.errors.any? %>
       <div id="error_explanation">
@@ -42,5 +40,3 @@
       <%= form.submit %>
     </div>
   <% end %>
-
-</main>

@@ -1,6 +1,29 @@
 // Place all the styles related to the Links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main__show,
+.main {
+  width: 1178px;
+  margin: 100px 138px 0 126px;
+}
+
+.container__form,
+.section__links_wrapper {
+  margin-top: 60px;
+}
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+.header__form {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
 .card_container {
   display: flex;
   width: 1188px;
@@ -38,4 +61,111 @@
   display: flex;
   width: 130px;
   justify-content: space-between;
+}
+
+div.field, div.actions {
+  margin-bottom: 30px;
+}
+
+label {
+  pointer-events: none;
+  transition: .3s all ease;
+  color: #000;
+  font-size: 16px;
+  margin: 20px 0 5px;
+}
+
+.actions input {
+  width: 130px;
+  background-color: #006AE3;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 1px;
+  border: none;
+  padding: 15px 22px;
+  margin: 40px 0;
+  transition: all .3s ease;
+
+    &:hover {
+      background-color: #000;
+    }
+}
+
+input, textarea {
+  width: 300px;
+  font-size: 18px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid black;
+
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ label,
+  &:valid ~ label {
+    transform: translateY(-10px);
+    font-size: 14px;
+  }
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: rgba(0, 255, 255, .4) !important;
+}
+
+.select2-selection {
+  width: 200px;
+  height: 30px;
+}
+
+.select2-selection--single {
+  width: 200px;
+  height: 30px;
+  border: 1px solid red;
+}
+
+span.select2 {
+  width: 200px;
+  height: 30px;
+}
+
+.select2-container {
+  width: 200px;
+  height: 30px;
+}
+
+.select2-container--default {
+  width: 200px;
+  height: 30px;
+}
+
+.select2-selection__arrow {
+  height: 30px;
+  right: -100px;
+  width: 200px;
+}
+
+.select2-selection__clear {
+  height: 30px;
+  right: -120px;
+  width: 200px;
+  font-weight: normal;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #000 transparent transparent transparent;
+}
+
+.select2-selection__arrow b {
+  border-color: transparent transparent #000 transparent;
+}
+
+#link_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: none;
 }
