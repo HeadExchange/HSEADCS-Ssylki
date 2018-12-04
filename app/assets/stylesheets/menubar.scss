@@ -11,7 +11,7 @@
   width: 100%;
   height: 60px;
   padding: 0 20px;
-  font-family: "Spectral", serif;
+  // font-family: "Spectral", serif;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
 
@@ -39,7 +39,7 @@
 }
 
 /* test. it works */ .menubar__left a:active {
-   color: blue;
+   color: #cccccc;
 }
 
 /* but nothing happens here */ .menubar__left a:visited {

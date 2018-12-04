@@ -1,24 +1,24 @@
 <section class="section__links_wrapper">
-
   <section class="card_container">
-  <% @links.each do |link| %>
-  <div class="card">
-    <div class="link_image">
-      <% if link.image.try(:url) %>
-        <%= image_tag link.image.url, width: '553px', height: '291px' %>
+
+    <% @links.each do |link| %>
+
+      <%= link_to link.url, target: "_blank", class: "card" do %>
+        <div class="link_image">
+          <% if link.image.try(:url) %>
+            <%= image_tag link.image.url, width: '553px', height: '291px' %>
+          <% end %>
+        </div>
+        <h2 class="link_title"><%= link.title %></h2>
+        <div class="link_url"><%= link.url %></div>
+
+        <!-- <div class="link_settings">
+          <div><%= link_to 'Изменить', edit_link_path(link) %></div>
+          <div><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %></div>
+        </div> -->
       <% end %>
-    </div>
-    <h2 class="link_title"><%= link.title %></h2>
-    <div class="link_url"><%= link.url %></div>
 
-    <div class="link_settings">
-      <div><%= link_to 'Изменить', edit_link_path(link) %></div>
-      <div><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %></div>
-    </div>
-  </div>
-
-  <% end %>
+    <% end %>
 
   </section>
-
 </section>
