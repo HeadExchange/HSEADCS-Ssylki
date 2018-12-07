@@ -1,6 +1,9 @@
 <section class="section__links_wrapper">
   <section class="card_container">
 
+    <header class=board_header><%= @board.title %></header>
+    <p class=board_description><%= @board.description %></p>
+
     <% @links.each do |link| %>
 
       <%= link_to link.url, target: "_blank", class: "card" do %>
