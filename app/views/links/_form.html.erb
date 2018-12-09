@@ -34,6 +34,11 @@
         <%= form.number_field :user_id %>
       </div>
 
+      <div class="field">
+        <%= form.label value="Доска" %>
+        <%= form.number_field :board_id %>
+      </div>
+
     <%= form.label value="Подборка" %>
     <div class="field">
       <% @boards = Board.all %>
