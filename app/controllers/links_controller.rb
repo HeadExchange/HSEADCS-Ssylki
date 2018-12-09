@@ -5,8 +5,12 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     # @links = Link.all
-    @board = Board.find(params[:board_id])
-    @links = @board.links
+    if params[:board_id]
+      @board = Board.find(params[:board_id])
+      @links = @board.links
+    else
+      @links = Link.all
+    end
   end
 
   # GET /links/1

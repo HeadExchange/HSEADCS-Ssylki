@@ -1,4 +1,4 @@
-<main class="main__show">
+<main class="main_show">
 
   <% if @link.image.try(:url) %>
    <%= image_tag @link.image.url, width: '300px' %>
@@ -29,7 +29,6 @@
     <%= @link.board_id %>
   </p>
 
-  <%= link_to 'Edit', edit_link_path(@link) %> |
-  <%# <%= link_to 'Back', links_path %> %>
+  <%= link_to 'Edit', edit_link_path(@link) %>
 
 </main>

@@ -15,8 +15,6 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Spectral');
-
  body {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -24,9 +22,44 @@
  }
 
  *::-moz-selection {
-     background: rgba(0, 255, 255, .2);
+    background: rgba(0, 255, 255, .2);
  }
 
  *::selection {
-     background: rgba(0, 255, 255, .2);
+    background: rgba(0, 255, 255, .2);
+ }
+
+ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+   background-color: rgba(0, 255, 255, .4) !important;
+ }
+
+ a,
+ a:visited {
+   color: #000;
+   text-decoration: none;
+ }
+
+ a,
+ a:visited:hover {
+   background-color: none;
+ }
+
+ .main {
+   width: 1178px;
+   margin: 140px 138px 0 126px;
+ }
+
+ .main_show {
+   width: 1178px;
+   margin: 50px 138px 0 126px;
+ }
+
+ .container_form,
+ .section_links-wrapper {
+   margin-top: 60px;
+ }
+
+ .header_form {
+   font-size: 30px;
+   margin-bottom: 40px;
  }

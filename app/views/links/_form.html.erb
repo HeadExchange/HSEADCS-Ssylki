@@ -1,5 +1,4 @@
 
-
   <%= form_with(model: link, local: true) do |form| %>
     <% if link.errors.any? %>
       <div id="error_explanation">
@@ -14,30 +13,31 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :url %>
+      <%= form.label value="URL" %>
       <%= form.text_field :url %>
     </div>
 
     <div class="field">
-      <%= form.label :title %>
+      <%= form.label value="Название" %>
       <%= form.text_field :title %>
     </div>
 
-    <div class="field" style="background-color: #fff; border: none; height: 250px; text-align: center; width: 350px; line-height: 270px; position: relative; border-radius: 6px; border: 2px dashed #cccccc; margin: 40px 0;">
+    <%= form.label value="Обложка" %>
+    <div class="field field_img-upload" style="background-color: #fff; border: none; height: 200px; text-align: center; width: 320px; line-height: 230px; position: relative; border-radius: 6px; border: 2px dashed #cccccc; margin: 40px 0;">
         <%= image_tag 'upload.svg' %>
         <!-- <div style="color: #cccccc">Загрузите изображение</div> -->
         <%= form.file_field :image %>
     </div>
 
       <div class="field">
-        <%= form.label :user_id %>
+        <%= form.label value="Пользователь" %>
         <%= form.number_field :user_id %>
       </div>
 
+    <%= form.label value="Подборка" %>
     <div class="field">
-      <%= form.label :board_id %>
       <% @boards = Board.all %>
-      <%= select_tag "boards", options_from_collection_for_select(@boards, "id", "title"), id: "dropdown" %>
+      <%= select_tag "boards", options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "200px"%>
     </div>
 
     <div class="actions">

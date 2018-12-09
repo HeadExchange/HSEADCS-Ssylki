@@ -12,31 +12,31 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :title %>
+      <%= form.label value="Название" %>
       <%= form.text_field :title %>
     </div>
 
     <div class="field">
-      <%= form.label :description %>
+      <%= form.label value="Описание" %>
       <%= form.text_area :description %>
     </div>
 
     <div class="field">
-      <%= form.label :user_id %>
+      <%= form.label value="Пользователь" %>
       <%= form.number_field :user_id %>
     </div>
 
     <div class="field">
-      <%= form.label :private %>
+      <%= form.label value="Приватная подборка" %>
       <%= form.check_box :private %>
     </div>
 
     <div class="field">
-      <%= form.label :share_url %>
+      <%= form.label value="Общий доступ по ссылке" %>
       <%= form.text_field :share_url %>
     </div>
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit value="Сохранить" %>
     </div>
   <% end %>

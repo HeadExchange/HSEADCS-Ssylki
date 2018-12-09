@@ -1,20 +1,39 @@
 <main class="main">
 
   <% @boards.each do |board| %>
+    <div class="container_board">
 
-    <h1 class="board_header">
-      <%= link_to board.title, board_links_path(board) %>
-    </h1>
+      <h1 class="header_board">
+        <%= link_to board.title, board_links_path(board) %>
+      </h1>
 
-    <div class="board_settings">
-      <%= image_tag 'settings.svg' %>
-      <div class="board_settings_element"><%#= link_to 'Показать', board %></div>
-      <div class="board_settings_element"><%= link_to 'Изменить', edit_board_path(board) %></div>
-      <div class="board_settings_element"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' } %></div>
+      <div class="container-menu">
+      <div class="more">
+          <div id="more-btn" class="more-btn">
+              <span class="more-dot"></span>
+              <span class="more-dot"></span>
+              <span class="more-dot"></span>
+          </div>
+          <div class="more-menu">
+              <div class="more-menu-caret">
+                  <div class="more-menu-caret-outer"></div>
+                  <div class="more-menu-caret-inner"></div>
+              </div>
+              <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                  <li class="more-menu-item" role="presentation">
+                      <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_board_path(board) %></div>
+                  </li>
+                  <li class="more-menu-item" role="presentation">
+                      <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' } %></button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+      <p class="description_board"><%= board.description %></p>
+
     </div>
-
-    <p class="board_description"><%= board.description %></p>
-
   <% end %>
 
 </main>

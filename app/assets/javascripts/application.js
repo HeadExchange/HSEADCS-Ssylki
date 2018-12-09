@@ -14,19 +14,14 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
-//# require turbolinks
 //= require select2
 //= require_tree .
-//= require_self
 
+$(function() {
 
-
-  $(function() {
-    console.log("ready!", $("#dropdown"));
-
-    $("#dropdown").select2({
-      placeholder: "Выберите подборку",
-      allowClear: true
-    })
+  console.log('test')
+  $('#dropdown').select2 ({
+    placeholder: "Выберите подборку"
+  })
 
 });

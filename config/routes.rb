@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "boards#index"
   get 'welcome/index'
   resources :links
 

@@ -1,9 +1,11 @@
 <header class="menubar">
 
   <div class="menubar__left">
-    <%= link_to 'Logo', welcome_index_path %></a>
-    <%= link_to 'Мои подборки', boards_path %></a>
-    <%= link_to 'Ссылки', links_path %></a>
+    <%= link_to welcome_index_path do %>
+      <%= image_tag 'logo.png', width: '88px', height: '30px', margin: 'auto'%>
+    <% end %>
+    <%= link_to 'Мои подборки', boards_path %>
+    <%= link_to 'Ссылки', links_path %>
   </div>
 
   <div class="menubar__right">
@@ -15,5 +17,5 @@
     <%= link_to '@semilunar', users_path %>
     <div class="image__avatar"></div>
   </div>
-  
+
 </header>
