@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Spectral');
-
 .menubar {
   box-sizing: border-box;
   position: fixed;
@@ -79,4 +77,11 @@
   margin: auto;
   margin-left: 5px;
 }
+
+.link_logo {
+  background-image: url(../images/logo.svg);
+  background-size: cover;
+  background-position: 0 -10px;
+}
+
 }

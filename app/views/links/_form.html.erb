@@ -23,30 +23,24 @@
     </div>
 
     <%= form.label value="Обложка" %>
-    <div class="field field_img-upload" style="background-color: #fff; border: none; height: 200px; text-align: center; width: 320px; line-height: 230px; position: relative; border-radius: 6px; border: 2px dashed #cccccc; margin: 40px 0;">
-        <%= image_tag 'upload.svg' %>
-        <!-- <div style="color: #cccccc">Загрузите изображение</div> -->
+    <div class="field field_img-upload">
+        <div style="color: #231F20; font-size: 16px; font-weight: 100;">Загрузите изображение &ensp;📥</div>
         <%= form.file_field :image %>
     </div>
 
-      <div class="field">
-        <%= form.label value="Пользователь" %>
-        <%= form.number_field :user_id %>
-      </div>
-
-      <div class="field">
-        <%= form.label value="Доска" %>
-        <%= form.number_field :board_id %>
-      </div>
+      <!-- <div class="field">
+        <%#= form.label value="Пользователь" %>
+        <%#= form.number_field :user_id %>
+      </div> -->
 
     <%= form.label value="Подборка" %>
     <div class="field">
       <% @boards = Board.all %>
-      <%= select_tag "boards", options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "200px"%>
+      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "450px"%>
     </div>
 
     <div class="actions">
-      <%= form.submit value="Сохранить"%>
+      <%= form.submit value="Добавить"%>
     </div>
 
   <% end %>

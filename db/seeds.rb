@@ -9,3 +9,22 @@
 Rake::Task['db:drop'].invoke
 Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
+
+# board_names = [
+#   [ ],
+#   [ ]
+#
+# ]
+#
+# boards.each do |board|
+#   Board.create(title: board[0], description: board[1])
+# end
+#
+#
+# link = [
+#
+# ]
+#
+# links.each do |link|
+#   Link.create(url: link[0], board_id: Boards.sample.id)
+# end

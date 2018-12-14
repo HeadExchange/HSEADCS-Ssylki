@@ -1,9 +1,7 @@
 <header class="menubar">
 
   <div class="menubar__left">
-    <%= link_to welcome_index_path do %>
-      <%= image_tag 'logo.png', width: '88px', height: '30px', margin: 'auto'%>
-    <% end %>
+    <%= link_to '', welcome_index_path, { :class=>"link_logo" }%>
     <%= link_to 'Мои подборки', boards_path %>
     <%= link_to 'Ссылки', links_path %>
   </div>
