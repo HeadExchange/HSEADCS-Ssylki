@@ -20,7 +20,7 @@
  @font-face {
   font-family: "Basis";
   font-weight: normal;
-  src: url(../fonts/basis_regular.woff);
+  src: url('<%= asset_path("basis_regular.woff") %>'), format('woff');
 }
 
  body {

@@ -20,8 +20,9 @@
 $(function() {
 
   console.log('test')
-  $('#dropdown').select2 ({
+  $('#link_board_id').select2 ({
     placeholder: "Выберите подборку"
   })
+  console.log('finish')
 
 });

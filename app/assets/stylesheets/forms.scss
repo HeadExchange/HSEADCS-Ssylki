@@ -71,19 +71,38 @@ textarea {
 }
 
 .select2 {
-  width: 300px !important;
+  width: 472px !important;
   height: 30px !important;
-  margin: 20px 0 !important;
+  font-family: 'Spectral', serif;
+  outline: none;
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  font-size: 20px;
+  margin: 5px;
+  transition: border .5s ease;
 }
 
 .select2-selection {
-  border: solid #e5e5e5 1px !important;
+  border: transparent 1px !important;
 }
 
 .select2-selection__clear {
   top: -2px !important;
   font-weight: normal !important;
   display: none;
+}
+
+.select2-dropdown {
+    border: 1px solid #e9e9e9 !important;
+}
+
+.select2-search--dropdown {
+    padding: 0px !important;
+    width: 90%;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #e9e9e9 !important;
 }
 
 b {

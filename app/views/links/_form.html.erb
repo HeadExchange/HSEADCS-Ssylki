@@ -1,4 +1,3 @@
-
   <%= form_with(model: link, local: true) do |form| %>
     <% if link.errors.any? %>
       <div id="error_explanation">
@@ -27,11 +26,6 @@
         <div style="color: #231F20; font-size: 16px; font-weight: 100;">Загрузите изображение &ensp;📥</div>
         <%= form.file_field :image %>
     </div>
-
-      <!-- <div class="field">
-        <%#= form.label value="Пользователь" %>
-        <%#= form.number_field :user_id %>
-      </div> -->
 
     <%= form.label value="Подборка" %>
     <div class="field">
