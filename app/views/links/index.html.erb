@@ -7,9 +7,8 @@
 
   <section class="link__section">
 
+    <div class="link__item">
     <% @links.each do |link| %>
-
-    <section class="link__section-one-link">
 
       <%= link_to link.url, target: "_blank", class: "link" do %>
 
@@ -21,34 +20,18 @@
         <h2 class="link__title"><%= link.title %></h2>
         <div class="link__url"><%= link.url %></div>
 
-
-            <div class="container-menu-card">
-            <div class="more">
-                <div id="more-btn" class="more-btn_show">
-                    <div class="more-btn-img">✏️</div>
-                </div>
-                <div class="more-menu">
-                    <div class="more-menu-caret">
-                        <div class="more-menu-caret-outer"></div>
-                        <div class="more-menu-caret-inner"></div>
-                    </div>
-                    <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
-                        <li class="more-menu-item" role="presentation">
-                            <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_link_path(link) %></div>
-                        </li>
-                        <li class="more-menu-item" role="presentation">
-                            <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %></button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
       <% end %>
-    </section>
 
-    <% end %>
+      <div class="link__settings_flex-container">
+        <div id="more-btn-link">✏️</div>
+        <div class="link__settings">
+            <%= link_to 'Изменить', edit_link_path(link) %>
+            <%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %>
+        </div>
+      </div>
+
+  </div>
+  <% end %>
 
   </section>
 </section>
