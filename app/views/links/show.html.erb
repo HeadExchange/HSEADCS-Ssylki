@@ -1,34 +1,21 @@
-<main class="main_show">
+<main class="main">
 
-  <% if @link.image.try(:url) %>
-   <%= image_tag @link.image.url, width: '300px' %>
-  <% end %>
+  <section class="section_links-wrapper">
 
-  <p>
-    <strong>Url:</strong>
-    <%= @link.url %>
-  </p>
+      <p>URL:</p>
+        <div class="link__url"><%= @link.url %></div>
 
-  <p>
-    <strong>Название:</strong>
-    <%= @link.title %>
-  </p>
+      <p>Название:</p>
+        <h2 class="link__title"><%= @link.title %></h2>
 
-  <p>
-    <strong>Обложка:</strong>
-    <%= @link.image %>
-  </p>
+      <p>Обложка:</p>
+      <% if @link.image.try(:url) %>
+       <%= image_tag @link.image.url, width: '300px' %>
+      <% end %>
 
-  <p>
-    <strong>Пользователь:</strong>
-    <%= @link.user_id %>
-  </p>
+  </section>
 
-  <p>
-    <strong>Подборка:</strong>
-    <%= @link.board_id %>
-  </p>
-
-  <%= link_to 'Edit', edit_link_path(@link) %>
+    <%= link_to 'Edit', edit_link_path(@link) %> |
+    <%= link_to 'Back', boards_path %>
 
 </main>

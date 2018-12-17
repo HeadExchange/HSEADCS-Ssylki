@@ -33,15 +33,12 @@
 
 .menubar__left a:last-child {
   margin-right: 0;
+  padding-bottom: -2px;
 }
 
-/* test. it works */ .menubar__left a:active {
-   color: #cccccc;
-}
-
-/* but nothing happens here */ .menubar__left a:visited {
-  padding-bottom: 15px;
-  border-bottom: 2px solid #000;
+.menubar__left a:first-child {
+  font-family: 'Spectral', serif;
+  font-size: 22px;
 }
 
 .menubar__right {

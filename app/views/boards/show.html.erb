@@ -1,29 +1,18 @@
-<main class="main_show">
+<main class="main">
 
-  <p>
-    <strong>Название:</strong>
-    <%= @board.title %>
-  </p>
+  <div class="container_board">
 
-  <p>
-    <strong>Описание:</strong>
-    <%= @board.description %>
-  </p>
+    <p>Название:</p>
+    <h1 class="header_board">
+      <%= @board.title %>
+    </h1>
 
-  <p>
-    <strong>Пользователь:</strong>
-    <%= @board.user_id %>
-  </p>
+    <p>Описание:</p>
+    <p class="description_board">
+      <%= @board.description %>
+    </p>
 
-  <p>
-    <strong>Приватная:</strong>
-    <%= @board.private %>
-  </p>
-
-  <p>
-    <strong>Поделиться:</strong>
-    <%= @board.share_url %>
-  </p>
+  </div>
 
   <%= link_to 'Edit', edit_board_path(@board) %> |
   <%= link_to 'Back', boards_path %>

@@ -28,6 +28,11 @@
     width: 60px;
  }
 
+ .container-menu-card {
+   position: absolute;
+   text-align: center;
+ }
+
  .more-menu {
     width: 100px;
  }
@@ -50,10 +55,10 @@
  }
 
  .more-dot {
-    background-color: #cccccc;
+    background-color: #e9e9e9;
     margin: 0 auto;
     display: inline-block;
-    width: 6px;
+    width: 7px;
     height: 6px;
     margin-right: 1px;
     border-radius: 6px;
@@ -62,10 +67,6 @@
     box-sizing: border-box;
     transition: all .3s ease;
  }
-/*
- .more-dot:last-child {
-   margin-right: 0px;
- } */
 
 .more-btn {
     transition: all .3s ease;
@@ -82,14 +83,13 @@
     z-index: 900;
     float: left;
     padding: 10px 0;
-    margin-top: 9px;
+    margin-top: 10px;
     background-color: #fff;
-    border: 1px solid #cccccc;
+    border: 1px solid #e9e9e9;
     border-radius: 4px;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
     opacity: 0;
     -webkit-transform: translate(0, 15px) scale(.95);
-    transform: translate(0, 15px) scale(.95);
+    transform: translate(0, 10px) scale(.95);
     transition: transform 0.1s ease-out, opacity 0.1s ease-out;
     pointer-events: none;
  }
@@ -114,7 +114,7 @@
  }
 
  .more-menu-caret-outer {
-    border-bottom: 10px solid #cccccc;
+    border-bottom: 10px solid #e9e9e9;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     height: auto;
@@ -154,7 +154,7 @@
  }
 
  .more-menu-item:hover {
-    background-color: rgba(239, 239, 239, 0.7);
+    background-color: #e9e9e9;
  }
 
  .more-btn:hover .more-dot,

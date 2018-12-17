@@ -20,6 +20,12 @@ test:
   <<: *default
   database: index_test
 
+# production:
+#   <<: *default
+#   database: index_prod
+
 production:
   <<: *default
-  database: index_prod
+  database: index_production
+  username: index
+  password: <%= ENV['INDEX_DATABASE_PASSWORD'] %>

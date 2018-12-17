@@ -16,4 +16,12 @@ $(function() {
     $(this).parent().find('.more-menu').removeClass('show-more-menu')
   })
 
+  $('.container-menu-card').hover(function() {
+    $(this).parent().find('.more-menu').addClass('show-more-menu')
+  })
+
+  $('.container-menu-card').mouseleave(function() {
+    $(this).parent().find('.more-menu').removeClass('show-more-menu')
+  })
+
 });

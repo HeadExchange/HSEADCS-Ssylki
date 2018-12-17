@@ -1,7 +1,3 @@
-// Place all the styles related to the Links controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 * {
   &:focus {
     outline: none;
@@ -35,6 +31,10 @@
   margin: auto;
 }
 
+.link__section-one-link {
+    position: relative;
+}
+
 .link {
   width: 368px;
   height: 285px;
@@ -50,9 +50,9 @@
 
 .link__title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 28px;
-  margin: 14px 14px 12px 20px;
+  margin: 10px 14px 12px 20px;
 }
 
 .link__url {
