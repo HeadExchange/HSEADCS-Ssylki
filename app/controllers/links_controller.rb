@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     # @links = Link.all
     if params[:board_id]
       @board = Board.find(params[:board_id])
-      @links = @board.links
+      @links = @board.links.all
     else
       @links = Link.all
     end
