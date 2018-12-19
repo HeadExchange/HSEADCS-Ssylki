@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
+    redirect_to boards_path
   end
 
   # GET /boards/new
