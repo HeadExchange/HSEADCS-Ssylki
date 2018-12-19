@@ -6,15 +6,13 @@
   </section>
 
   <section class="link__section">
-
-    <div class="link__item">
     <% @links.each do |link| %>
-
+    <div class="link__item">
       <%= link_to link.url, target: "_blank", class: "link" do %>
 
         <div class="link__image">
           <% if link.image.try(:url) %>
-            <%= image_tag link.image.url, width: '368px', height: '194px'%>
+            <%= image_tag link.image.url%>
           <% end %>
         </div>
         <h2 class="link__title"><%= link.title %></h2>
@@ -22,16 +20,13 @@
 
       <% end %>
 
-      <!-- <div class="link__settings_flex-container">
-        <div id="more-btn-link">✏️</div> -->
         <div class="link__settings">
             <%= link_to 'Изменить', edit_link_path(link) %>
             <%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %>
         </div>
-      <!-- </div> -->
-
-  </div>
+    </div>
   <% end %>
+
 
   </section>
 </section>

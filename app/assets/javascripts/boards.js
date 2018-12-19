@@ -16,17 +16,4 @@ $(function() {
     $(this).parent().find('.more-menu').removeClass('show-more-menu')
   })
 
-  $('#more-btn-link').hover(function() {
-    $(this).parent().find('.link__settings').addClass('link__settings_show')
-  })
-
-  $('#more-btn-link').mouseleave(function() {
-    $(this).parent().find('.link__settings').removeClass('link__settings_show')
-
-  $('.link__settings').hover(function() {
-    $(this).addClass('link__settings_show')
-  })
-  
-  })
-
 });

@@ -1,6 +1,11 @@
+// Place all the styles related to the Links controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
 .section_board-in-links {
-  width: 75%;
-  margin: auto;
+  margin-left: 100px;
 }
 
 .section_board-in-links .header_board {
@@ -13,16 +18,18 @@
   font-size: 18px;
   line-height: 24px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
   width: 450px;
 }
 
 .link__section {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  margin-top: 40px;
   display: flex;
-  width: 75%;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 .link__section-one-link {
@@ -30,18 +37,30 @@
 }
 
 .link__item {
-  display: flex;
-  flex-direction: column;
-  width: 368px;
-  height: 300px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  margin: 40px 0;
   transition: all .2s ease;
+  width: 380px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 70px;
+  margin-right: 42px;
+}
+
+.link__item:nth-child(3n+3){
+  margin-right: 0px;
 }
 
 .link__item:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.link__image img{
+  width: 380px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .link__title {
@@ -49,6 +68,9 @@
   font-size: 20px;
   line-height: 28px;
   margin: 5px 14px 5px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link__url {
@@ -56,6 +78,9 @@
   font-size: 13px;
   line-height: 20px;
   margin: 5px 14px 12px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link__settings {
@@ -76,7 +101,7 @@
 }
 
 .link__settings a:hover {
-  color: #272727 !important;;
+  color: #272727 !important;
 }
 
 .link__settings_edit_left a {
@@ -87,25 +112,3 @@
 .link__settings_edit_left a:hover {
   color: #9a9a9a;
 }
-
-// .link__settings_show {
-//   opacity: 1;
-// }
-
-// #more-btn-link {
-//   margin-left: 20px;
-//   opacity: 1;
-//   overflow: visible;
-//   -webkit-user-select: none;
-//   -moz-user-select: none;
-//   -ms-user-select: none;
-//   text-align: left;
-//   outline: none;
-//   cursor: pointer;
-// }
-//
-// .link__settings_flex-container {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// }

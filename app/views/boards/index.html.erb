@@ -33,32 +33,27 @@
 
       <p class="description_board"><%= board.description %></p>
 
-      <div class="link__item">
+      <div class="container__preview">
 
-      <% board.links.each do |link| %>
+        <% board.links.each do |link| %>
+          <div class="item__preview">
+            <%= link_to link.url, target: "_blank", class: "link" do %>
 
-        <%= link_to link.url, target: "_blank", class: "link" do %>
+              <div class="image__preview">
+                <% if link.image.try(:url) %>
+                  <%= image_tag link.image.url%>
+                <% end %>
+              </div>
+              <h2 class="title__preview"><%= link.title %></h2>
+              <div class="url__preview"><%= link.url %></div>
 
-          <div class="link__image">
-            <% if link.image.try(:url) %>
-              <%= image_tag link.image.url, width: '368px', height: '194px'%>
             <% end %>
           </div>
-          <h2 class="link__title"><%= link.title %></h2>
-          <div class="link__url"><%= link.url %></div>
-
         <% end %>
 
-          <div class="link__settings">
-              <%= link_to 'Изменить', edit_link_path(link) %>
-              <%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %>
-          </div>
-
-    </div>
-
+      </div>
 
     </div>
   <% end %>
-<% end %>
 
 </main>
