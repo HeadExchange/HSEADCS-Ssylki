@@ -1,10 +1,14 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_board, only: [:show, :edit, :update, :publish, :destroy]
+  # before_action :authorize_user, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /boards
   # GET /boards.json
   def index
     @boards = Board.all
+    @boards = Board.order('title ASC')
   end
 
   # GET /boards/1
@@ -26,6 +30,7 @@ class BoardsController < ApplicationController
   # POST /boards.json
   def create
     @board = Board.new(board_params)
+    @board.user_id = current_user.id
 
     respond_to do |format|
       if @board.save
@@ -52,6 +57,21 @@ class BoardsController < ApplicationController
     end
   end
 
+  def publish
+  @board.public = !@board.public
+  # @board.save
+
+  respond_to do |format|
+    if @board.save
+      format.html { redirect_to @board, notice: 'Board was successfully updated.' }
+      format.json { render :show, status: :ok, location: @post }
+    else
+      format.html { render :edit }
+      format.json { render json: @board.errors, status: :unprocessable_entity }
+    end
+  end
+end
+
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
@@ -68,6 +88,9 @@ class BoardsController < ApplicationController
       @board = Board.find(params[:id])
     end
 
+    def authorize_user
+      redirect_to boards_url, notice: "Упс вы не можете управлять этим бордом" if @board.user_id != current_user.id
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
       params.require(:board).permit(:title, :description)

@@ -1,0 +1,74 @@
+<div class="container_board">
+
+  <div class="container_header_board">
+    <div class="container-menu">
+    <div class="more">
+        <div id="more-btn" class="more-btn">
+            <span class="more-dot"></span>
+            <span class="more-dot"></span>
+            <span class="more-dot"></span>
+        </div>
+        <div class="more-menu">
+            <div class="more-menu-caret">
+                <div class="more-menu-caret-outer"></div>
+                <div class="more-menu-caret-inner"></div>
+            </div>
+            <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                <li class="more-menu-item" role="presentation">
+                    <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_board_path(board) %></div>
+                </li>
+                <li class="more-menu-item" role="presentation">
+                    <div type="button" class="more-menu-btn" role="menuitem">
+                      <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
+                      <%= link_to public, publish_board_path(board) %></div>
+                </li>
+                <li class="more-menu-item" role="presentation">
+                    <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></button>
+                </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <h1 class="header_board"><%= link_to board.title, board_links_path(board) %></h1>
+    <% if board.public %>
+    <div class="header_board_public-icon">
+      <%= image_tag "share.svg" %>
+    </div>
+    <% end %>
+
+  </div>
+
+
+  <p class="description_board"><%= board.description %></p>
+
+  <div class="container__preview">
+
+    <!-- <div class="container__preview_wrapper"></div> -->
+
+    <%= render 'links/newlink' %>
+
+    <% board.links.each do |link| %>
+      <div class="item__preview">
+        <%= link_to link.url, target: "_blank", class: "link" do %>
+
+          <div class="image__preview">
+            <% if link.image.try(:url) %>
+              <%= image_tag link.image.url%>
+            <% end %>
+          </div>
+          <h2 class="title__preview"><%= link.title %></h2>
+          <div class="url__preview"><%= link.url %></div>
+
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="link_show-all">
+    <%= link_to "Показать все", board_links_path(board)%>
+      <span><%= "(" + board.links.count.to_s + ")" %></span>
+      <%= image_tag "chevron-right.svg", class: "icon_chevron-right" %>
+  </div>
+
+</div>

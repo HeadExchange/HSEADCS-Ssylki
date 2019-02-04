@@ -1,59 +1,6 @@
 <main class="main">
 
-  <% @boards.each do |board| %>
-    <div class="container_board">
-
-      <h1 class="header_board">
-        <%= link_to board.title, board_links_path(board) %>
-      </h1>
-
-      <div class="container-menu">
-      <div class="more">
-          <div id="more-btn" class="more-btn">
-              <span class="more-dot"></span>
-              <span class="more-dot"></span>
-              <span class="more-dot"></span>
-          </div>
-          <div class="more-menu">
-              <div class="more-menu-caret">
-                  <div class="more-menu-caret-outer"></div>
-                  <div class="more-menu-caret-inner"></div>
-              </div>
-              <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
-                  <li class="more-menu-item" role="presentation">
-                      <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_board_path(board) %></div>
-                  </li>
-                  <li class="more-menu-item" role="presentation">
-                      <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' } %></button>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-
-      <p class="description_board"><%= board.description %></p>
-
-      <div class="container__preview">
-
-        <% board.links.each do |link| %>
-          <div class="item__preview">
-            <%= link_to link.url, target: "_blank", class: "link" do %>
-
-              <div class="image__preview">
-                <% if link.image.try(:url) %>
-                  <%= image_tag link.image.url%>
-                <% end %>
-              </div>
-              <h2 class="title__preview"><%= link.title %></h2>
-              <div class="url__preview"><%= link.url %></div>
-
-            <% end %>
-          </div>
-        <% end %>
-
-      </div>
-
-    </div>
-  <% end %>
+  <%= render 'form', board: Board.new %>
+  <%= render @boards %>
 
 </main>

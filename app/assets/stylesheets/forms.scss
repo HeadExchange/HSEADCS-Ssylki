@@ -8,11 +8,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 90%;
-  max-width: 450px;
-}
-
-div.field, div.actions {
-  margin-bottom: 30px;
+  max-width: 640px;
 }
 
 label {
@@ -31,24 +27,22 @@ input, textarea {
   background-color: white;
   -webkit-rtl-ordering: logical;
   cursor: text;
-  height: 30px;
+  height: 50px;
   width: 450px;
   outline: none;
-  border: 1px solid #e9e9e9;
-  border-radius: 3px;
-  padding: 10px;
-  font-size: 20px;
-  margin: 5px;
-  transition: border .5s ease;
+  border: none;
 
   &:focus {
-    outline: none;
-    border: 1px solid #272727;
+    border: none;
   }
 }
 
 textarea {
-  height: 150px;
+  height: 60px;
+
+  &:focus::placeholder {
+    color: transparent;
+  }
 }
 
 .actions input {
@@ -70,7 +64,7 @@ textarea {
 
 .select2 {
   width: 472px !important;
-  height: 30px !important;
+  height: 40px !important;
   outline: none;
   border: 1px solid #e9e9e9;
   border-radius: 3px;
@@ -91,17 +85,17 @@ textarea {
 }
 
 .select2-dropdown {
-    font-size: 16px;
-    border: 1px solid #e9e9e9 !important;
+  font-size: 16px;
+  border: 1px solid #e9e9e9 !important;
 }
 
 .select2-search--dropdown {
-    padding: 0px !important;
-    width: 90%;
+  padding: 0px !important;
+  width: 90%;
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 1px solid #e9e9e9 !important;
+  border: 1px solid #e9e9e9 !important;
 }
 
 b {

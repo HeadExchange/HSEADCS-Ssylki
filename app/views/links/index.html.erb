@@ -1,32 +1,17 @@
 <section class="section_links-wrapper">
 
+
   <section class="section_board-in-links">
-    <h1 class=header_board><%= @board.title %></h1>
-    <p class=description_board><%= @board.description %></p>
+    <div class="container_header_board">
+      <%= render 'application/contextmenu'%>
+      <h1 class="header_board"><%= @board.title %></h1>
+    </div>
+    <p class="description_board"><%= @board.description %></p>
   </section>
 
   <section class="link__section">
-    <% @links.each do |link| %>
-    <div class="link__item">
-      <%= link_to link.url, target: "_blank", class: "link" do %>
-
-        <div class="link__image">
-          <% if link.image.try(:url) %>
-            <%= image_tag link.image.url%>
-          <% end %>
-        </div>
-        <h2 class="link__title"><%= link.title %></h2>
-        <div class="link__url"><%= link.url %></div>
-
-      <% end %>
-
-        <div class="link__settings">
-            <%= link_to 'Изменить', edit_link_path(link) %>
-            <%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %>
-        </div>
-    </div>
-  <% end %>
-
-
+      <%= render 'newlink' %>
+      <%= render @links %>
   </section>
+
 </section>

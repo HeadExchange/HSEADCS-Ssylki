@@ -1,8 +1,11 @@
 <header class="menubar">
 
   <div class="menubar__left">
-    <%= link_to 'Index', welcome_index_path%>
+    <%= link_to welcome_index_path do %>
+      <%= image_tag "logo.svg", class: "link_logo" %>
+    <% end %>
     <%= link_to 'Мои подборки', boards_path %>
+    <%= link_to 'Мои подписки'%>
   </div>
 
   <div class="menubar__right">
@@ -11,8 +14,15 @@
   </div>
 
   <div class="avatar">
-    <a>@kirillivanov</a>
-    <div class="image__avatar"></div>
+    <% if user_signed_in? %>
+      <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
+      <%#= render 'settingsmenu' %>
+      <%= link_to '@username' %>
+      <div class="image__avatar"><%= render "application/avatar" %></div>
+    <% else %>
+      <%= link_to "Войти", new_user_session_path %>
+      <%= link_to "Зарегистрироваться", new_user_registration_path %>
+    <% end %>
   </div>
 
 </header>

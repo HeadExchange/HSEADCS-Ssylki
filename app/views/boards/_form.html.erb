@@ -12,16 +12,19 @@
     <% end %>
 
     <div class="field">
-      <%= form.label value="Название" %>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, :placeholder => "Untitled", :class => "header_board", :autofocus => "autofocus", :autocomplete => "off" %>
     </div>
 
     <div class="field">
-      <%= form.label value="Описание" %>
-      <%= form.text_area :description %>
+      <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "description_board", :autocomplete => "off"%>
     </div>
 
     <div class="actions">
-      <%= form.submit value="Добавить" %>
+      <%#= form.submit value="Добавить" %>
+      <input type="submit"
+       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+       tabindex="-1" />
     </div>
+
+    <a>Отменить</a>
   <% end %>

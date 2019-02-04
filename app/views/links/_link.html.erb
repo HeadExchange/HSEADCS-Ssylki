@@ -1,0 +1,18 @@
+<div class="link__item">
+  <%= link_to link.url, target: "_blank", class: "link" do %>
+
+    <div class="link__image">
+      <% if link.image.try(:url) %>
+        <%= image_tag link.image.url%>
+      <% end %>
+    </div>
+    <h2 class="link__title"><%= link.title %></h2>
+    <div class="link__url"><%= link.url %></div>
+
+  <% end %>
+
+    <div class="link__settings">
+        <%= link_to 'Изменить', edit_link_path(link) %>
+        <%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' } %>
+    </div>
+</div>

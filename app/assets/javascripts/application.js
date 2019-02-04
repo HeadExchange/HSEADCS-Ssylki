@@ -18,11 +18,7 @@
 //= require_tree .
 
 $(function() {
-
-  console.log('test')
   $('#link_board_id').select2 ({
     placeholder: "Выберите подборку"
   })
-  console.log('finish')
-
 });

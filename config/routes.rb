@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "boards#index"
   get 'welcome/index'
   resources :links
 
   resources :boards do
+    member do
+      get "publish"
+    end
     resources :links
   end
 

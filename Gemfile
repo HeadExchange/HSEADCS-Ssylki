@@ -66,3 +66,8 @@ gem 'jquery-rails'
 gem 'select2-rails'
 
 gem 'carrierwave', '~> 1.0'
+
+gem 'link_thumbnailer'
+gem 'faker'
+gem 'devise'
+gem 'cancancan', '~> 2.0'

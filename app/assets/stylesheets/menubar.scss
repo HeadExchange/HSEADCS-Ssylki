@@ -8,77 +8,80 @@
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  padding: 0 20px;
+  padding: 0 40px;
   background-color: #fff;
   border-bottom: solid #e5e5e5 1px;
 
-  a,
-  a:visited {
-    font-size: 18px;
-    line-height: 60px;
-    text-decoration: none;
-    color: #000;
-    transition: all .3s ease;
+    a,
+    a:visited {
+      font-size: 16px;
+      line-height: 60px;
+      text-decoration: none;
+      color: #000;
+      transition: all .3s ease;
 
-    &:hover {
-      color: #9a9a9a;
-      background-color: #fff;
+      &:hover {
+        background-color: #fff;
+      }
+
+      &.isActive {
+      pointer-events: none;
+      }
     }
+
+  .menubar__left a {
+    margin-right: 45px;
   }
 
+  .menubar__left a:last-child {
+    margin-right: 0;
+    transform: translateY(-1px);
+  }
 
-.menubar__left a {
-  margin-right: 45px;
-}
+  .menubar__left a:first-child {
+    font-family: 'Spectral', serif;
+    font-size: 22px;
+  }
 
-.menubar__left a:last-child {
-  margin-right: 0;
-  transform: translateY(-1px);
-}
+  .menubar__right {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.menubar__left a:first-child {
-  font-family: 'Spectral', serif;
-  font-size: 22px;
-}
+  .menubar__right a {
+    margin-right: 45px;
+  }
 
-.menubar__right {
-  display: flex;
-  justify-content: space-between;
-}
+  .menubar__right a:last-child {
+    margin-right: 0;
+  }
 
-.menubar__right a {
-  margin-right: 35px;
-}
+  .avatar {
+    display: flex;
+  }
 
-.menubar__right a:last-child {
-  margin-right: 0;
-}
+  .avatar a {
+    margin-right: 10px;
+  }
 
-.avatar {
-  display: flex;
-}
+  .avatar a:last-child {
+    margin-right: 0;
+  }
 
-.avatar a {
-  margin-right: 10px;
-}
+  .image__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: auto;
+    margin-left: 5px;
+  }
 
-.avatar a:last-child {
-  margin-right: 0;
-}
+  .link_logo {
+    transform: translateY(5px);
+    transition: background .3s ease;
 
-.image__avatar {
-  width: 36px;
-  height: 36px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
-  margin: auto;
-  margin-left: 5px;
-}
-
-.link_logo {
-  background-image: url(/assets/logo.svg);
-  background-size: cover;
-  background-position: 0 -10px;
-}
-
+    &:hover {
+      fill: rgba(0, 255, 255, .2);
+    }
+  }
 }
