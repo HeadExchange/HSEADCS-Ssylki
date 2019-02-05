@@ -1,14 +1,11 @@
 <div class="link__item">
   <%= link_to link.url, target: "_blank", class: "link" do %>
-
+    <% linkProps = LinkThumbnailer.generate(link.url)%>
     <div class="link__image">
-      <% if link.image.try(:url) %>
-        <%= image_tag link.image.url%>
-      <% end %>
+      <%= image_tag linkProps.images.first.src.to_s %>
     </div>
-    <h2 class="link__title"><%= link.title %></h2>
-    <div class="link__url"><%= link.url %></div>
-
+    <h2 class="link__title"><%= linkProps.title %></h2>
+    <div class="link__url"><%= linkProps.url %></div>
   <% end %>
 
     <div class="link__settings">

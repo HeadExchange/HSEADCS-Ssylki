@@ -1,15 +1,14 @@
-<section class="section_links-wrapper">
+<section class="section_linksWrapper">
 
-
-  <section class="section_board-in-links">
-    <div class="container_header_board">
+  <section class="section_boardInLinks">
+    <div class="section_boardInLinks__header">
       <%= render 'application/contextmenu'%>
-      <h1 class="header_board"><%= @board.title %></h1>
+      <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
     </div>
-    <p class="description_board"><%= @board.description %></p>
+    <p class="section_boardInLinks__description"><%= @board.description %></p>
   </section>
 
-  <section class="link__section">
+  <section class="section_links">
       <%= render 'newlink' %>
       <%= render @links %>
   </section>

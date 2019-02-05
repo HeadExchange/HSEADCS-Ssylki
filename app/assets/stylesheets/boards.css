@@ -1,49 +1,45 @@
-.container_board {
+.section_board {
   position: relative;
   width: 100%;
   margin-bottom: 100px;
 }
 
-.container_header_board {
+.section_board__header {
   display: flex;
   align-items: center;
   width: 640px;
   margin-top: 100px;
 }
 
-.header_board {
+.section_board__title {
   font-size: 44px;
   font-weight: bold;
   position: relative;
   margin: 0px 20px 0px 0px;
 }
 
-.header_board_public-icon {
-  transform: translateY(5px);
-}
-
-.description_board {
+.section_board__description {
   font-size: 16px;
   line-height: 1.5;
   margin: 30px 0;
   width: 640px;
 }
 
- .container__preview {
-   /* width: calc(100vw - 126px); */
-   width: 2000px;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   justify-content: flex-start;
-   overflow-y: hidden;
- }
-
-.container__preview:nth-child(5n+5){
-  margin-right: 0px;
+.section__icon_public {
+  transform: translateY(5px);
 }
 
-.container__preview_wrapper {
+.container_preview {
+  /* width: calc(100vw - 126px); */
+  width: 2000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-y: hidden;
+ }
+
+.container_preview_wrapper {
   position: absolute;
   width: calc(100vw - 126px);
   height: 100%;
@@ -52,7 +48,7 @@
   background: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,0) 70%, rgba(255, 255, 255, .8) 100%);
  }
 
-.item__preview {
+.link__item_preview {
   width: 190px;
   height: 150px;
   background-color: white;
@@ -64,11 +60,11 @@
   position: relative;
 }
 
-.item__preview:hover {
+.link__item_preview:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.item__preview_newlink {
+.link__item_preview_newlink {
   width: 190px;
   height: 150px;
   border: 1px dashed #adb5bd;
@@ -76,17 +72,22 @@
   box-shadow: none !important;
 }
 
-.item__preview_newlink:hover {
+.link__item_preview_newlink:hover {
   background-color: #fbfbfb;
 }
 
-.image__preview img {
+.link__section .link__item_preview_newlink {
+  width: 380px;
+  height: 300px;
+}
+
+.link__image_preview img {
   width: 190px;
   height: 100px;
   object-fit: cover;
 }
 
-.title__preview {
+.link__title_preview {
   font-size: 16px;
   line-height: 18px;
   margin-top: 4px;
@@ -97,7 +98,7 @@
   text-overflow: ellipsis;
 }
 
-.url__preview {
+.link__url_preview {
   font-size: 12px;
   line-height: 16px;
   margin-left: 8px;
@@ -107,11 +108,11 @@
   text-overflow: ellipsis;
 }
 
-.link_show-all {
+.button_showAll {
   font-size: 14px;
   font-weight: 500;
 }
 
-.icon_chevron-right {
+.icon_chevronRight {
   transform: translateY(3.5px);
 }

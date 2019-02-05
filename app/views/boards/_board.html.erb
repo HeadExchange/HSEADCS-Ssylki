@@ -1,6 +1,6 @@
-<div class="container_board">
+<section class="section_board">
 
-  <div class="container_header_board">
+  <div class="section_board__header">
     <div class="container-menu">
     <div class="more">
         <div id="more-btn" class="more-btn">
@@ -29,9 +29,9 @@
           </div>
       </div>
     </div>
-    <h1 class="header_board"><%= link_to board.title, board_links_path(board) %></h1>
+    <h1 class="section_board__title"><%= link_to board.title, board_links_path(board) %></h1>
     <% if board.public %>
-    <div class="header_board_public-icon">
+    <div class="section__icon_public">
       <%= image_tag "share.svg" %>
     </div>
     <% end %>
@@ -39,25 +39,23 @@
   </div>
 
 
-  <p class="description_board"><%= board.description %></p>
+  <p class="section_board__description"><%= board.description %></p>
 
-  <div class="container__preview">
-
-    <!-- <div class="container__preview_wrapper"></div> -->
+  <div class="container_preview">
 
     <%= render 'links/newlink' %>
 
     <% board.links.each do |link| %>
-      <div class="item__preview">
+      <div class="link__item_preview">
         <%= link_to link.url, target: "_blank", class: "link" do %>
 
-          <div class="image__preview">
+          <div class="link__image_preview">
             <% if link.image.try(:url) %>
               <%= image_tag link.image.url%>
             <% end %>
           </div>
-          <h2 class="title__preview"><%= link.title %></h2>
-          <div class="url__preview"><%= link.url %></div>
+          <h2 class="link__title_preview"><%= link.title %></h2>
+          <div class="link__url_preview"><%= link.url %></div>
 
         <% end %>
       </div>
@@ -65,10 +63,10 @@
 
   </div>
 
-  <div class="link_show-all">
+  <div class="button_showAll">
     <%= link_to "Показать все", board_links_path(board)%>
       <span><%= "(" + board.links.count.to_s + ")" %></span>
-      <%= image_tag "chevron-right.svg", class: "icon_chevron-right" %>
+      <%= image_tag "chevron-right.svg", class: "icon_chevronRight" %>
   </div>
 
-</div>
+</section>

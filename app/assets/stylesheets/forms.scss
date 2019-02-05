@@ -28,9 +28,10 @@ input, textarea {
   -webkit-rtl-ordering: logical;
   cursor: text;
   height: 50px;
-  width: 450px;
+  width: 640px;
   outline: none;
   border: none;
+  font-size: 22px;  
 
   &:focus {
     border: none;

@@ -2,7 +2,6 @@
     <% if link.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
         <ul>
         <% link.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -13,19 +12,19 @@
 
     <div class="field">
       <%= form.label value="URL" %>
-      <%= form.text_field :url %>
+      <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off" %>
     </div>
 
-    <div class="field">
-      <%= form.label value="Название" %>
-      <%= form.text_field :title %>
-    </div>
+    <!-- <div class="field">
+      <%#= form.label value="Название" %>
+      <%#= form.text_field :title, :autocomplete => "off" %>
+    </div> -->
 
-    <%= form.label value="Обложка" %>
-    <div class="field field_img-upload">
+    <%#= form.label value="Обложка" %>
+    <!-- <div class="field field_img-upload">
         <div style="color: #231F20; font-size: 16px; font-weight: 100;">Загрузите изображение &ensp;📥</div>
-        <%= form.file_field :image %>
-    </div>
+        <%#= form.file_field :image %>
+    </div> -->
 
     <%= form.label value="Подборка" %>
     <div class="field">

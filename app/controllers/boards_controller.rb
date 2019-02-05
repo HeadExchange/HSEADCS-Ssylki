@@ -39,6 +39,7 @@ class BoardsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @board.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -50,6 +51,7 @@ class BoardsController < ApplicationController
       if @board.update(board_params)
         format.html { redirect_to @board, notice: 'Board was successfully updated.' }
         format.json { render :show, status: :ok, location: @board }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @board.errors, status: :unprocessable_entity }
