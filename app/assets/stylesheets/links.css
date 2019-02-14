@@ -1,45 +1,33 @@
-.section_boardInLinks {
-  margin-left: 100px;
-}
-
-.section_boardInLinks .section_boardInLinks__title {
-  font-size: 55px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-.section_boardInLinks .section_boardInLinks__description {
-  font-size: 18px;
-  line-height: 24px;
-  margin: 0;
-  width: 450px;
+.section_linksWrapper {
+  width: 90%;
+  margin: auto;
+  margin-top: 120px;
 }
 
 .section_links {
-  width: 100%;
   height: 100%;
-  margin-bottom: 10px;
-  margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-flow: row wrap;
 }
 
-.link__section-one-link {
-  position: relative;
+.link__section .link__item_newlink {
+  width: 380px;
+  height: 300px;
 }
 
 .link__item {
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  transition: all .2s ease;
   width: 380px;
   height: 300px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 70px;
-  margin-right: 42px;
+  margin-right: 40px;
+  cursor: pointer;
+  transition: all .2s ease;
 }
 
 .icon_plus {
@@ -59,10 +47,10 @@
 }
 
 .link__item:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
 }
 
-.link__image img{
+.link__image img {
   width: 380px;
   height: 200px;
   object-fit: cover;
@@ -101,7 +89,71 @@
   color: #cccccc !important;
 }
 
-.link__section > .link__item_preview_newlink {
-  width: 380px;
-  height: 300px;
+.link__settings:hover {
+  color: #272727 !important;
+}
+
+/* LINKS PREVIEW */
+
+.container_preview {
+  /* width: calc(100vw - 126px); */
+  width: 1400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-y: hidden;
+ }
+
+.container_preview .link__item {
+  width: 190px;
+  height: 150px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.container_preview .link__item:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.link__item_newlink {
+  border: 1px dashed #adb5bd !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+.link__item_newlink:hover {
+  background-color: #fbfbfb;
+}
+
+.container_preview .link__image img {
+  width: 190px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.container_preview .link__title {
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container_preview .link__url {
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container_preview .link__settings {
+  display: none;
 }

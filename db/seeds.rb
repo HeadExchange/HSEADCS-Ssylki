@@ -17,6 +17,7 @@ def create_admin
 
   admin = User.create(
     email: "admin@admin.admin",
+    nickname: 'admin'
     admin: true,
     password: password,
     password_confirmation: password
@@ -27,17 +28,18 @@ end
 
 def create_users
   20.times do |i|
-    username = "user" + i.to_s
-    email = username + "@" + username + "." + username
-    create_user(email)
+    nickname = "user" + i.to_s
+    email = nickname + "@" + nickname + "." + nickrname
+    create_user(email, username)
   end
 end
 
-def create_user(email)
+def create_user(email, nickname)
   password = 'testtest'
 
   user = User.create(
     email: email,
+    nickname: nickname,
     admin: false,
     password: password,
     password_confirmation: password
@@ -51,14 +53,6 @@ def random_user_id
 end
 
 def create_boards
-
-  # boards = [
-  #   ['Рецепты', 'Сomfort food по вегану и чтобы удивить родителей. Если нагрянули гости, real man always has something in the oven.'],
-  #   ['Книги', 'Рекомендованные книги по искусству. Ещё те, которые остались непрочитанными с того самого списка из 2016. Must-read от бабушки.'],
-  #   ['Статьи', 'Сборная солянка. То, что нужно прочитать до декабря, психология и философия.'],
-  #   ['Математика', 'Список от Львовского + онлайн-калькуляторы. Ссылки по дискре на избранные главы, чтобы подготовиться к семинарам'],
-  #   ['Спорт', 'Йога и пилатес на youtube, тренировки для расслабления и снятия стресса. Плейлисты для бега. Те самые кроссовки.']
-  # ]
 
   10.times do
     board = Board.create(

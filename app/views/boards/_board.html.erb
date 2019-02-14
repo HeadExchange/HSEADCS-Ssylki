@@ -1,66 +1,47 @@
-<section class="section_board">
+<section class="section_board" id="board_<% board.id  %>">
 
-  <div class="section_board__header">
-    <div class="container-menu">
-    <div class="more">
-        <div id="more-btn" class="more-btn">
-            <span class="more-dot"></span>
-            <span class="more-dot"></span>
-            <span class="more-dot"></span>
-        </div>
-        <div class="more-menu">
-            <div class="more-menu-caret">
-                <div class="more-menu-caret-outer"></div>
-                <div class="more-menu-caret-inner"></div>
-            </div>
-            <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
-                <li class="more-menu-item" role="presentation">
-                    <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_board_path(board) %></div>
-                </li>
-                <li class="more-menu-item" role="presentation">
-                    <div type="button" class="more-menu-btn" role="menuitem">
-                      <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
-                      <%= link_to public, publish_board_path(board) %></div>
-                </li>
-                <li class="more-menu-item" role="presentation">
-                    <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></button>
-                </li>
-              </ul>
-          </div>
-      </div>
-    </div>
+  <div class="section_board__heading">
+
+    <div class="section_board__heading_left">
     <h1 class="section_board__title"><%= link_to board.title, board_links_path(board) %></h1>
     <% if board.public %>
     <div class="section__icon_public">
       <%= image_tag "share.svg" %>
     </div>
     <% end %>
+    </div>
+
+    <%#= render 'application/contextmenu' %>
+    <div class="container__menu-dropdown">
+    <div class="more">
+      <div id="button-more" class="button-more">
+          <span class="button-more__dot"></span>
+          <span class="button-more__dot"></span>
+          <span class="button-more__dot"></span>
+      </div>
+
+        <div class="menu-dropdown menu-dropdown_edit-board">
+          <div class="menu-dropdown__list">
+            <li><%= link_to 'Изменить', edit_board_path(board) %></li>
+            <li>
+              <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
+              <%= link_to public, publish_board_path(board) %>
+            </li>
+            <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
+          </div>
+        </div>
+    </div>
+    </div>
 
   </div>
-
 
   <p class="section_board__description"><%= board.description %></p>
 
   <div class="container_preview">
-
     <%= render 'links/newlink' %>
-
     <% board.links.each do |link| %>
-      <div class="link__item_preview">
-        <%= link_to link.url, target: "_blank", class: "link" do %>
-
-          <div class="link__image_preview">
-            <% if link.image.try(:url) %>
-              <%= image_tag link.image.url%>
-            <% end %>
-          </div>
-          <h2 class="link__title_preview"><%= link.title %></h2>
-          <div class="link__url_preview"><%= link.url %></div>
-
-        <% end %>
-      </div>
+      <%= render link %>
     <% end %>
-
   </div>
 
   <div class="button_showAll">

@@ -24,6 +24,9 @@ class BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /boards
@@ -66,7 +69,7 @@ class BoardsController < ApplicationController
   respond_to do |format|
     if @board.save
       format.html { redirect_to @board, notice: 'Board was successfully updated.' }
-      format.json { render :show, status: :ok, location: @post }
+      format.json { render :show, status: :ok, location: @board }
     else
       format.html { render :edit }
       format.json { render json: @board.errors, status: :unprocessable_entity }

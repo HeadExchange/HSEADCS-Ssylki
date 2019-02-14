@@ -1,11 +1,24 @@
 <section class="section_linksWrapper">
 
   <section class="section_boardInLinks">
-    <div class="section_boardInLinks__header">
-      <%= render 'application/contextmenu'%>
-      <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
+
+    <div class="section_boardInLinks__heading">
+
+      <div class="section_boardInLinks__heading_left">
+        <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
+        <div style="transform: translateY(3px); color: #adb5bd"><%= @board.links.count %></div>
+        <% if @board.public %>
+          <div class="section__icon_public">
+            <%= image_tag "share.svg" %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= render 'application/contextmenu' %>
     </div>
+
     <p class="section_boardInLinks__description"><%= @board.description %></p>
+
   </section>
 
   <section class="section_links">
