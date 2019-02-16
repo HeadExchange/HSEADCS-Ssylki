@@ -1,24 +1,20 @@
-<div class="container-menu">
+<div class="container__menu-dropdown">
 <div class="more">
-    <div id="more-btn" class="more-btn">
-        <span class="more-dot"></span>
-        <span class="more-dot"></span>
-        <span class="more-dot"></span>
-    </div>
-    <div class="more-menu">
-        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
-            <li class="more-menu-item" role="presentation">
-                <div type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Изменить', edit_board_path(board) %></div>
-            </li>
-            <li class="more-menu-item" role="presentation">
-                <div type="button" class="more-menu-btn" role="menuitem">
-                  <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
-                  <%= link_to public, publish_board_path(board) %></div>
-            </li>
-            <li class="more-menu-item" role="presentation">
-                <button type="button" class="more-menu-btn" role="menuitem"><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></button>
-            </li>
-          </ul>
-      </div>
+  <div id="button-more" class="button-more">
+      <span class="button-more__dot"></span>
+      <span class="button-more__dot"></span>
+      <span class="button-more__dot"></span>
   </div>
+
+  <div class="menu-dropdown menu-dropdown_edit-board">
+    <div class="menu-dropdown__list">
+      <li><%= link_to 'Изменить', edit_board_path(board), remote: true %></li>
+      <li>
+        <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
+        <%= link_to public, publish_board_path(board) %>
+      </li>
+      <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
+    </div>
+  </div>
+</div>
 </div>

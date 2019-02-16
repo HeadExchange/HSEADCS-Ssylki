@@ -14,7 +14,27 @@
         <% end %>
       </div>
 
-      <%= render 'application/contextmenu' %>
+      <div class="container__menu-dropdown">
+      <div class="more">
+        <div id="button-more" class="button-more">
+            <span class="button-more__dot"></span>
+            <span class="button-more__dot"></span>
+            <span class="button-more__dot"></span>
+        </div>
+
+        <div class="menu-dropdown menu-dropdown_edit-board">
+          <div class="menu-dropdown__list">
+            <li><%= link_to 'Изменить', edit_board_path(@board) %></li>
+            <li>
+              <% public = @board.public ? "Сделать приватной" : "Сделать публичной" %>
+              <%= link_to public, publish_board_path(@board) %>
+            </li>
+            <li><%= link_to 'Удалить', @board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red' %></li>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </div>
 
     <p class="section_boardInLinks__description"><%= @board.description %></p>

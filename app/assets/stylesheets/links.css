@@ -96,13 +96,10 @@
 /* LINKS PREVIEW */
 
 .container_preview {
-  /* width: calc(100vw - 126px); */
-  width: 1400px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  overflow-y: hidden;
  }
 
 .container_preview .link__item {
@@ -114,7 +111,7 @@
 }
 
 .container_preview .link__item:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
 }
 
 .link__item_newlink {

@@ -1,0 +1,92 @@
+.menubar {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 134;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 0 40px;
+  background-color: #fff;
+  border-bottom: solid #e9e9e9 .5px;
+}
+
+.icon-bell {
+  position: absolute;
+}
+
+.icon-bell__red-dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: red;
+  top: 20px;
+  right: -16px;
+}
+
+.menubar a,
+.menubar a:visited {
+  font-size: 16px;
+  line-height: 60px;
+  text-decoration: none;
+  color: #000;
+  transition: all .3s ease;
+}
+
+.menubar a,
+.menubar a:visited:hover {
+  background-color: none;
+}
+
+.menubar_left a {
+  margin-right: 45px;
+}
+
+.menubar_left a:nth-child(2) {
+  padding: 0px 10px 18px;
+  border-bottom: 2px solid;
+}
+
+.menubar_left a:last-child {
+  margin-right: 0;
+  transform: translateY(-1px);
+}
+
+.menubar_right {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+}
+
+.avatar {
+  display: flex;
+}
+
+.avatar a {
+  margin-right: 10px;
+}
+
+.avatar a:last-child {
+  margin-right: 0;
+}
+
+.image_avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: auto;
+  margin-left: 5px;
+}
+
+.image_avatar:hover {
+  cursor: pointer;
+}
+
+.link_logo {
+  position: relative;
+  transform: translateY(5px);
+  transition: fill .3s ease;
+}

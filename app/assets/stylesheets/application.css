@@ -56,12 +56,9 @@ body {
   background-color: #fff;
   margin: 0;
   padding: 0;
- }
+  overflow-x: hidden;
+}
 
- body.darkmode {
-  color: #fff !important;
-  background-color: #000 !important;
- }
 
 ::-webkit-scrollbar {
   display: none;

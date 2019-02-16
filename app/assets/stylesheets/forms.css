@@ -1,7 +1,5 @@
-* {
-  &:focus {
-    outline: none;
-  }
+*:focus {
+  outline: none;
 }
 
 form {
@@ -27,23 +25,20 @@ input, textarea {
   background-color: white;
   -webkit-rtl-ordering: logical;
   cursor: text;
+}
+
+input.form-board {
   height: 50px;
   width: 640px;
-  outline: none;
   border: none;
-  font-size: 22px;  
-
-  &:focus {
-    border: none;
-  }
 }
 
 textarea {
   height: 60px;
+}
 
-  &:focus::placeholder {
-    color: transparent;
-  }
+input.section_board__description:focus::placeholder {
+  color: transparent;
 }
 
 .actions input {
@@ -57,11 +52,13 @@ textarea {
   font-size: 18px;
   background-color: #2151FF;
   color: #fff;
-
-    &:hover {
-      background-color: #272727;
-    }
 }
+
+.actions input:hover {
+  background-color: #272727;
+}
+
+/* SELECT 2 */
 
 .select2 {
   width: 472px !important;
@@ -105,27 +102,15 @@ b {
   border-top: 5px solid #272727 !important;
 }
 
-#link_image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  border: none;
-  cursor: pointer;
+.form-board__buttons {
+  display: flex;
 }
 
-.field_img-upload {
-  background-color: #fff;
-  border: none;
-  height: 250px;
-  text-align: center;
-  width: 472px;
-  line-height: 270px;
-  position: relative;
-  border-radius: 6px;
-  border: 1px dashed #e9e9e9;
-  margin: 5px 0 30px;
-  cursor: pointer !important;
+.form-board__buttons a {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.button_back {
+  color: #cccccc;
 }

@@ -1,30 +1,33 @@
-  <%= form_with(model: board, local: true) do |form| %>
-    <% if board.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
+<div class="form-board" id="board_<%= board.id  %>">
+  <%= form_with(model: board) do |form| %>
+  <% if board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
 
-        <ul>
-        <% board.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= form.text_field :title, :placeholder => "Untitled", :class => "section_board__title", :autofocus => "autofocus", :autocomplete => "off" %>
+      <ul>
+      <% board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-
-    <div class="field">
-      <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "section_board__description", :autocomplete => "off"%>
-    </div>
-
-    <div class="actions">
-      <%#= form.submit value="Добавить" %>
-      <input type="submit"
-       style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-       tabindex="-1" />
-    </div>
-
-    <a>Отменить</a>
   <% end %>
+
+  <div class="field">
+    <%= form.text_field :title, :placeholder => "Untitled", :class => "section_board__title form-board", :autofocus => "autofocus", :autocomplete => "off" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "section_board__description form-board", :autocomplete => "off"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit value="Готово", :class => "button_ok" %>
+    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+  </div>
+
+  <div class="form-board__buttons">
+    <a class="button_back">Отменить</a>
+  </div>
+
+  <% end %>
+</div>

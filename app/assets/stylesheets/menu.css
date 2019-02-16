@@ -11,6 +11,11 @@
   top: 25px;
 }
 
+.section_boardInLinks__heading .menu-dropdown {
+  right: -50px;
+  top: 25px;
+}
+
 .more {
   position: relative;
 }
@@ -94,12 +99,12 @@
 }
 
 .menu-dropdown__close {
-  padding: 10px 12px 10px 8px;
+  padding: 0px 12px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 2;
-  line-height: 12px;
+  line-height: 40px;
   transition: opacity .2s ease;
 }
 

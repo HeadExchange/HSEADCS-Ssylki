@@ -6,7 +6,7 @@
       <%= image_tag "logo.svg", class: "link_logo" %>
     <% end %>
     <%= link_to 'Мои подборки', boards_path %>
-    <%= link_to 'Мои подписки'%>
+    <%= link_to 'Мои подписки' %>
 
   </div>
 
@@ -19,13 +19,14 @@
       <div class="menu-dropdown__username">Создать</div>
       <div class="menu-dropdown__close"></div>
       <div class="menu-dropdown__list">
-        <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board" %></li>
+        <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
         <li><%= link_to 'Добавить ссылку', new_link_path %></li>
       </div>
     </div>
 
     <div class="icon-wrapper">
-      <%= image_tag "bell.svg" %>
+      <%= image_tag "bell.svg", class: "icon-bell" %>
+      <div class="icon-bell__red-dot"></div>
     </div>
 
     <div class="avatar">

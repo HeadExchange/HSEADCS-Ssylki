@@ -1,0 +1,7 @@
+<main class="main">
+
+  <% if @board.public || (can? :manage, @board) %>
+  <%= render @boards %>
+  <% end %>
+
+</main>
