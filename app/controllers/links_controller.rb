@@ -1,7 +1,6 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /links
   # GET /links.json
@@ -27,6 +26,7 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
+    format.js
   end
 
   # POST /links
@@ -38,10 +38,12 @@ class LinksController < ApplicationController
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
-        format.json { render :show, status: :created, location: @link }
+        format.json { render :index, status: :created, location: @link }
+        # redirect_to boards_path
       else
         format.html { render :new }
         format.json { render json: @link.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -53,6 +55,7 @@ class LinksController < ApplicationController
       if @link.update(link_params)
         format.html { redirect_to @link, notice: 'Link was successfully updated.' }
         format.json { render :show, status: :ok, location: @link }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @link.errors, status: :unprocessable_entity }

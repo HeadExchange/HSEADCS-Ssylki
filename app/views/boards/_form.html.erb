@@ -20,12 +20,11 @@
     <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "section_board__description form-board", :autocomplete => "off"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit value="Готово", :class => "button_ok" %>
-    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-  </div>
-
   <div class="form-board__buttons">
+    <div class="actions">
+      <%= form.submit value="Готово", :class => "button_ok" %>
+      <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+    </div>
     <a class="button_back">Отменить</a>
   </div>
 

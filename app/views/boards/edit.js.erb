@@ -1,1 +1,4 @@
 $("#board_<%= @board.id %>").replaceWith("<%= escape_javascript(render 'form', board: @board) %>")
+$(".form-board .button_back").on("click", function() {
+  $(".form-board").remove()
+})

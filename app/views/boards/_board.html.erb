@@ -43,10 +43,10 @@
     <% end %>
   </div>
 
-  <div class="button_showAll">
-    <%= link_to "Показать все", board_links_path(board)%>
-      <span><%= "(" + board.links.count.to_s + ")" %></span>
-      <%= image_tag "chevron-right.svg", class: "icon_chevronRight" %>
-  </div>
+  <%= link_to board_links_path(board), class: "button_showAll" do %>
+    <span>Показать все</span>
+    <span><%= "(" + board.links.count.to_s + ")" %></span>
+    <%= image_tag "chevron-right.svg", class: "icon_chevronRight" %>
+  <% end %>
 
 </section>

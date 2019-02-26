@@ -1,4 +1,4 @@
-<header class="menubar">
+<header class="menubar nav-down">
 
   <div class="menubar_left">
 
@@ -12,6 +12,7 @@
 
   <div class="menubar_right">
 
+    <% if user_signed_in? %>
     <div class="icon-wrapper">
       <%= image_tag "plus_black.svg", class: "icon_add" %>
     </div>
@@ -20,14 +21,15 @@
       <div class="menu-dropdown__close"></div>
       <div class="menu-dropdown__list">
         <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
-        <li><%= link_to 'Добавить ссылку', new_link_path %></li>
+        <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
       </div>
     </div>
 
     <div class="icon-wrapper">
       <%= image_tag "bell.svg", class: "icon-bell" %>
-      <div class="icon-bell__red-dot"></div>
+      <!-- <div class="icon-bell__red-dot"></div> -->
     </div>
+    <% end %>
 
     <div class="avatar">
       <% if user_signed_in? %>
@@ -42,7 +44,7 @@
         </div>
 
       <% else %>
-        <%= link_to "Войти", new_user_session_path %>
+        <%= link_to "Войти", new_user_session_path, style: "margin-right: 30px;" %>
         <%= link_to "Зарегистрироваться", new_user_registration_path %>
       <% end %>
     </div>

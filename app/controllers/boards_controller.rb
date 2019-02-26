@@ -7,7 +7,6 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    # @boards = Board.all
     @boards = Board.order('title ASC')
   end
 

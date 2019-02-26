@@ -10,6 +10,7 @@ def seed_data
   create_admin
   create_users
   create_boards
+  create_links
 end
 
 def create_admin
@@ -17,7 +18,7 @@ def create_admin
 
   admin = User.create(
     email: "admin@admin.admin",
-    nickname: 'admin'
+    nickname: 'admin',
     admin: true,
     password: password,
     password_confirmation: password
@@ -27,10 +28,10 @@ def create_admin
 end
 
 def create_users
-  20.times do |i|
+  10.times do |i|
     nickname = "user" + i.to_s
-    email = nickname + "@" + nickname + "." + nickrname
-    create_user(email, username)
+    email = nickname + "@" + nickname + "." + nickname
+    create_user(email, nickname)
   end
 end
 
@@ -52,8 +53,11 @@ def random_user_id
   User.all.reject { |user| user.admin == true }.sample.id
 end
 
-def create_boards
+def random_board_id
+  User.all.sample.id
+end
 
+def create_boards
   10.times do
     board = Board.create(
       title: Faker::Color.color_name,
@@ -63,6 +67,50 @@ def create_boards
 
     puts "Board #{ board.title} was created"
   end
+end
+
+def create_links
+    links = [
+      'https://www.apple.com/iphone-xr',
+      'https://busedu.hse.ru',
+      'https://events.yandex.ru/events/ds/16-feb-2019',
+      'https://research.yandex.com/publications/154',
+      'https://reactjs.org/docs/react-dom.html',
+      'http://www.eliequintard.com/prod/HAINS_DEX_2',
+      'https://ony.ru',
+      'https://moscowmusicschool.ru',
+      'https://minimalissimo.com/less-but-better',
+      'https://pl.wikipedia.org/wiki/Logika',
+      # 'https://www.readingdesign.org/index-1',
+      # 'https://www.205.tf/Font/23/louize',
+      'https://talents.6nomads.cm',
+      'https://www.stockholmdesignlab.se',
+      'http://www.generative-gestaltung.de/2',
+      'https://canary---yellow.com',
+      'https://opensourcerover.jpl.nasa.gov/#!/home',
+      'https://www.e-flux.com',
+      'https://www.smallvictori.es',
+      'http://www.thepytefoundry.net'
+    ]
+    
+    # Errors
+    # SocketError
+    # Net::HTTPServerException
+
+    links.each do |link|
+      create_link(link)
+    end
+
+    puts "Links were created"
+end
+
+def create_link(link)
+  board = Board.all.sample
+  user = User.find(board.user_id)
+
+  l = Link.create(url: link, board_id: board.id, user_id: user.id)
+
+  puts "Link #{l.title} created"
 end
 
 seed_data

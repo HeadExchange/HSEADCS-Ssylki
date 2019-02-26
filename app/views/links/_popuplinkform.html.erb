@@ -1,0 +1,24 @@
+<div class="popup_link-form">
+  <section class="container_form form__link">
+  <%= form_with(model: @link) do |form| %>
+
+
+    <div class="field">
+      <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "URL" %>
+    </div>
+
+    <div class="field">
+      <% @boards = Board.all %>
+      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "450px"%>
+    </div>
+
+    <div class="form-board__buttons">
+      <div class="actions">
+        <%= form.submit value="Добавить", :class => "button_ok" %>
+      </div>
+      <a class="button_back">Отменить</a>
+    </div>
+
+  <% end %>
+  </section>
+</div>

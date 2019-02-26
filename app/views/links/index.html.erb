@@ -6,7 +6,7 @@
 
       <div class="section_boardInLinks__heading_left">
         <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
-        <div style="transform: translateY(3px); color: #adb5bd"><%= @board.links.count %></div>
+        <div style="transform: translateY(3px); opacity: .3;"><%= @board.links.count %></div>
         <% if @board.public %>
           <div class="section__icon_public">
             <%= image_tag "share.svg" %>

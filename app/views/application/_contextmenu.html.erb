@@ -8,7 +8,7 @@
 
   <div class="menu-dropdown menu-dropdown_edit-board">
     <div class="menu-dropdown__list">
-      <li><%= link_to 'Изменить', edit_board_path(board), remote: true %></li>
+      <li><%= link_to 'Изменить', edit_board_path(board) %></li>
       <li>
         <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
         <%= link_to public, publish_board_path(board) %>

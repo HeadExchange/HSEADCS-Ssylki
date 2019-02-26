@@ -15,9 +15,7 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Spectral&subset=cyrillic');
-
- @font-face {
+@font-face {
   font-family: "Graphik Kinopoisk LC";
   font-weight: normal;
   src: url('Graphik Kinopoisk LC-Regular.woff') format('woff'),
@@ -31,34 +29,21 @@
  url('<%= asset_path("Graphik Kinopoisk LC-Light.woff") %>'), format('woff');
 }
 
-@font-face {
-  font-family: 'Figgins';
-  src: url('../fonts/Figgins.woff') format('woff'),
-       url('<%= asset_path("Figgins.woff") %>'), format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Figgins';
-  src: url('../fonts/FigginsBold.woff') format('woff'),
-       url('<%= asset_path("FigginsBold.woff") %>'), format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Graphik Kinopoisk LC", "Helvetica", sans-serif;
-  /* font-family: 'Figgins', serif; */
   color: #272727;
   background-color: #fff;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  padding-top: 60px;
 }
 
+.turbolinks-progress-bar {
+  visibility: hidden;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -69,11 +54,13 @@ body {
 }
 
 *::-moz-selection {
-  background: rgba(0, 255, 255, .2);
+  background: #000;
+  color: #fff;
 }
 
 *::selection {
-  background: rgba(0, 255, 255, .2);
+  background: #000;
+  color: #fff;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
@@ -99,16 +86,11 @@ a:visited:hover {
 
 .main {
   width: 1178px;
-  margin: 140px 0px 0px 126px;
-}
-
-.main_show {
-  width: 1178px;
-  margin: 50px 0px 0 126px;
+  margin: 80px 0px 0px 126px;
 }
 
 .section_links-wrapper {
-   margin-top: 60px;
+  margin-top: 60px;
 }
 
 .container_form {
@@ -124,6 +106,15 @@ a:visited:hover {
 .header_form {
   font-size: 45px;
   margin-bottom: 40px;
+}
+
+.blur-filter {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  opacity: .4;
 }
 
  /* Media Queries */

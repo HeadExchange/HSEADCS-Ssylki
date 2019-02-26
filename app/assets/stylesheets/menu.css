@@ -8,7 +8,7 @@
 
 .section_board__heading .menu-dropdown {
   left: -50px;
-  top: 25px;
+  top: 10px;
 }
 
 .section_boardInLinks__heading .menu-dropdown {
@@ -60,7 +60,7 @@
   background-color: #fff;
   border: 1px solid #ECECEC;
   border-radius: 3px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 5px rgba(0,0,0,0.01);
   display: none;
   overflow: hidden;
   position: absolute;
@@ -147,7 +147,7 @@
 }
 
 .menu-dropdown__list li>a:hover {
-  background-color: rgba(239, 239, 239, .4);
+  /* background-color: rgba(239, 239, 239, .4); */
 }
 
 .icon-wrapper {
@@ -160,6 +160,6 @@
 }
 
 .icon-wrapper:hover {
-  background-color: rgba(239, 239, 239, .4);
+  /* background-color: rgba(239, 239, 239, .4); */
   cursor: pointer;
 }

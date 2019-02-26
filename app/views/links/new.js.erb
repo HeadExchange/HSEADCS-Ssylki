@@ -1,0 +1,7 @@
+$("body").append("<%= j (render partial: 'popuplinkform', link: Link.new) %>")
+$(".main").addClass("blur-filter")
+$(".popup_link-form .button_back").on("click", function() {
+  $(".popup_link-form").remove()
+  $(".main").removeClass("blur-filter")
+})
+$(".menu-dropdown_add").remove();

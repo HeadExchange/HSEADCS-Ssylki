@@ -1,13 +1,13 @@
 .section_linksWrapper {
   width: 90%;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .section_links {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-flow: row wrap;
 }
 
@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 70px;
-  margin-right: 40px;
+  margin-right: 75px;
   cursor: pointer;
   transition: all .2s ease;
 }
@@ -39,10 +39,6 @@
 }
 
 .link__item:nth-child(3n+3){
-  margin-right: 0px;
-}
-
-.link__item:last-child {
   margin-right: 0px;
 }
 
@@ -132,7 +128,7 @@
 
 .container_preview .link__title {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 16px;
   margin-top: 4px;
   margin-bottom: 4px;
   margin-left: 8px;
@@ -143,7 +139,7 @@
 
 .container_preview .link__url {
   font-size: 12px;
-  line-height: 16px;
+  line-height: 12px;
   margin-left: 8px;
   margin-right: 8px;
   white-space: nowrap;

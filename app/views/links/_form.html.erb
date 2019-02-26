@@ -11,29 +11,19 @@
     <% end %>
 
     <div class="field">
-      <%= form.label value="URL" %>
-      <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off" %>
+      <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "URL" %>
     </div>
 
-    <!-- <div class="field">
-      <%#= form.label value="Название" %>
-      <%#= form.text_field :title, :autocomplete => "off" %>
-    </div> -->
-
-    <%#= form.label value="Обложка" %>
-    <!-- <div class="field field_img-upload">
-        <div style="color: #231F20; font-size: 16px; font-weight: 100;">Загрузите изображение &ensp;📥</div>
-        <%#= form.file_field :image %>
-    </div> -->
-
-    <%= form.label value="Подборка" %>
     <div class="field">
       <% @boards = Board.all %>
-      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "450px"%>
+      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "450px", placeholder: "Выберите подборку" %>
     </div>
 
-    <div class="actions">
-      <%= form.submit value="Добавить"%>
+    <div class="form-board__buttons">
+      <div class="actions">
+        <%= form.submit value="Добавить", :class => "button_ok" %>
+      </div>
+      <a class="button_back">Отменить</a>
     </div>
 
   <% end %>
