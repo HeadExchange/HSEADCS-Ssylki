@@ -1,16 +1,21 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  # load_and_authorize_resource
 
   # GET /links
   # GET /links.json
   def index
-    # @links = Link.all
     if params[:board_id]
       @board = Board.find(params[:board_id])
-      @links = @board.links.all
+      @links = @board.links.all.page(params[:page]).per(5)
     else
       @links = Link.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
@@ -68,19 +73,18 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to links_url, notice: 'Link was successfully destroyed.' }
+      format.html { redirect_to boards_url, notice: 'Link was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_link
-      @link = Link.find(params[:id])
-    end
+  def set_link
+    @link = Link.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  private
     def link_params
       params.require(:link).permit(:url, :title, :image, :board_id)
     end
+
 end

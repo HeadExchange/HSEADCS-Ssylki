@@ -28,6 +28,7 @@ class Link < ApplicationRecord
     end
 
     self.title = metadata.title
+    self.description = metadata.description
     self.save
 
     puts self.image

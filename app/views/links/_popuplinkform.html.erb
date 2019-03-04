@@ -2,7 +2,6 @@
   <section class="container_form form__link">
   <%= form_with(model: @link) do |form| %>
 
-
     <div class="field">
       <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "URL" %>
     </div>
@@ -20,5 +19,11 @@
     </div>
 
   <% end %>
+
   </section>
+</div>
+
+
+<div class="icon_close">
+  <%= image_tag "close.svg" %>
 </div>

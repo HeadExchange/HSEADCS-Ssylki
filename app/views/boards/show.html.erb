@@ -1,20 +1,11 @@
 <main class="main">
 
-  <div class="container_board">
-
-    <h1 class="header_board">
+    <h1>
       <%= @board.title %>
     </h1>
 
-    <p class="description_board">
+    <p>
       <%= @board.description %>
     </p>
-
-  </div>
-
-  <div class="link__settings_edit_left">
-    <%= link_to '← Назад', boards_path %>
-    <%= link_to 'Изменить', edit_board_path(@board) %>
-  </div>
 
 </main>

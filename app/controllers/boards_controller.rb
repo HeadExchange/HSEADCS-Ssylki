@@ -7,7 +7,12 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @boards = Board.order('title ASC')
+    @boards = Board.order('title ASC').page(params[:page]).per(5)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /boards/1
@@ -86,17 +91,17 @@ end
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_board
-      @board = Board.find(params[:id])
-    end
+  def set_board
+    @board = Board.find(params[:id])
+  end
 
-    def authorize_user
-      redirect_to boards_url, notice: "Упс вы не можете управлять этим бордом" if @board.user_id != current_user.id
-    end
-    # Never trust parameters from the scary internet, only allow the white list through.
+  def authorize_user
+    redirect_to boards_url, notice: "Упс вы не можете управлять этим бордом" if @board.user_id != current_user.id
+  end
+
+  private
     def board_params
       params.require(:board).permit(:title, :description)
     end
+    
 end

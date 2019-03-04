@@ -86,7 +86,7 @@ a:visited:hover {
 
 .main {
   width: 1178px;
-  margin: 80px 0px 0px 126px;
+  margin: 60px 0px 0px 126px;
 }
 
 .section_links-wrapper {
@@ -114,7 +114,6 @@ a:visited:hover {
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
   filter: blur(10px);
-  opacity: .4;
 }
 
  /* Media Queries */

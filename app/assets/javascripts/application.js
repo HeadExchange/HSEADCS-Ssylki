@@ -18,7 +18,17 @@
 //= require_tree .
 
 $(function() {
+
   $('#link_board_id').select2 ({
     placeholder: "Выберите подборку"
   })
+
+  $('.link__settings').click(function() {
+    $(this).parent().find('.menu-dropdown').addClass('menu-dropdown_shown')
+  })
+
+  $('.link__item').mouseleave(function() {
+    $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
+  })
+
 });

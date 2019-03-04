@@ -1,0 +1,15 @@
+<container class="container_boards-results">
+
+    <h1 class="section_board__title"><%= link_to @board.title, board_links_path(@board) %></h1>
+
+    <% if @board.public %>
+      <div class="section__icon_public">
+        <%= image_tag "share.svg" %>
+      </div>
+    <% end %>
+
+    <p class="section_board__description"><%= @board.description %></p>
+
+    <span><%= @board.links.count.to_s %></span>
+
+</container>

@@ -38,7 +38,7 @@
 
   <div class="container_preview">
     <%= render 'links/newlink' %>
-    <% board.links.each do |link| %>
+    <% board.links[0..4].each do |link| %>
       <%= render link %>
     <% end %>
   </div>

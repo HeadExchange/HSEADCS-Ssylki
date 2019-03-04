@@ -1,6 +1,8 @@
 $('form').trigger('reset')
 $(".index_board").prepend("<%= j (render 'form', board: Board.new) %>");
-$(".menu-dropdown_add").remove();
+
 $(".form-board .button_back").on("click", function() {
   $(".form-board").remove()
 })
+
+$(".menu-dropdown_add").remove();
