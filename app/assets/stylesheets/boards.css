@@ -32,7 +32,7 @@
 .section_board__description {
   font-size: 16px;
   line-height: 1.5;
-  margin: 30px 0;
+  margin: 15px 0 35px;
   width: 750px;
   color: #636363;
 }

@@ -1,11 +1,6 @@
-<main>
+<main class="main">
 
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
-
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
+<div><%= @user.nickname %></div>
+<div><%= @user.email %></div>
 
 </main>

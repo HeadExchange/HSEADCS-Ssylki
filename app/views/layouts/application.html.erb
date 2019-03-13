@@ -26,9 +26,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="blur-wrapper" style="height: 100vh; width: 100vw; margin-top: -60px; position: absolute"></div>
-    <%= render 'menubar' %>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <%= render "menubar" %>
+    <%#= render "application/navmenu" %>
+    <section class="blur-wrapper"></section>
     <%= yield %>
   </body>
 </html>

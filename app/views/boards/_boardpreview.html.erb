@@ -1,15 +1,15 @@
-<container class="container_boards-results">
+<section class="boardSearchPreview">
 
-    <h1 class="section_board__title"><%= link_to @board.title, board_links_path(@board) %></h1>
+  <h1 class="section_boardpreview__title"><%= link_to board.title, board_path(board) %></h1>
 
-    <% if @board.public %>
-      <div class="section__icon_public">
-        <%= image_tag "share.svg" %>
-      </div>
-    <% end %>
+  <% if board.public %>
+    <div class="section__icon_public">
+      <%= image_tag "share.svg" %>
+    </div>
+  <% end %>
 
-    <p class="section_board__description"><%= @board.description %></p>
+  <p class="section_boardpreview__description"><%= board.description %></p>
 
-    <span><%= @board.links.count.to_s %></span>
+  <span class="link_number_boardpreview"><%= "(" + board.links.count.to_s + ")" %></span>
 
-</container>
+</section>

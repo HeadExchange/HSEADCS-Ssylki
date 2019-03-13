@@ -17,4 +17,12 @@ $(function() {
     $('.menu-dropdown_add').removeClass('menu-dropdown_shown')
   })
 
-});
+  $('#modeSwitcher').click(function() {
+    $('body').addClass('dark-mode')
+  })
+
+  // $('.search__submit').click(function() {
+  //   $('.search__textfield').addClass('search__textfield_opened')
+  // })
+
+})

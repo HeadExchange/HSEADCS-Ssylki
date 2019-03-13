@@ -1,0 +1,16 @@
+<section class="section_search main">
+
+  <p class="searchP">Результаты поиска по запросу <strong><%= params[:query]%></strong></p>
+
+  <% @search_results.each do |pg_search_document| %>
+
+    <% if pg_search_document.searchable_type == "Board" %>
+      <% board = Board.find(pg_search_document.searchable_id) %>
+      <%= render "boards/boardpreview", board: board %>
+    <% elsif pg_search_document.searchable_type == "Link" %>
+      <%= render Link.find(pg_search_document.searchable_id) %>
+    <% end %>
+
+  <% end %>
+
+</section>

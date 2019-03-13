@@ -98,9 +98,6 @@ def create_links
     # Net::HTTPServerException
     # LinkThumbnailer::HTTPError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known) / SocketError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known)
 
-
-
-
     links.each do |link|
       create_link(link)
     end

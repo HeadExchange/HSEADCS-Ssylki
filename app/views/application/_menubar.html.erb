@@ -2,15 +2,19 @@
 
   <div class="menubar_left">
 
-    <%= link_to welcome_index_path do %>
-      <%= image_tag "logo.svg", class: "link_logo" %>
+    <% if user_signed_in? %>
+      <%= link_to boards_path do %>
+        <%= image_tag "logo.svg", class: "link_logo" %>
+      <% end %>
+      <%#= link_to 'Мои подборки' %>
+      <%#= link_to 'Мои подписки' %>
     <% end %>
-    <%= link_to 'Мои подборки', boards_path %>
-    <%= link_to 'Мои подписки' %>
 
   </div>
 
   <div class="menubar_right">
+
+    <%= render "search" %>
 
     <% if user_signed_in? %>
     <div class="icon-wrapper">
@@ -31,23 +35,24 @@
     </div>
     <% end %>
 
-    <div class="avatar">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="avatar">
         <div class="image_avatar"><%= render "application/avatar" %></div>
         <div class="menu-dropdown menu-dropdown_edit">
-          <div class="menu-dropdown__username">@semilunar<%#= @user.nickname %></div>
+          <div class="menu-dropdown__username">@username<%#= @user.nickname %></div>
           <div class="menu-dropdown__close"></div>
           <div class="menu-dropdown__list">
             <li><%= link_to 'Настройки' %></li>
+            <li id="modeSwitcher"><a href="">Тёмная тема</a></li>
             <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
           </div>
         </div>
+      </div>
 
-      <% else %>
-        <%= link_to "Войти", new_user_session_path, style: "margin-right: 30px;" %>
+    <% else %>
+        <%= link_to "Войти", new_user_session_path, style: "margin-right: 30px;", class: "button_actions" %>
         <%= link_to "Зарегистрироваться", new_user_registration_path %>
-      <% end %>
-    </div>
+    <% end %>
 
   </div>
 

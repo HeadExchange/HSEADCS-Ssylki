@@ -1,4 +1,4 @@
-<div class="link__item">
+<div class="link__item" id="<%= dom_id(link)%>"> 
   <%= link_to link.url, target: "_blank", class: "link" do %>
     <div class="link__image">
       <% if link.image.try(:url) %>
@@ -13,16 +13,17 @@
     </div>
   <% end %>
 
-  <div class="link__settings">
-    <%= image_tag "settingsCard.svg" %>
-  </div>
+  <% if can? :manage, link %>
 
-  <div class="menu-dropdown menu-dropdown_edit-link">
-    <div class="menu-dropdown__list">
-      <li><%= link_to 'Изменить', edit_link_path(link) %></li>
-      <li><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red' %></li>
+    <div class="link__settings">
+      <%= image_tag "settingsCard.svg" %>
     </div>
-  </div>
 
+    <div class="menu-dropdown menu-dropdown_edit-link">
+      <div class="menu-dropdown__list">
+        <li><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red' %></li>
+      </div>
+    </div>
+  <% end %>
 
 </div>

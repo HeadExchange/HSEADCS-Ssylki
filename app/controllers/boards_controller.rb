@@ -1,8 +1,7 @@
 class BoardsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_board, only: [:show, :edit, :update, :publish, :destroy]
-  # before_action :authorize_user, only: [:edit, :update, :destroy]
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
   # GET /boards
   # GET /boards.json
@@ -18,7 +17,17 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
-    redirect_to boards_path
+    if params[:board_id]
+      @board = Board.find(params[:id])
+      @links = @board.links.all.page(params[:page]).per(8)
+    else
+      @links = Link.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /boards/new
@@ -103,5 +112,5 @@ end
     def board_params
       params.require(:board).permit(:title, :description)
     end
-    
+
 end

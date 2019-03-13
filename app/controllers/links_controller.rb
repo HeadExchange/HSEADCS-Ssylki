@@ -8,15 +8,23 @@ class LinksController < ApplicationController
   def index
     if params[:board_id]
       @board = Board.find(params[:board_id])
-      @links = @board.links.all.page(params[:page]).per(5)
+      @links = @board.links.order(:position).page(params[:page]).per(5)
     else
-      @links = Link.all
+      @links = Link.order(:position)
     end
 
     respond_to do |format|
       format.html
       format.js
     end
+  end
+
+  def sort
+    params[:link].each_with_index do |id, index|
+      Link.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
   end
 
   # GET /links/1
@@ -31,7 +39,6 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
-    format.js
   end
 
   # POST /links
@@ -42,9 +49,8 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
-        format.json { render :index, status: :created, location: @link }
-        # redirect_to boards_path
+        format.html { redirect_to boards_path, notice: 'Link was successfully created.' }
+        format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
         format.json { render json: @link.errors, status: :unprocessable_entity }

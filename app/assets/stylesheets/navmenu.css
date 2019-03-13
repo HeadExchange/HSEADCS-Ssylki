@@ -1,0 +1,38 @@
+.navmenu {
+  position: fixed;
+  height: 100vh;
+  margin-left: 70px;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 99999999999;
+}
+
+.navmenu__item {
+  font-size: 32px;
+  padding-bottom: 20px;
+  transition: all .5s ease-out;
+}
+
+.navmenu__item:last-child {
+  padding-bottom: 0;
+}
+
+.navmenu__item:hover {
+  cursor: pointer;
+  padding: 40px 0;
+}
+
+.navmenu__item_hovered {
+  opacity: .2;
+}
+
+/* .navmenu__item:hover ~ .navmenu__item {
+  opacity: .3;
+} */
+
+/* .navmenu__item:hover::before {
+  content: "~ ";
+  margin-left: 6px;
+} */

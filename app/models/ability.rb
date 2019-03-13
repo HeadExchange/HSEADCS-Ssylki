@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Board, public: true
+    can :show, Board, public: true
     can :read, Link, board: { public: true }
 
     if user.present?

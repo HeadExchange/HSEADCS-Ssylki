@@ -1,13 +1,21 @@
 class Link < ApplicationRecord
+
+  include PgSearch
+  multisearchable against: [:title, :description]
+
+  after_save :reindex
+
   belongs_to :board
   belongs_to :user
+
+  acts_as_list scope: :board
 
   validates :url, :format => URI::regexp(%w(http https))
   validates :board_id, presence: true
 
   mount_uploader :image, ImageUploader
 
-  default_scope { order(created_at: :desc) }
+  default_scope { order(position: :asc) }
 
   after_create :fetch_metadata
 
@@ -54,6 +62,11 @@ class Link < ApplicationRecord
     end
 
     format
+  end
+
+  private
+  def reindex
+    PgSearch::Multisearch.rebuild(Link)
   end
 
 end

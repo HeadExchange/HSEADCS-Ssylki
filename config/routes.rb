@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # constraints(nickname: UserRouteConstraints.new) do
+    get '/:nickname',      to: 'users#show', as: 'user_by_nickname', :constraints => UserRouteConstraints.new
+    get '/:nickname/edit', to: 'users#edit', as: 'edit_user_by_nickname'
+  # end
+
   root to: "boards#index"
   get 'welcome/index'
-  resources :links
+  resources :links do
+    collection do
+      patch :sort
+    end
+  end
 
   resources :boards do
     member do
@@ -12,5 +22,6 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'results', to: 'results#index', as: 'results'
 end

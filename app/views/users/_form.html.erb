@@ -1,5 +1,5 @@
-<main>
-  
+<main class="main">
+
   <%= form_with(model: user, local: true) do |form| %>
     <% if user.errors.any? %>
       <div id="error_explanation">
@@ -14,8 +14,13 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label :nickname %>
+      <%= form.text_field :nickname %>
     </div>
 
     <div class="actions">

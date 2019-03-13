@@ -7,10 +7,6 @@ form {
   flex-direction: column;
 }
 
-.container_form .field {
-  margin-bottom: 40px;
-}
-
 label {
   pointer-events: none;
   transition: .3s all ease;
@@ -27,6 +23,14 @@ input, textarea {
   background-color: white;
   -webkit-rtl-ordering: logical;
   cursor: text;
+}
+
+textarea {
+  height: 60px;
+}
+
+input.section_board__description:focus::placeholder {
+  color: transparent;
 }
 
 input.form-board {
@@ -50,16 +54,12 @@ input.form-link:focus {
   border-bottom: 2px solid #272727;
 }
 
-textarea {
-  height: 60px;
-}
-
-input.section_board__description:focus::placeholder {
-  color: transparent;
+.container_form .field {
+  margin-bottom: 40px;
 }
 
 .actions input {
-  width: 150px;
+  width: 176px;
   height: 50px;
   border-radius: 2px;
   border: 2px transparent;
@@ -85,7 +85,7 @@ input.section_board__description:focus::placeholder {
   font-weight: 500;
   color: #ccc;
   font-size: 18px;
-  width: 150px;
+  width: 176px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -196,6 +196,15 @@ b {
   overflow: hidden;
 }
 
+> :not(.popup_link-form_opened) {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  opacity: .6;
+}
+
 .icon_close {
   position: absolute;
   top: 10px;
@@ -206,4 +215,15 @@ b {
 .icon_close:hover {
   cursor: pointer;
   opacity: .7;
+}
+
+/* SEARCH */
+
+.searchTextField {
+  background-color: #F9F9F9;
+  height: 36px;
+  width: 220px;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 14px;
 }

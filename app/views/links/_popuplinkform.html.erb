@@ -8,7 +8,7 @@
 
     <div class="field">
       <% @boards = Board.all %>
-      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", width: "450px"%>
+      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", width: "450px"%>
     </div>
 
     <div class="form-board__buttons">
@@ -22,7 +22,6 @@
 
   </section>
 </div>
-
 
 <div class="icon_close">
   <%= image_tag "close.svg" %>

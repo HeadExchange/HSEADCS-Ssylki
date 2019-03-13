@@ -1,3 +1,7 @@
 $("a[data-remote]").on("ajax:success", function(event) {
-  console.log('ajax')
+
+  $('#link_board_id').select2({
+    placeholder: "Выберите подборку"
+  });
+
 })
