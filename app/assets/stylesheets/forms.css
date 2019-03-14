@@ -2,6 +2,24 @@
   outline: none;
 }
 
+.container_form {
+  margin: auto;
+  margin-top: 50px;
+  width: 474px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__header {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+.form__subtitle {
+
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -12,10 +30,8 @@ label {
   transition: .3s all ease;
   font-size: 14px;
   font-weight: 100;
-  color: #231F20;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  margin-top: 10px;
+  color: #272727;
+  padding-bottom: 6px;
 }
 
 input, textarea {
@@ -65,7 +81,7 @@ input.form-link:focus {
   border: 2px transparent;
   color: #fff;
   background-color: #272727;
-  font-size: 18px;
+  font-size: 18px !important;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -97,7 +113,6 @@ input.form-link:focus {
 
 .button_back:hover {
   opacity: .6;
-  border: none;
 }
 
 .form-board__buttons {
@@ -185,10 +200,10 @@ b {
 
 .popup_link-form {
   position: absolute;
-  width: 90vw;
-  height: 85vh;
+  width: 60vw;
+  height: 50vh;
   margin: auto;
-  border: none;
+  border: 2px solid #272727;
   background-color: #fff;
   top: 50%;
   left: 50%;
@@ -196,14 +211,14 @@ b {
   overflow: hidden;
 }
 
-> :not(.popup_link-form_opened) {
+/* > :not(.popup_link-form_opened) {
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
   filter: blur(10px);
   opacity: .6;
-}
+} */
 
 .icon_close {
   position: absolute;
@@ -226,4 +241,130 @@ b {
   border-radius: 20px;
   padding-left: 20px;
   font-size: 14px;
+}
+
+/* REGISTRATION */
+
+form.new_user {
+  width: 474px;
+  margin: auto;
+}
+
+form.new_user .field,
+.popup_link-form .field {
+  width: 474px;
+}
+
+form.new_user label {
+  padding-bottom: 6px;
+  transition: all .2s ease;
+}
+
+form.new_user input,
+.popup_link-form input {
+  width: 474px;
+  border: none;
+  border-bottom: 2px solid #E5E5E5;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  font-size: 22px;
+  transition: border-bottom .2s ease;
+}
+
+form.new_user input:focus {
+  border-bottom: 2px solid #272727;
+}
+
+form.new_user input[type="checkbox"] {
+  border: none;
+}
+
+form.new_user .actions {
+  margin: 30px 0;
+}
+
+form.new_user input[type="submit"],
+.popup_link-form input[type="submit"] {
+  border: 2px solid transparent;
+  width: 176px;
+  transition: all .2s ease;
+  margin: auto;
+}
+
+input:disabled {
+  border: 2px solid #ccc !important;
+  background-color: #fff;
+  color: #ccc;
+}
+
+input:disabled:hover {
+  color: #ccc !important;
+}
+
+form.new_user input[type="submit"]:hover,
+.popup_link-form input[type="submit"]:hover  {
+  border: 2px solid #272727;
+}
+
+.registrations.new input[type="submit"] {
+  width: 264px;
+}
+
+.link_new-action {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#togglePasswordVisibility {
+  position: relative;
+  right: -450px;
+  top: -30px;
+  transition: all .2s ease;
+}
+
+#togglePasswordVisibility:hover {
+  cursor: pointer;
+  fill: #272727;
+}
+
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+input:placeholder-shown + label {
+  color: red;
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+/*
+* By default, the placeholder should be transparent. Also, it should
+* inherit the transition.
+*/
+form.new_user::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/*
+* Show the placeholder when the input is focused.
+*/
+form.new_user input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/*
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when
+* there's something in the input at all.
+*/
+form.new_user input:not(:placeholder-shown) + label,
+form.new_user input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
 }

@@ -1,28 +1,27 @@
 <section class="container_form">
 
-<h2>Log in</h2>
+<h1 class="form__header">Войти в аккаунт</h1>
+<div class="form__subtitle"></div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: false, autocomplete: "off", placeholder: "ted@nelson.com" %>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field checkbox-wrapper">
-      <div class="checkbox"><%= f.check_box :remember_me %></div>
-      <%= f.label :remember_me %>
+  <div class="field" style="margin-bottom: 10px;">
+    <%= f.label value="Пароль" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "••••••", id: "password" %>
+    <%= image_tag "eye.svg", id: "togglePasswordVisibility", class: "svg" %>
+  </div>
+
+  <div class="form-board__buttons">
+    <div class="actions">
+      <%= f.submit value="Войти", :class => "button_ok button_disabled" %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Войти" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

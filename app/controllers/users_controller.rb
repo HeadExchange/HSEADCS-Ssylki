@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -69,8 +69,7 @@ class UsersController < ApplicationController
       @user = User.find_by_nickname(params[:nickname])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:nickname)
+      params.require(:user).permit(:nickname, :email)
     end
 end

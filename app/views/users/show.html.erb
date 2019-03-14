@@ -1,5 +1,6 @@
 <main class="main">
 
+<div><%= image_tag(@user.avatar_url) if @user.avatar? %></div>
 <div><%= @user.nickname %></div>
 <div><%= @user.email %></div>
 

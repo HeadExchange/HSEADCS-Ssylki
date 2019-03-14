@@ -23,6 +23,10 @@
       <%= form.text_field :nickname %>
     </div>
 
+    <label>Avatar:</label>
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= form.file_field :image %>
+
     <div class="actions">
       <%= form.submit %>
     </div>

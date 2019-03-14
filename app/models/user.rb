@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
+
+  mount_uploader :avatar, AvatarUploader
 end

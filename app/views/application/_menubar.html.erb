@@ -2,21 +2,22 @@
 
   <div class="menubar_left">
 
-    <% if user_signed_in? %>
+    <%# if user_signed_in? %>
       <%= link_to boards_path do %>
         <%= image_tag "logo.svg", class: "link_logo" %>
       <% end %>
       <%#= link_to 'Мои подборки' %>
       <%#= link_to 'Мои подписки' %>
-    <% end %>
+    <%# end %>
 
   </div>
 
   <div class="menubar_right">
 
+    <% if user_signed_in? %>
+
     <%= render "search" %>
 
-    <% if user_signed_in? %>
     <div class="icon-wrapper">
       <%= image_tag "plus_black.svg", class: "icon_add" %>
     </div>
@@ -36,6 +37,7 @@
     <% end %>
 
     <% if user_signed_in? %>
+    <%# @users.each do |user| %>
       <div class="avatar">
         <div class="image_avatar"><%= render "application/avatar" %></div>
         <div class="menu-dropdown menu-dropdown_edit">
@@ -48,6 +50,7 @@
           </div>
         </div>
       </div>
+      <%# end %>
 
     <% else %>
         <%= link_to "Войти", new_user_session_path, style: "margin-right: 30px;", class: "button_actions" %>

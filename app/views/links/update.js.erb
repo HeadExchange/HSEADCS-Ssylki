@@ -1,1 +1,1 @@
-$("#link_<%= @link.id %>").replaceWith("<%= escape_javascript(render @link) %>")
+$("body").remove("<%= j (render partial: 'popuplinkform', link: Link.new) %>")
