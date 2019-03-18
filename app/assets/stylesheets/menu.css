@@ -1,4 +1,16 @@
-/* 3-DOT-MENU */
+.menu {
+  color: #fff;
+  background: #272727;
+  border-radius: 2px;
+}
+
+.menu div,
+.menu li,
+.menu a {
+  color: #fff !important;
+}
+
+/* 3 Dot Menu */
 
 .section_board__heading .container__menu-dropdown {
   position: absolute;
@@ -52,17 +64,14 @@
   transition: all .3s ease;
 }
 
-/* DROPDOWN MENU */
+/* Dropdown Menu */
 
 .menu-dropdown {
   font-size: 14px;
   line-height: 12px;
-  background-color: #fff;
-  border: 1px solid #ECECEC;
   border-radius: 3px;
-  box-shadow: 0 4px 5px rgba(0,0,0,0.01);
   display: none;
-  overflow: hidden;
+  overflow: visible;
   position: absolute;
   right: -9999px;
   top: -9999px;
@@ -70,6 +79,32 @@
   z-index: 999;
   transition: all .3s ease;
   -webkit-transform: translateZ(0);
+}
+
+.menu-dropdown__username a {
+  line-height: 24px !important;
+  font-size: 14px !important
+}
+
+.menu-dropdown__caret {
+  width: 220px;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  background: #272727;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.menu-dropdown :before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -8px;
+  left: 125px;
+  transform: rotate(45deg);
+  background-color: #272727;
 }
 
 .menu-dropdown_edit-board {
@@ -161,4 +196,61 @@
 
 .menu-dropdown__list li>a:hover {
   color: #272727;
+}
+
+/* Privacy Menu */
+
+.container__menu-privacy {
+  position: relative;
+  width: 300px;
+  height: 24px;
+  padding: 5px;
+  color: #fff;
+  background: #272727;
+  border-radius: 2px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.menu-privacy__list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.menu-privacy__description {
+  font-size: 12px;
+  font-weight: 500;
+  color: #636363;
+  opacity: 0;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  width: 240px;
+  position: absolute;
+  top: 45px;
+  line-height: 1.5;
+  transition: opacity .1s ease-out;
+}
+
+.menu-privacy__list li a {
+  color: #fff;
+}
+
+.menu-privacy__list li {
+  height: 24px;
+  line-height: 24px;
+  transition: all .2s ease;
+}
+
+.menu-privacy__list li:hover {
+  cursor: pointer;
+}
+
+.menu-privacy__list li:hover + .menu-privacy__description {
+  opacity: 1;
 }

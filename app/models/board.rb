@@ -1,5 +1,7 @@
 class Board < ApplicationRecord
 
+  acts_as_url :title
+
   include PgSearch
   multisearchable against: [:title, :description]
 
@@ -9,6 +11,11 @@ class Board < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true
+  validates :url, uniqueness: true
+
+  def to_param
+    id.to_s + "-" + url
+  end
 
   scope :ordered_by_title, -> { reorder(title: :asc) }
 

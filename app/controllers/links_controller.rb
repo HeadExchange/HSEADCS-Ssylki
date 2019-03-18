@@ -1,20 +1,20 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
   # GET /links
   # GET /links.json
   def index
     if params[:board_id]
       @board = Board.find(params[:board_id])
-      @links = @board.links.order(:position).page(params[:page]).per(5)
+      @links = @board.links.order(:position)
     else
       @links = Link.order(:position)
     end
 
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end
   end
@@ -35,6 +35,9 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /links/1/edit

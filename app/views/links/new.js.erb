@@ -1,28 +1,17 @@
+$("body").append("<%= j render partial: 'popuplinkform', link: Link.new %>")
+
 $('#link_board_id').select2({
   placeholder: "Выберите подборку"
-});
+})
 
-
-$("body").append("<%= j (render partial: 'popuplinkform', link: Link.new) %>")
-
+$("body").css("overflow-y", "hidden")
 // $(".main").addClass("blur-filter")
-$("body").css("overflow-y", "hidden");
-// $("body").css("pointer-events", "none");
+// $("body").css("pointer-events", "none")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
+  $("body").css("overflow-y", "inherit")
   // $(".main").removeClass("blur-filter")
-  // $(".blur-wrapper").css("background-color", "transparent")
-  // $(".menubar").css("display", "flex")
-  $("body").css("overflow-y", "inherit");
 })
 
-// $(".icon_close").on("click", function() {
-//   $(".popup_link-form").remove()
-//   $(".main").removeClass("blur-filter")
-//   $(".blur-wrapper").css("background-color", "transparent")
-//   $(".menubar").css("display", "flex")
-//   $("body").css("overflow-y", "inherit");
-// })
-
-$(".menu-dropdown_add").remove();
+$(".menu-dropdown_add").remove()

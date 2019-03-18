@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # constraints(nickname: UserRouteConstraints.new) do
-    get '/:nickname',      to: 'users#show', as: 'user_by_nickname', :constraints => UserRouteConstraints.new
-    get '/:nickname/edit', to: 'users#edit', as: 'edit_user_by_nickname'
-  # end
+  get '/:nickname',      to: 'users#show', as: 'user_by_nickname', :constraints => UserRouteConstraints.new
+  get '/:nickname/edit', to: 'users#edit', as: 'edit_user_by_nickname'
 
-  root to: "boards#index"
   get 'welcome/index'
   resources :links do
     collection do
@@ -24,4 +21,6 @@ Rails.application.routes.draw do
   resources :users
 
   get 'results', to: 'results#index', as: 'results'
+
+  root to: "boards#index"
 end

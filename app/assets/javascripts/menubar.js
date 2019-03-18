@@ -1,6 +1,6 @@
 $(function() {
 
-  $('.image_avatar').click(function() {
+  $('.menubar .image_avatar').click(function() {
     $('.menu-dropdown_edit').addClass('menu-dropdown_shown')
   })
 

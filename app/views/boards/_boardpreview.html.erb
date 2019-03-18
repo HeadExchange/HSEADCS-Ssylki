@@ -1,15 +1,12 @@
-<section class="boardSearchPreview">
+<section class="boardSearchPreview link__item">
+  <%= link_to @board, target: "_blank" do %>
 
-  <h1 class="section_boardpreview__title"><%= link_to board.title, board_path(board) %></h1>
+    <div class="link__content">
+      <h1 class="section_boardpreview__title link__title"><%= link_to board.title, board_path(board) %></h1>
+      <p class="section_boardpreview__description link__description"><%= board.description %></p>
 
-  <% if board.public %>
-    <div class="section__icon_public">
-      <%= image_tag "share.svg" %>
+      <div class="link__number"><%= "Публичная" + " • " + board.links.count.to_s %></div>
     </div>
+
   <% end %>
-
-  <p class="section_boardpreview__description"><%= board.description %></p>
-
-  <span class="link_number_boardpreview"><%= "(" + board.links.count.to_s + ")" %></span>
-
 </section>

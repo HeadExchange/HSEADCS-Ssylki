@@ -87,3 +87,25 @@
   margin: 0;
   color: #636363;
 }
+
+/* Search Preview */
+
+.boardSearchPreview .link__content {
+  margin: auto;
+  text-align: center;
+}
+
+.boardSearchPreview .link__title {
+  font-size: 36px;
+  line-height: 1.5;
+}
+
+.boardSearchPreview .link__description {
+  margin-bottom: 30px;
+}
+
+.boardSearchPreview .link__number {
+  font-size: 14px;
+  letter-spacing: .2px;
+  color: #636363;
+}

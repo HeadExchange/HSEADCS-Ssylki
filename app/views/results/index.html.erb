@@ -2,6 +2,8 @@
 
   <p class="searchP">Результаты поиска по запросу <strong><%= params[:query]%></strong></p>
 
+  <section class="container__search-results">
+
   <% @search_results.each do |pg_search_document| %>
 
     <% if pg_search_document.searchable_type == "Board" %>
@@ -12,5 +14,7 @@
     <% end %>
 
   <% end %>
+
+  </section>
 
 </section>

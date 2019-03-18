@@ -95,13 +95,18 @@
 .image_avatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   margin: auto;
   margin-left: 5px;
 }
 
 .image_avatar:hover {
   cursor: pointer;
+}
+
+form.edit_user .image_avatar {
+  width: 100px;
+  height: 100px;
+  margin-left: 0px;
 }
 
 .link_logo {

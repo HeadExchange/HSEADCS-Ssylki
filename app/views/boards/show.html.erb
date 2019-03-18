@@ -6,7 +6,7 @@
 
       <div class="section_boardInLinks__heading_left">
         <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
-        <div style="transform: translateY(3px); opacity: .3;"><%= @board.links.count %></div>
+        <div style="transform: translateY(3px); opacity: .3;"><%= @links.count %></div>
         <% if @board.public %>
           <div class="section__icon_public">
             <%= image_tag "share.svg" %>
@@ -22,7 +22,7 @@
             <span class="button-more__dot"></span>
         </div>
 
-        <div class="menu-dropdown menu-dropdown_edit-board">
+        <div class="menu-dropdown menu-dropdown_edit-board menu">
           <div class="menu-dropdown__list">
             <li><%= link_to 'Изменить', edit_board_path(@board) %></li>
             <li>

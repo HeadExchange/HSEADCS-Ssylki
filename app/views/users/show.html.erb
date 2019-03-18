@@ -1,7 +1,13 @@
 <main class="main">
 
-<div><%= image_tag(@user.avatar_url) if @user.avatar? %></div>
-<div><%= @user.nickname %></div>
-<div><%= @user.email %></div>
+  <% if current_user.avatar? %>
+    <%= image_tag(current_user.avatar_url) %>
+  <% else %>
+    <%= render "application/avatar" %>
+  <% end %>
+  <div><%= current_user.nickname %></div>
+  <div><%= current_user.email %></div>
+
+  <div><%= link_to "Редактировать профиль", edit_user_by_nickname_path(current_user.nickname) %></div>
 
 </main>

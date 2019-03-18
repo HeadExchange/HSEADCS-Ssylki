@@ -1,7 +1,6 @@
-<main class="main">
+<%= form_with model: user, local: "true", class: "edit_user" do |form| %>
 
-  <%= form_with(model: user, local: true) do |form| %>
-    <% if user.errors.any? %>
+  <% if user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
@@ -13,23 +12,27 @@
       </div>
     <% end %>
 
+
+      <%= form.file_field :image %>
+
+        <% if @user.avatar? %>
+          <%= image_tag(@user.avatar_url) %>
+        <% else %>
+          <%= render "application/avatar"  %>
+        <% end %>
+
     <div class="field">
       <%= form.label :email %>
       <%= form.text_field :email %>
     </div>
 
     <div class="field">
-      <%= form.label :nickname %>
+      <%= form.label value="Никнейм" %>
       <%= form.text_field :nickname %>
     </div>
 
-    <label>Avatar:</label>
-    <%= image_tag(@user.avatar_url) if @user.avatar? %>
-    <%= form.file_field :image %>
-
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit value="Обновить" %>
     </div>
-  <% end %>
 
-</main>
+<% end %>

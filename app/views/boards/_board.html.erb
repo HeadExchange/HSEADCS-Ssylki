@@ -19,7 +19,7 @@
           <span class="button-more__dot"></span>
       </div>
 
-      <div class="menu-dropdown menu-dropdown_edit-board">
+      <div class="menu-dropdown menu-dropdown_edit-board menu">
         <div class="menu-dropdown__list">
           <li><%= link_to 'Изменить', edit_board_path(board), remote: true %></li>
           <li>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <%= link_to board_links_path(board), class: "button_showAll" do %>
+  <%= link_to board_path(board), class: "button_showAll" do %>
     <span>Показать все</span>
     <span><%= "(" + board.links.count.to_s + ")" %></span>
     <%= image_tag "chevron-right.svg", class: "icon_chevronRight" %>

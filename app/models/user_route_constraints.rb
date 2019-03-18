@@ -1,7 +1,5 @@
 class UserRouteConstraints
   def matches?(request)
-    not request.params[:nickname].include?('boards')
-    not request.params[:nickname].include?('results')
-    not request.params[:nickname].include?('sign_in')
+    not ['boards', 'results', 'welcome', 'collaborations'].include?(request.params[:nickname])
   end
 end
