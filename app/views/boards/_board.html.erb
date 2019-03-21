@@ -5,8 +5,9 @@
     <div class="section_board__heading_left">
     <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
     <% if board.public %>
+    <div><%= board.share_url %></div>
     <div class="section__icon_public">
-      <%= image_tag "share.svg" %>
+      <%#= image_tag "share.svg" %>
     </div>
     <% end %>
     </div>

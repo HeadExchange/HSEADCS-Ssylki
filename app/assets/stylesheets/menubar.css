@@ -121,7 +121,6 @@ form.edit_user .image_avatar {
   flex-direction: row;
   z-index: 1000;
   margin-top: 12px;
-  margin-right: 20px;
   position: relative;
 }
 
@@ -140,7 +139,7 @@ form.edit_user .image_avatar {
 .search__textfield {
   background-color: #fff;
   height: 30px;
-  width: 80px;
+  width: 0px;
   border: none;
   font-size: 16px;
   padding: 2px;

@@ -18,11 +18,11 @@ $(function() {
 
   /* Disable Button */
 
-  $(':input[type="submit"]').prop('disabled', true);
-  $('input[type!="submit"]').keyup(function() {
-    if($(this).val() != '') {
-       $(':input[type="submit"]').prop('disabled', false);
-    }
-  })
+  // $(':input[type="submit"]').prop('disabled', true);
+  // $('input[type!="submit"]').keyup(function() {
+  //   if($(this).val() != '') {
+  //      $(':input[type="submit"]').prop('disabled', false);
+  //   }
+  // })
 
 })

@@ -5,6 +5,8 @@
   <% else %>
     <%= render "application/avatar" %>
   <% end %>
+
+  <div><%= current_user.avatar_url %></div>
   <div><%= current_user.nickname %></div>
   <div><%= current_user.email %></div>
 

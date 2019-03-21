@@ -21,8 +21,10 @@ $(function() {
     $('body').addClass('dark-mode')
   })
 
-  // $('.search__submit').click(function() {
-  //   $('.search__textfield').addClass('search__textfield_opened')
-  // })
+  $('.search__submit').click(function(event) {
+    $('.search__textfield').addClass('search__textfield_opened')
+    event.stopPropagation();
+  })
+
 
 })

@@ -1,6 +1,7 @@
 <div class="search">
   <%= form_tag results_path, method: :get, role: 'search' do %>
     <%= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "search__textfield" %>
-    <%= image_submit_tag "search.svg", name: nil, :class => "search__submit" %>
+    <%#= image_submit_tag "search.svg", name: nil, :class => "search__submit" %>
+    <%= image_tag "search.svg", name: nil, :class => "search__submit" %>
   <% end %>
 </div>

@@ -77,17 +77,17 @@ class BoardsController < ApplicationController
   def publish
   @board.public = !@board.public
 
-  if @board.share_url == ''
+  if @board.share_url == nil || @board.share_url == ""
     @board.share_url = SecureRandom.uuid
   end
 
   respond_to do |format|
     if @board.save
-      format.html { redirect_to @board, notice: 'Board was successfully updated.' }
+      format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
       format.json { render :show, status: :ok, location: @board }
       format.js
     else
-      format.html { render :edit }
+      format.html { render :new }
       format.json { render json: @board.errors, status: :unprocessable_entity }
     end
   end
@@ -110,8 +110,11 @@ end
   private
 
     def set_board
-      # @board = Board.find(params[:id])
-      @board = Board.find_by_url(params[:id])
+      if @board.public
+         @board = Board.find_by_share_url(params[:id]) || @board = Board.find_by_url(params[:id])
+      else
+        @board = Board.find_by_url(params[:id])
+      end
     end
 
     def board_params
