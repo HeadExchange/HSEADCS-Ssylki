@@ -7,8 +7,11 @@ class Board < ApplicationRecord
 
   after_save :reindex
 
-  has_many :links
   belongs_to :user
+
+  has_many :links
+  has_many :collaborations
+  has_many :collaborators, class_name: "User", through: :collaborations, source: :users
 
   validates :title, presence: true
   validates :url, uniqueness: true

@@ -29,20 +29,6 @@
  url('<%= asset_path("Graphik Kinopoisk LC-Light.woff") %>'), format('woff');
 }
 
-@font-face {
-  font-family: "Figgins";
-  font-weight: normal;
-  src: url('Figgins.woff') format('woff'),
-  url('<%= asset_path("Figgins.woff") %>'), format('woff');
-}
-
-@font-face {
-  font-family: "Figgins";
-  font-weight: normal;
-  src: url('Figgins.woff') format('woff2'),
-  url('<%= asset_path("Figgins.woff2") %>'), format('woff2');
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -68,13 +54,13 @@ body {
 }
 
 *::-moz-selection {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: blue;
 }
 
 *::selection {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: blue;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {

@@ -76,7 +76,6 @@
 }
 
 .icon-wrapper:hover {
-  /* background-color: rgba(239, 239, 239, .4); */
   cursor: pointer;
 }
 
@@ -114,7 +113,7 @@ form.edit_user .image_avatar {
   transform: translateY(7px);
 }
 
-/* SEARCH */
+/* Search */
 
 .search {
   display: flex;

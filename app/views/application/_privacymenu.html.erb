@@ -1,23 +1,16 @@
-<div class="container__menu-privacy">
 
-    <div class="menu-privacy__list">
-
-      <li>
-        <%# public = board.public ? "Приватная" : "Публичная" %>
-        <%#= link_to public, publish_board_path(board) %>
-        <%= link_to 'Приватная' %>
-      </li>
-      <div class="menu-privacy__description">Эта доска доступна только вам.</div>
-      <div class="menu-privacy__description">
-        <%# public = board.public ? "Эта доска доступна только вам." : "Содержимое доски видно всем, у кого есть ссылка." %>
-        <%#= public %>
-      </div>
-
-      <span>/</span>
-
-      <li><%= link_to 'Совместная' %></li>
-      <div class="menu-privacy__description">Приглашённый коллаборатор получает право редактировать доску и её содержание.</div>
-
+    <div class="container__menu-privacy">
+        <div class="menu-privacy__list">
+          <li>
+            <% public = board.public ? "Публичная" : "Приватная" %>
+            <%= link_to public, publish_board_path(board) %>
+          </li>
+          <div class="menu-privacy__description">
+            <% public = board.public ? "Содержимое доски видно всем, у кого есть ссылка. " : "Эта доска доступна только вам." %>
+            <%= public %>
+          </div>
+          <span>/</span>
+          <li><%= link_to 'Совместная' %></li>
+          <div class="menu-privacy__description">Приглашённый коллаборатор получает право редактировать доску и её содержание.</div>
+        </div>
     </div>
-
-</div>

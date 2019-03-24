@@ -6,10 +6,12 @@
 
       <div class="section_boardInLinks__heading_left">
         <h1 class="section_boardInLinks__title"><%= @board.title %></h1>
-        <div style="transform: translateY(3px); opacity: .3;"><%= @links.count %></div>
+        <div style="transform: translateY(3px); opacity: .5;"><%= @links.count %></div>
         <% if @board.public %>
-          <div class="section__icon_public">
-            <%= image_tag "share.svg" %>
+          <%= image_tag "link.svg", class: "icon_sharelink" %>
+          <div class="container__share-url menu">
+            <div class="share-url"><%= 'localhost:3333/b/' + @board.share_url.to_s %></div>
+            <div class="share_url__button" class="share_url__button_copy">Скопировать</div>
           </div>
         <% end %>
       </div>
@@ -45,6 +47,8 @@
       <%= render 'links/newlink' %>
       <%= render @links %>
   </section>
+
+  <div><%= link_to "Новая коллаборация", board_collaborations_path(@board) %></div>
 
   <div id="loadMoreBoards"></div>
 

@@ -1,0 +1,32 @@
+<%#= form_with(model: collaboration, local: true) do |form| %>
+
+<%= form_for ([@board, @collaboration]) do |f| %>
+
+  <% if collaboration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collaboration.errors.count, "error") %> prohibited this collaboration from being saved:</h2>
+
+      <ul>
+      <% collaboration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= form.label :user_email %>
+      <%= form.email_field :user_email, autofocus: false, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown", placeholder: "Выберите подборку" %>
+    </div>
+
+    <div class="form-board__buttons">
+      <div class="actions">
+        <%= form.submit value="Создать", :class => "button_ok button_disabled" %>
+      </div>
+    </div>
+
+  <% end %>

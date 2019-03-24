@@ -6,8 +6,6 @@
       <%= link_to boards_path do %>
         <%= image_tag "logo.svg", class: "link_logo" %>
       <% end %>
-      <%#= link_to 'Мои подборки' %>
-      <%#= link_to 'Мои подписки' %>
     <%# end %>
 
   </div>
@@ -23,17 +21,12 @@
     </div>
     <div class="menu-dropdown menu-dropdown_add menu">
       <div class="menu-dropdown__username">Создать</div>
-      <div class="menu-dropdown__close"></div>
       <div class="menu-dropdown__list">
         <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
         <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
       </div>
     </div>
 
-    <div class="icon-wrapper">
-      <%= image_tag "bell.svg", class: "icon-bell" %>
-      <!-- <div class="icon-bell__red-dot"></div> -->
-    </div>
     <% end %>
 
     <% if user_signed_in? %>
@@ -47,11 +40,9 @@
         </div>
         <div class="menu-dropdown menu-dropdown_edit menu">
           <span class="menu-dropdown__caret"></span>
-          <div class="menu-dropdown__username">@<%= link_to current_user.nickname, user_by_nickname_path(current_user.nickname) %></div>
-          <div class="menu-dropdown__close"></div>
+          <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
           <div class="menu-dropdown__list">
-            <li><%= link_to 'Настройки' %></li>
-            <!-- <li id="modeSwitcher"><a href="">Ночной режим</a></li> -->
+            <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
             <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
           </div>
         </div>

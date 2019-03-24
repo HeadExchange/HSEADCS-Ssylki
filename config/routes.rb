@@ -11,16 +11,24 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'b/:share_url' => 'boards#shared', as: 'shared_board'
+
   resources :boards do
     member do
       get "publish"
     end
     resources :links
+    resources :collaborations
   end
 
   resources :users
 
   get 'results', to: 'results#index', as: 'results'
 
+  resources :boards do
+    resources :collaborations
+  end
+
   root to: "boards#index"
+
 end

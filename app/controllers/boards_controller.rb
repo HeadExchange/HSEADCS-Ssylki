@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   require 'securerandom'
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_board, only: [:show, :edit, :update, :publish, :destroy]
+  before_action :authenticate_user!
+  before_action :set_board, only: [:index, :show, :edit, :update, :publish, :destroy]
   load_and_authorize_resource
 
   # GET /boards
@@ -19,11 +19,20 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    # @links = @board.links.order(:position)
     @links = @board.links.all
 
     respond_to do |format|
       format.html
+      format.js
+    end
+  end
+
+  def shared
+    @board = Board.find_by_share_url(params[:id])
+    @links = @board.links.all
+
+    respond_to do |format|
+      format.html { render 'show' }
       format.js
     end
   end
@@ -110,11 +119,11 @@ end
   private
 
     def set_board
-      if @board.public
-         @board = Board.find_by_share_url(params[:id]) || @board = Board.find_by_url(params[:id])
-      else
+      # if @board.public
+      #    @board = Board.find_by_share_url(params[:id]) || @board = Board.find_by_url(params[:id])
+      # else
         @board = Board.find_by_url(params[:id])
-      end
+      # end
     end
 
     def board_params

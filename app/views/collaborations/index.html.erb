@@ -1,0 +1,27 @@
+<main class="main">
+
+<h1>Коллаборации</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @collaborations.each do |collaboration| %>
+      <tr>
+        <td><%= link_to 'Show', collaboration %></td>
+        <td><%= link_to 'Edit', edit_collaboration_path(collaboration) %></td>
+        <td><%= link_to 'Destroy', collaboration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить коллабораторов', new_board_collaboration_path, class: "button_ok" %>
+
+</main>

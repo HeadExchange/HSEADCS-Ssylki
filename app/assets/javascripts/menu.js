@@ -37,4 +37,12 @@ $(function() {
     $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
   })
 
+  $('.icon_sharelink').click(function() {
+    $(this).parent().find('.container__share-url').addClass('container__share-url_shown')
+  })
+
+  $('.container__share-url').mouseleave(function() {
+    $(this).removeClass('container__share-url_shown')
+  })
+
 })

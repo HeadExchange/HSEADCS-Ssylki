@@ -3,13 +3,15 @@
   <div class="section_board__heading">
 
     <div class="section_board__heading_left">
-    <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
-    <% if board.public %>
-    <div><%= board.share_url %></div>
-    <div class="section__icon_public">
-      <%#= image_tag "share.svg" %>
-    </div>
-    <% end %>
+      <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
+      <div><%= board.user_id %></div>
+      <% if board.public %>
+        <%= image_tag "link.svg", class: "icon_sharelink" %>
+        <div class="container__share-url menu">
+          <div class="share-url"><%= 'localhost:3333/b/' + board.share_url.to_s %></div>
+          <div class="share_url__button" class="share_url__button_copy">Скопировать</div>
+        </div>
+      <% end %>
     </div>
 
     <div class="container__menu-dropdown">
@@ -25,8 +27,9 @@
           <li><%= link_to 'Изменить', edit_board_path(board), remote: true %></li>
           <li>
             <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
-            <%= link_to public, publish_board_path(board) %>
+            <%= link_to public, publish_board_path(board), id: "share_url__button"  %>
           </li>
+          <li><%= link_to 'Поделиться' %></li>
           <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
         </div>
       </div>

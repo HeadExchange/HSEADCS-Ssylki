@@ -36,8 +36,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -22px;
-  margin-left: -22px;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 
 .link__item:nth-child(3n+3){
@@ -132,7 +132,7 @@
 }
 
 .link__item_newlink:hover {
-  background-color: #fbfbfb;
+  background-color: #fdfdfd;
 }
 
 .container_preview .link__image img {

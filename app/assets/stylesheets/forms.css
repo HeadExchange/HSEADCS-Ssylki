@@ -124,7 +124,7 @@ input.form-link:focus {
   margin-right: 20px;
 }
 
-/* SELECT 2 */
+/* Select 2 */
 
 .select2 {
   width: 474px !important;
@@ -224,7 +224,7 @@ b {
   background-color: #f5f5f5 !important;
 }
 
-/* NEW LINK POPUP */
+/* New Link Popup */
 
 .popup_link-form {
   position: absolute;
@@ -245,8 +245,8 @@ b {
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
-  filter: blur(10px);
-  opacity: .6;
+  filter: blur(1px);
+  opacity: .9;
 } */
 
 .icon_close {

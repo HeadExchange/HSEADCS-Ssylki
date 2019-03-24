@@ -13,13 +13,13 @@
     <% end %>
 
 
-      <%= form.file_field :image %>
+    <%#= form.file_field :image %>
 
-        <% if @user.avatar? %>
-          <%= image_tag(@user.avatar_url) %>
-        <% else %>
-          <%= render "application/avatar"  %>
-        <% end %>
+      <%# if @user.avatar? %>
+        <%#= image_tag(@user.avatar_url) %>
+      <%# else %>
+        <%#= render "application/avatar"  %>
+      <%# end %>
 
     <div class="field">
       <%= form.label :email %>

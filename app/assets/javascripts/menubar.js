@@ -2,10 +2,7 @@ $(function() {
 
   $('.menubar .image_avatar').click(function() {
     $('.menu-dropdown_edit').addClass('menu-dropdown_shown')
-  })
-
-  $('.menu-dropdown__close').click(function() {
-    $('.menu-dropdown_edit').removeClass('menu-dropdown_shown')
+    $('.menu-dropdown_add').removeClass('menu-dropdown_shown')
   })
 
   $('.icon_add').click(function() {
@@ -13,18 +10,21 @@ $(function() {
     $('.menu-dropdown_edit').removeClass('menu-dropdown_shown')
   })
 
-  $('.menu-dropdown__close').click(function() {
-    $('.menu-dropdown_add').removeClass('menu-dropdown_shown')
+  $('.menu-dropdown_add').mouseleave(function() {
+    $(this).removeClass('menu-dropdown_shown')
   })
 
-  $('#modeSwitcher').click(function() {
-    $('body').addClass('dark-mode')
+  $('.menu-dropdown_edit').mouseleave(function() {
+    $(this).removeClass('menu-dropdown_shown')
+  })
+
+  $(window).click(function () {
+    $('.search__textfield').removeClass('search__textfield_opened')
   })
 
   $('.search__submit').click(function(event) {
     $('.search__textfield').addClass('search__textfield_opened')
-    event.stopPropagation();
+    event.stopPropagation()
   })
-
 
 })

@@ -11,6 +11,11 @@
     <%= f.email_field :email, autofocus: false, autocomplete: "off", placeholder: "ted@nelson.com" %>
   </div>
 
+  <div class="field">
+    <%= f.label value="Никнейм" %>
+    <%= f.text_field :nickname, autofocus: false, autocomplete: "off", placeholder: "tednelson" %>
+  </div>
+
   <div class="field" style="margin-bottom: 10px;">
     <%= f.label value="Пароль" do %>
       <% if @minimum_password_length %>Пароль (не менее <%= @minimum_password_length %> символов)

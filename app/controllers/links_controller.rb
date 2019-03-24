@@ -92,6 +92,7 @@ class LinksController < ApplicationController
   end
 
   private
+  
     def link_params
       params.require(:link).permit(:url, :title, :image, :board_id)
     end

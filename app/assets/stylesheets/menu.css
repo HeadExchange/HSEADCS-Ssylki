@@ -109,7 +109,7 @@
 
 .menu-dropdown_edit-board {
   font-size: 12px;
-  width: 180px;
+  width: 200px;
 }
 
 .menu-dropdown_edit-link {
@@ -128,7 +128,7 @@
 
 .menu-dropdown_shown.menu-dropdown_edit-link {
   top: -50px;
-  right: -30px;
+  right: -10px;
 }
 
 .menu-dropdown__username {
@@ -145,28 +145,8 @@
   z-index: 1;
 }
 
-.menu-dropdown__close {
-  padding: 0px 12px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  line-height: 40px;
-  transition: opacity .2s ease;
-}
-
-.menu-dropdown__close:hover {
-  cursor: pointer;
-  opacity: .4;
-}
-
-.menu-dropdown__close:before {
-  content: "✕";
-}
-
 .menu-dropdown__list {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   margin: 10px 0;
 }
 
@@ -203,16 +183,14 @@
 .container__menu-privacy {
   position: relative;
   width: 300px;
-  height: 24px;
+  height: 30px;
   padding: 5px;
   color: #fff;
   background: #272727;
   border-radius: 2px;
-  /* margin: auto;
-  margin-top: 100px; */
-  position: absolute;
-  top: 10px;
-  right: -10px;
+}
+
+.container__menu-privacy_shown {
 }
 
 .menu-privacy__list {
@@ -245,8 +223,8 @@
 }
 
 .menu-privacy__list li {
-  height: 24px;
-  line-height: 24px;
+  height: 30px;
+  line-height: 30px;
   transition: all .2s ease;
 }
 
@@ -260,7 +238,48 @@
 
 /* Share Url */
 
-.menu-share-url {
-  height: 24px;
-  width: 300px;
+.container__share-url {
+  font-size: 14px;
+  height: 30px;
+  width: 550px;
+  padding: 5px;
+  margin-left: 20px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0;
+}
+
+.container__share-url:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 15px;
+  left: -5px;
+  transform: rotate(45deg);
+  background-color: #272727;
+}
+
+.container__share-url_shown {
+  opacity: 1;
+}
+
+.share_url__button_copy {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 20px;
+  opacity: 1;
+  transition: opacity .2s ease;
+  cursor: pointer;
+}
+
+.share_url__button_copy:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.icon_sharelink:hover {
+  cursor: pointer;
 }
