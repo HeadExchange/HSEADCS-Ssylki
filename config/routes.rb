@@ -25,10 +25,6 @@ Rails.application.routes.draw do
 
   get 'results', to: 'results#index', as: 'results'
 
-  resources :boards do
-    resources :collaborations
-  end
-
   root to: "boards#index"
 
 end

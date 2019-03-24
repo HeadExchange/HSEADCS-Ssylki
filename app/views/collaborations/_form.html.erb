@@ -1,6 +1,4 @@
-<%#= form_with(model: collaboration, local: true) do |form| %>
-
-<%= form_for ([@board, @collaboration]) do |f| %>
+<%= form_with(model: [ :board, @collaboration ], local: true) do |form| %>
 
   <% if collaboration.errors.any? %>
     <div id="error_explanation">
