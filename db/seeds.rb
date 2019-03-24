@@ -79,18 +79,18 @@ def create_links
       'http://www.eliequintard.com/prod/HAINS_DEX_2',
       'https://ony.ru',
       'https://moscowmusicschool.ru',
-      'https://minimalissimo.com/less-but-better',
-      'https://pl.wikipedia.org/wiki/Logika',
+      'https://minimalissimo.com/less-but-better'
+      # 'https://pl.wikipedia.org/wiki/Logika',
       # 'https://www.readingdesign.org/index-1',
       # 'https://www.205.tf/Font/23/louize',
       # 'https://talents.6nomads.cm',
-      'https://www.stockholmdesignlab.se',
-      'http://www.generative-gestaltung.de/2',
-      'https://canary---yellow.com',
-      'https://opensourcerover.jpl.nasa.gov/#!/home',
-      'https://www.e-flux.com',
-      'https://www.smallvictori.es',
-      'http://www.thepytefoundry.net'
+      # 'https://www.stockholmdesignlab.se',
+      # 'http://www.generative-gestaltung.de/2',
+      # 'https://canary---yellow.com',
+      # 'https://opensourcerover.jpl.nasa.gov/#!/home',
+      # 'https://www.e-flux.com',
+      # 'https://www.smallvictori.es',
+      # 'http://www.thepytefoundry.net'
     ]
 
     # Errors

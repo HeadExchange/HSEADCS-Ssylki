@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @board = current_user.boards.order('title ASC').page(params[:page]).per(8)
+    @board = current_user.boards.order('title ASC').page(params[:page]).per(5)
 
     respond_to do |format|
       format.html

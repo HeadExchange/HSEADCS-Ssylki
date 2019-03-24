@@ -5,13 +5,18 @@ $('#link_board_id').select2({
 })
 
 $("body").css("overflow-y", "hidden")
-// $(".main").addClass("blur-filter")
-// $("body").css("pointer-events", "none")
+$(".blur-wrapper").css("background", "#000")
+$(".blur-wrapper").css("height", "100vh")
+$(".menubar").css("opacity", "0")
+$("body").css("padding-top", "0")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
   $("body").css("overflow-y", "inherit")
-  // $(".main").removeClass("blur-filter")
+  $(".blur-wrapper").css("background", "none")
+  $(".blur-wrapper").css("height", "0")
+  $(".menubar").css("opacity", "1")
+  $("body").css("padding-top", "60px")
 })
 
 $(".menu-dropdown_add").remove()

@@ -4,7 +4,7 @@
 
 .container_form {
   margin: auto;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   width: 474px;
   height: 100%;
   display: flex;
@@ -231,7 +231,6 @@ b {
   width: 956px;
   height: 420px;
   margin: auto;
-  border: 2px solid #E5E5E5;
   border-radius: 2px;
   background-color: #fff;
   top: 50%;
@@ -240,14 +239,10 @@ b {
   overflow: hidden;
 }
 
-/* :not(.popup_link-form_opened) {
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(1px);
-  opacity: .9;
-} */
+.form__link form {
+  margin: auto;
+  margin-top: 65px;
+}
 
 .icon_close {
   position: absolute;
@@ -261,7 +256,7 @@ b {
   opacity: .7;
 }
 
-/* SEARCH */
+/* Search */
 
 .searchTextField {
   background-color: #F9F9F9;
