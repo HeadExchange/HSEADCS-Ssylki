@@ -4,20 +4,20 @@
 
 .container_form {
   margin: auto;
-  /* margin-top: 50px; */
+  margin-top: 50px;
   width: 474px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
+.container_form.form__link {
+  margin-top: 0;
+}
+
 .form__header {
   font-size: 34px;
   margin-bottom: 40px;
-}
-
-.form__subtitle {
-
 }
 
 form {

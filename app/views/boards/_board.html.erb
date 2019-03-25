@@ -28,7 +28,7 @@
             <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
             <%= link_to public, publish_board_path(board), id: "share_url__button"  %>
           </li>
-          <li><%= link_to "Расшерить", new_board_collaboration_path(board) %></li>
+          <!-- <li><%#= link_to "Расшерить", new_board_collaboration_path(board) %></li> -->
           <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
         </div>
       </div>

@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @board = current_user.boards.order('title ASC').page(params[:page]).per(5)
+    @board = current_user.boards.all.order('title ASC').page(params[:page]).per(5)
 
     respond_to do |format|
       format.html
@@ -19,7 +19,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @links = @board.links.all
+    @links = @board.links.all.page(params[:page]).per(8)
 
     respond_to do |format|
       format.html
@@ -52,7 +52,6 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
-    # Board.create(slug: to_slug(title))
     @board = Board.new(board_params)
     @board.user_id = current_user.id
 
@@ -94,7 +93,6 @@ class BoardsController < ApplicationController
     if @board.save
       format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
       format.json { render :show, status: :ok, location: @board }
-      format.js
     else
       format.html { render :new }
       format.json { render json: @board.errors, status: :unprocessable_entity }
@@ -127,7 +125,7 @@ end
     end
 
     def board_params
-      params.require(:board).permit(:title, :description)
+      params.require(:board).permit(:title, :description, :id)
     end
 
 end
