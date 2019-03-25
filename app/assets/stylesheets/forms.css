@@ -25,6 +25,10 @@ form {
   flex-direction: column;
 }
 
+.form-board form {
+  margin-bottom: 60px;
+}
+
 label {
   pointer-events: none;
   transition: .3s all ease;
