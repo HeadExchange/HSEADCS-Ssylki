@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :boards
   has_many :links
   has_many :collaborations
-  has_many :shared_boards, through: :collaborations, source: :board
-
+  has_many :shared_boards, through: :collaborations
+  
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
 

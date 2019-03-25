@@ -8,6 +8,8 @@
         <%= image_tag "link.svg", class: "icon_sharelink" %>
         <div class="container__share-url menu">
           <div class="share-url"><%#= link_to board.share_url, shared_board_path(share_url) %></div>
+          <div class="share-url"><%#= link_to (resource_name) + board.share_url, shared_board_path(share_url) %></div>
+          resource_name
           <div class="share_url__button_copy">Скопировать</div>
         </div>
       <% end %>
@@ -28,7 +30,7 @@
             <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
             <%= link_to public, publish_board_path(board), id: "share_url__button"  %>
           </li>
-          <li><%= link_to "Поделиться", board_collaborations_path(@board) %></li>
+          <li><%= link_to "Расшерить", new_board_collaboration_path(board) %></li>
           <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
         </div>
       </div>
