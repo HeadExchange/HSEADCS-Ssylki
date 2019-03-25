@@ -11,7 +11,7 @@ class Board < ApplicationRecord
 
   has_many :links
   has_many :collaborations
-  has_many :collaborators, class_name: "User", through: :collaborations, source: :users
+  has_many :collaborators, class_name: "User", through: :collaborations, source: :user
 
   validates :title, presence: true
   validates :url, uniqueness: true
