@@ -1,20 +1,18 @@
-<section class="section_search main">
+<section class="section_linksWrapper">
+  <p class="searchP" style="margin-bottom: 55px;">Результаты поиска по запросу <strong><%= params[:query]%></strong>:</p>
 
-  <p class="searchP">Результаты поиска по запросу <strong><%= params[:query]%></strong>:</p>
+    <section class="section_links">
 
-  <section class="container__search-results">
+      <% @search_results.each do |pg_search_document| %>
 
-  <% @search_results.each do |pg_search_document| %>
+        <% if pg_search_document.searchable_type == "Board" %>
+          <% board = Board.find(pg_search_document.searchable_id) %>
+          <%= render "boards/boardpreview", board: board %>
+        <% elsif pg_search_document.searchable_type == "Link" %>
+          <%= render Link.find(pg_search_document.searchable_id) %>
+        <% end %>
 
-    <% if pg_search_document.searchable_type == "Board" %>
-      <% board = Board.find(pg_search_document.searchable_id) %>
-      <%= render "boards/boardpreview", board: board %>
-    <% elsif pg_search_document.searchable_type == "Link" %>
-      <%= render Link.find(pg_search_document.searchable_id) %>
-    <% end %>
+      <% end %>
 
-  <% end %>
-
-  </section>
-
+    </section>
 </section>
