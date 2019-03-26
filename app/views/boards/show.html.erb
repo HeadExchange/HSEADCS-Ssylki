@@ -10,7 +10,7 @@
         <% if @board.public %>
           <%= image_tag "link.svg", class: "icon_sharelink" %>
           <div class="container__share-url menu">
-            <div class="share-url"><%#= link_to board.share_url, shared_board_path(share_url) %></div>
+            <div class="share-url"><%= link_to 'localhost:3001/b/' + board.share_url.to_s, shared_board_path(board, @share_url)%></div>
             <div class="share_url__button" class="share_url__button_copy">Скопировать</div>
           </div>
         <% end %>
