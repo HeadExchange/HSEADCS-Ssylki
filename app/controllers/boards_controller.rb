@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @board = current_user.boards.all.order('title ASC').page(params[:page]).per(5)
+    @board = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
 
     respond_to do |format|
       format.html
@@ -19,7 +19,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @links = @board.links.all.page(params[:page]).per(8)
+    @links = @board.links.all.page(params[:page]).per(100)
 
     respond_to do |format|
       format.html
@@ -28,11 +28,17 @@ class BoardsController < ApplicationController
   end
 
   def shared
-    @board = Board.find_by_share_url(params[:id])
+    logger.debug "----------"
+    logger.debug params[:share_url]
+    @board = Board.find_by_share_url(params[:share_url])
+    logger.debug @board.title
+    logger.debug @board.id
+    logger.debug Board.all.collect { |b| [b.id, b.share_url] }
     @links = @board.links.all
 
     respond_to do |format|
-      format.html { render 'show' }
+      # format.html { render 'show' }
+      format.html { redirect_to board_url(@board) }
       format.js
     end
   end

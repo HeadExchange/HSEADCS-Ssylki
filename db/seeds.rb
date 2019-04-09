@@ -82,19 +82,15 @@ def create_links
       'https://minimalissimo.com/less-but-better'
       # 'https://pl.wikipedia.org/wiki/Logika',
       # 'https://www.readingdesign.org/index-1',
-      # 'https://www.205.tf/Font/23/louize',
-      # 'https://talents.6nomads.cm',
       # 'https://www.stockholmdesignlab.se',
       # 'http://www.generative-gestaltung.de/2',
       # 'https://canary---yellow.com',
       # 'https://opensourcerover.jpl.nasa.gov/#!/home',
       # 'https://www.e-flux.com',
       # 'https://www.smallvictori.es',
-      # 'http://www.thepytefoundry.net'
     ]
 
     # Errors
-    # SocketError
     # Net::HTTPServerException
     # LinkThumbnailer::HTTPError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known) / SocketError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known)
 

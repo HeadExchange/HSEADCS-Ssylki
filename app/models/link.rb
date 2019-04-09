@@ -5,7 +5,7 @@ class Link < ApplicationRecord
 
   after_save :reindex
 
-  belongs_to :board
+  belongs_to :board, optional: true
   belongs_to :user
 
   acts_as_list scope: :board
