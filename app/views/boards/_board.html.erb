@@ -1,57 +1,21 @@
-<section class="section_board" id="board_<%= board.id  %>">
+<% @boards.each do |board| %>
+  <section class="section_board" id="board_<%= board.id  %>">
+    <%= render 'boardheader', board: board %>
 
-  <div class="section_board__heading">
-
-    <div class="section_board__heading_left">
-      <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
-      <% if board.public %>
-        <%= image_tag "link.svg", class: "icon_sharelink" %>
-        <div class="container__share-url menu">
-          <div class="share-url"><%= link_to shared_board_path(board.share_url), shared_board_path(board.share_url)%></div>
-          <div class="share_url__button_copy">Скопировать ссылку</div>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="container__menu-dropdown">
-    <div class="more">
-      <div id="button-more" class="button-more">
-          <span class="button-more__dot"></span>
-          <span class="button-more__dot"></span>
-          <span class="button-more__dot"></span>
-      </div>
-
-      <div class="menu-dropdown menu-dropdown_edit-board menu">
-        <div class="menu-dropdown__list">
-          <li><%= link_to 'Изменить', edit_board_path(board), remote: true %></li>
-          <li>
-            <% public = board.public ? "Сделать приватной" : "Сделать публичной" %>
-            <%= link_to public, publish_board_path(board), id: "share_url__button"  %>
-          </li>
-          <!-- <li><%#= link_to "Расшерить", new_board_collaboration_path(board) %></li> -->
-          <li><%= link_to 'Удалить', board, method: :delete, data: { confirm: 'Вы уверены?' }, style: 'color: red'%></li>
-        </div>
+    <div class="container_preview">
+      <%= render 'links/newlink' %>
+      <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
+        <% board.links[0..4].each do |link| %>
+          <%= render link %>
+        <% end %>
       </div>
     </div>
-    </div>
 
-  </div>
+  <%# <%= link_to board_path(board), class: "button_show-all" do %>
+    <!-- <span>Показать все</span> -->
+    <!-- <span><%#= "(" + board.links.count.to_s + ")" %></span> -->
+    <%#= image_tag "chevron-right.svg", class: "icon_chevron-right" %>
+  <%# end %>
 
-  <p class="section_board__description"><%= board.description %></p>
-
-  <div class="container_preview">
-    <%= render 'links/newlink' %>
-    <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
-      <% board.links[0..4].each do |link| %>
-        <%= render link %>
-      <% end %>
-    </div>
-  </div>
-
-  <%= link_to board_path(board), class: "button_showAll" do %>
-    <span>Показать все</span>
-    <span><%= "(" + board.links.count.to_s + ")" %></span>
-    <%= image_tag "chevron-right.svg", class: "icon_chevronRight" %>
-  <% end %>
-
-</section>
+  </section>
+<% end %>

@@ -1,10 +1,11 @@
 .section_linksWrapper {
-  width: 90%;
+  width: 1218px;
   margin: auto;
   margin-top: 60px;
 }
 
 .section_links {
+  width: 1218px;
   height: 100%;
   display: flex;
   /* justify-content: space-between; */
@@ -27,7 +28,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 70px;
-  margin-right: 75px;
+  margin-right: 36px;
   cursor: pointer;
   transition: box-shadow .2s ease;
 }
@@ -171,9 +172,6 @@
   display: block;
 }
 
-.container_preview .link__settings {
-
-}
 
 /* LINK WITH NO IMAGE ничё не работает нужно как-то иначе или вообще лучше создать другой блок с описанием во всю высоту да и его показывать отличная идея только сейчас я пошла мыть голову а не этими вещами заниматься спасибо */
 

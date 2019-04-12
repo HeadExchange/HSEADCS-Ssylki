@@ -92,8 +92,8 @@
 }
 
 .image_avatar {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   margin: auto;
   margin-left: 5px;
 }
@@ -110,9 +110,14 @@ form.edit_user .image_avatar {
 
 .link_logo {
   position: relative;
-  transform: translateY(7px);
+  transform: translateY(5px);
+  opacity: 1;
+  transition: all .2s ease;
 }
 
+.link_logo:hover {
+  filter: blur(2px);
+}
 /* Search */
 
 .search {

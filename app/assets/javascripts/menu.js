@@ -39,10 +39,25 @@ $(function() {
 
   $('.icon_sharelink').click(function() {
     $(this).parent().find('.container__share-url').addClass('container__share-url_shown')
+    $(this).parent().find('.share-url').addClass('opened')
   })
 
   $('.container__share-url').mouseleave(function() {
     $(this).removeClass('container__share-url_shown')
+    $(this).parent().find('.share-url').removeClass('opened')
+  })
+
+  $('.icon__bookmark').click(function() {
+
+    const bookmarktoggle = $(".icon__bookmark")
+
+    if (bookmarktoggle.src="/assets/bookmark.svg") {
+      bookmarktoggle.src="/assets/blackbookmark.svg"
+    }
+
+    else if (bookmarktoggle.src="/assets/blackbookmark.svg") {
+      bookmarktoggle.src="/assets/bookmark.svg"
+    }
   })
 
 })

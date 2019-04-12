@@ -241,14 +241,16 @@
 .container__share-url {
   font-size: 14px;
   height: 30px;
-  width: 550px;
+  width: 400px;
   padding: 5px;
   margin-left: 20px;
   display: flex;
-  position: relative;
+  /* position: relative; */
+  position: absolute;
   align-items: center;
   justify-content: space-around;
   opacity: 0;
+  border-radius: 4px;
 }
 
 .container__share-url:before {
@@ -277,9 +279,5 @@
 
 .share_url__button_copy:hover {
   opacity: .6;
-  cursor: pointer;
-}
-
-.icon_sharelink:hover {
   cursor: pointer;
 }

@@ -1,0 +1,38 @@
+<section class="header_board">
+
+  <div class="section_board__heading header_over-line">
+    <div class="section_board__heading_left">
+
+      <% if board.public %>
+        <%= image_tag "link.svg", class: "icon icon_privacy" %>
+        <div class="container__share-url menu">
+          <div class="share-url"><%= link_to "Этого элемента не будет видно", shared_board_path(board.share_url)%></div>
+          <div class="share_url__button_copy">Скопировать ссылку</div>
+        </div>
+        <% else %>
+          <%= image_tag "lock.svg", class: "icon icon_privacy" %>
+      <% end %>
+
+      <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
+
+      <% label = board.public ? "Публичная" : "Приватная" %>
+      <div class="section_board__label"><%= label %></div>
+
+      <%# labelCollaborative = "" %>
+      <!-- <div class="section_board__label"><%#= labelCollaborative %></div> -->
+
+      </div>
+        <div class="container_bookmark">
+        <%= image_tag "bookmark.svg", class: "icon icon__bookmark"%>
+        <%= render "application/hint" %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="header_under-line">
+        <p class="section_board__description"><%= board.description %></p>
+        <div class="button__edit"><%= link_to 'Изменить', edit_board_path(board), remote: true %></div>
+      </div>
+
+</section>

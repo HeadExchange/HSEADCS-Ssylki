@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require select2
+ *= require switchery
  *= require_tree .
  *= require_self
  */
@@ -54,13 +55,11 @@ body {
 }
 
 *::-moz-selection {
-  background: #fff;
-  color: blue;
+  background: #FEF259;
 }
 
 *::selection {
-  background: #fff;
-  color: blue;
+  background: #FEF259;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
@@ -84,8 +83,13 @@ a:visited:hover {
   background-color: none;
 }
 
+hr {
+  border: .5px #F5F5F5 solid;
+  margin: 15px 0 10px 0;
+}
+
 .main {
-  width: 1178px;
+  width: 1218px;
   margin: 70px 0px 0px 121px;
 }
 
@@ -121,6 +125,45 @@ a:visited:hover {
 
 .dark-mode .section_board__description {
   color: #afafaf;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.hint {
+  background-color: #000;
+  border-radius: 3px;
+  width: 105px;
+  height: 27px;
+  position: absolute;
+  display: none;
+  bottom: 45px;
+  left: -45px;
+}
+
+.hint.opened {
+  display: block;
+}
+
+.hint::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  left: 47.5px;
+  transform: rotate(45deg);
+  background-color: #000;
+}
+
+.hint__text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.3px;
 }
 
  /* Media Queries */
