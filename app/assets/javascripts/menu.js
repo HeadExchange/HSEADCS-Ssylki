@@ -37,7 +37,7 @@ $(function() {
     $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
   })
 
-  $('.icon_sharelink').click(function() {
+  $('.icon_privacy').click(function() {
     $(this).parent().find('.container__share-url').addClass('container__share-url_shown')
     $(this).parent().find('.share-url').addClass('opened')
   })

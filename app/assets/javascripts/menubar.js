@@ -27,4 +27,10 @@ $(function() {
     event.stopPropagation()
   })
 
+  $(".menubar_middle div").hover(function() {
+    $(this).siblings(".menubar_middle div").addClass("hovered");
+  }, function() {
+    $(this).siblings(".menubar_middle div").removeClass("hovered");
+  })
+
 })

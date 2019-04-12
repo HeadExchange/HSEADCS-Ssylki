@@ -10,6 +10,13 @@
 
   </div>
 
+  <div class="menubar_middle">
+    <div><%=link_to "Все", :controller => "boards"%></div>
+    <div><%=link_to "Личные", :controller => "boards", :query => "private"%></div>
+    <div><%=link_to "Публичные", :controller => "boards", :query => "public"%></div>
+    <div><%=link_to "Общий доступ", :controller => "boards", :query => "collaborative"%></div>
+  </div>
+
   <div class="menubar_right">
 
     <% if user_signed_in? %>
