@@ -27,10 +27,17 @@ $(function() {
     event.stopPropagation()
   })
 
-  $(".menubar_middle div").hover(function() {
-    $(this).siblings(".menubar_middle div").addClass("hovered");
+  // $(".menubar_middle div").hover(function() {
+  //   $(this).siblings(".menubar_middle div").addClass("hovered")
+  // }, function() {
+  //   $(this).siblings(".menubar_middle div").removeClass("hovered");
+  // })
+
+  $(".menubar_middle div").click(function() {
+    $(this).addClass("active")
+    $(this).siblings(".menubar_middle div").removeClass("active")
   }, function() {
-    $(this).siblings(".menubar_middle div").removeClass("hovered");
+    $(this).siblings(".menubar_middle div").removeClass("active")
   })
 
 })

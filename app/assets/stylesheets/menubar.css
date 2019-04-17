@@ -44,19 +44,18 @@
 
 .menubar a:hover {
   background-color: none;
-  /* color: #FA9538; */
+  opacity: .3;
 }
 
-.menubar div.hovered a {
-  opacity: .2;
+.menubar div.hovered a, .hovered {
+  /* filter: blur(1px);
+  opacity: .2; */
 }
 
-/* .menubar.active a::before {
-  background: #000;
-  padding-bottom: 16px;
-  width: 30px;
-  height: 2px;
-} */
+.menubar div.active a {
+  border-bottom: 1px solid #000;
+  font-size: 18px;
+}
 
 .menubar_left a {
   margin-right: 45px;
@@ -73,7 +72,7 @@
 }
 
 .menubar_middle {
-  width: 662px;
+  width: 474px;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;

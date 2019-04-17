@@ -7,11 +7,14 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @board = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
-
-    respond_to do |format|
-      format.html
-      format.js
+    if params[:query] == "published"
+      @boards = Board.published.order('title ASC')
+    else
+      @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
@@ -37,7 +40,6 @@ class BoardsController < ApplicationController
     @links = @board.links.all
 
     respond_to do |format|
-      # format.html { render 'show' }
       format.html { redirect_to board_url(@board) }
       format.js
     end
@@ -89,22 +91,22 @@ class BoardsController < ApplicationController
   end
 
   def publish
-  @board.public = !@board.public
+    @board.published = !@board.published
 
-  if @board.share_url == nil || @board.share_url == ""
-    @board.share_url = SecureRandom.uuid
-  end
+    if @board.share_url == nil || @board.share_url == ""
+      @board.share_url = SecureRandom.uuid
+    end
 
-  respond_to do |format|
-    if @board.save
-      format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
-      format.json { render :show, status: :ok, location: @board }
-    else
-      format.html { render :new }
-      format.json { render json: @board.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @board.save
+        format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
+        format.json { render :show, status: :ok, location: @board }
+      else
+        format.html { render :new }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
+      end
     end
   end
-end
 
   # DELETE /boards/1
   # DELETE /boards/1.json

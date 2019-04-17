@@ -121,6 +121,7 @@ input.form-link:focus {
 
 .form-board__buttons {
   display: flex;
+  margin: 40px 0 60px;
 }
 
 .form-board__buttons a {
@@ -130,13 +131,17 @@ input.form-link:focus {
 
 /* Select 2 */
 
+select {
+  background: transparent !important;
+}
+
 .select2 {
   width: 474px !important;
   height: 40px !important;
   outline: none;
   border: 1px solid #ссс;
   font-size: 22px;
-  background: none !important;
+  background: transparent !important;
 }
 
 .select2-selection {
@@ -234,9 +239,9 @@ b {
   position: absolute;
   width: 956px;
   height: 420px;
+  background: transparent;
   margin: auto;
   border-radius: 2px;
-  background-color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -248,16 +253,25 @@ b {
   margin-top: 65px;
 }
 
-.icon_close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  transition: opacity .2s ease;
+.popup_link-form .field {
+  background: transparent;
 }
 
-.icon_close:hover {
-  cursor: pointer;
-  opacity: .7;
+.menubar.underpopup {
+  /* opacity: 0; */
+  opacity: .2;
+  filter: blur(10px);
+}
+
+body.underpopup {
+  /* padding-top: 60px; */
+  overflow-y: hidden;
+}
+
+.index_board.underpopup {
+  opacity: .3;
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 /* Search */
@@ -271,7 +285,7 @@ b {
   font-size: 14px;
 }
 
-/* REGISTRATION */
+/* Registration */
 
 form.new_user {
   width: 474px;
@@ -299,6 +313,7 @@ form.edit_user input {
   margin-top: 10px;
   font-size: 22px;
   transition: border-bottom .2s ease;
+  background: transparent;
 }
 
 form.new_user input:focus,

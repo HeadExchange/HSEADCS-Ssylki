@@ -16,11 +16,12 @@ class Board < ApplicationRecord
   validates :title, presence: true
   validates :url, uniqueness: true
 
+  scope :published, -> { where(published: true) }
+  scope :ordered_by_title, -> { reorder(title: :asc) }
+
   def to_param
     id.to_s + "-" + url
   end
-
-  scope :ordered_by_title, -> { reorder(title: :asc) }
 
   private
   def reindex

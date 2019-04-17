@@ -4,19 +4,15 @@ $('#link_board_id').select2({
   placeholder: "Выберите подборку"
 })
 
-$("body").css("overflow-y", "hidden")
-$(".blur-wrapper").css("background", "#000")
-$(".blur-wrapper").css("height", "100vh")
-$(".menubar").css("opacity", "0")
-$("body").css("padding-top", "0")
+$("body").addClass("underpopup")
+$(".menubar").addClass("underpopup")
+$(".index_board").addClass("underpopup")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
-  $("body").css("overflow-y", "inherit")
-  $(".blur-wrapper").css("background", "none")
-  $(".blur-wrapper").css("height", "0")
-  $(".menubar").css("opacity", "1")
-  $("body").css("padding-top", "60px")
+  $("body").removeClass("underpopup")
+  $(".menubar").removeClass("underpopup")
+  $(".index_board").removeClass("underpopup")
 })
 
 $(".menu-dropdown_add").remove()

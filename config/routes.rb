@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :public
+  resources :private
+  resources :collaborative
+
   get 'results', to: 'results#index', as: 'results'
 
   root to: "boards#index"
