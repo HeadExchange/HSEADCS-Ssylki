@@ -17,6 +17,7 @@ class Board < ApplicationRecord
   validates :url, uniqueness: true
 
   scope :published, -> { where(published: true) }
+  scope :my, -> { where(published: false) }
   scope :ordered_by_title, -> { reorder(title: :asc) }
 
   def to_param

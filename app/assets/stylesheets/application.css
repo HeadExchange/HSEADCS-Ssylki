@@ -11,7 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require select2
- *= require switchery
  *= require_tree .
  *= require_self
  */
@@ -55,11 +54,13 @@ body {
 }
 
 *::-moz-selection {
-  background: #FEF259;
+  background: #fff;
+  color: #FF21E9;
 }
 
 *::selection {
-  background: #FEF259;
+  background: #fff;
+  color: #FF21E9;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {

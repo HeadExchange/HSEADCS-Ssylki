@@ -1,16 +1,36 @@
+<div class="container__menu-privacy menu">
+  <div class="menu-privacy__content">
 
-    <div class="container__menu-privacy">
-        <div class="menu-privacy__list">
-          <li>
-            <% public = board.public ? "Публичная" : "Приватная" %>
-            <%= link_to public, publish_board_path(board) %>
-          </li>
-          <div class="menu-privacy__description">
-            <% public = board.public ? "Содержимое доски видно всем, у кого есть ссылка. " : "Эта доска доступна только вам." %>
-            <%= public %>
-          </div>
-          <span>/</span>
-          <li><%= link_to 'Совместная' %></li>
-          <div class="menu-privacy__description">Приглашённый коллаборатор получает право редактировать доску и её содержание.</div>
+    <div class="menu-privacy__list">
+
+      <li>
+        <div class="menu-privacy__icon">
+          <%= image_tag "link.svg", class: "icon icon_privacy icon_published" %>
         </div>
+        <div class="menu-privacy__item">Доступ по ссылке</div>
+        <div class="menu-privacy__toggle toggle">
+          <div class="toggle__body"></div>
+          <div class="toggle__circle"></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="menu-privacy__icon">
+          <%#= image_tag "shared.svg", class: "icon icon_privacy icon_shared" %>
+        </div>
+        <div class="menu-privacy__item">Совместный доступ</div>
+        <div class="menu-privacy__toggle toggle">
+          <div class="toggle__body"></div>
+          <div class="toggle__circle"></div>
+        </div>
+      </li>
+      
     </div>
+
+    <div class="menu-privacy__buttons">
+      <a class="button_add button">Добавить коллаборатора</a>
+      <a class="button_copy button">Скопировать ссылку</a>
+    </div>
+
+  </div>
+</div>

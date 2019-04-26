@@ -2,7 +2,7 @@
 
   <%= render 'boardheader', board: @board %>
 
-  <section class="section_links" id="linksPage">
+  <section class="section_links container_preview_sortable" id="linksPage" data-url="<%= sort_links_path %>">
     <%= render 'links/newlink' %>
     <%= render @links %>
   </section>

@@ -10,10 +10,14 @@ class BoardsController < ApplicationController
     if params[:query] == "published"
       @boards = Board.published.order('title ASC')
     else
-      @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
-      respond_to do |format|
-        format.html
-        format.js
+      if params[:query] == "my"
+        @boards = Board.my.order('title ASC')
+        else
+          @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
+          respond_to do |format|
+            format.html
+            format.js
+        end
       end
     end
   end

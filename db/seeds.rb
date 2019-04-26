@@ -67,6 +67,21 @@ def create_boards
 
     puts "Board #{ board.title} was created"
   end
+
+  # boards = [
+  #   [ "Артефакты", "Объекты материального мира" ],
+  #   [ "Дизайн", "Шрифты, люди, сетки и стеки" ],
+  #   [ "Учёба", "React stuff etc." ],
+  #   [ "Статьи", "Список для чтения" ],
+  #   [ "Философия", "Мысли великих людей" ],
+  #   [ "Вечеринка", ":)" ],
+  #   [ "Мусор", "Всякое" ],
+  # ]
+  #
+  # boards.each do |name, description|
+  #   Board.create( name: name, description: description )
+  # end
+
 end
 
 def create_links
@@ -80,19 +95,25 @@ def create_links
       'https://ony.ru',
       'https://moscowmusicschool.ru',
       'https://minimalissimo.com/less-but-better'
-      # 'https://pl.wikipedia.org/wiki/Logika',
-      # 'https://www.readingdesign.org/index-1',
-      # 'https://www.stockholmdesignlab.se',
-      # 'http://www.generative-gestaltung.de/2',
-      # 'https://canary---yellow.com',
-      # 'https://opensourcerover.jpl.nasa.gov/#!/home',
-      # 'https://www.e-flux.com',
-      # 'https://www.smallvictori.es',
+      'https://ru.wikipedia.org/wiki/Утопление',
+      'https://ru.wikipedia.org/wiki/Повешение',
+      'https://ru.wikipedia.org/wiki/Яд',
+      'http://www.generative-gestaltung.de/2',
+      'https://vk.com/@physics_math-detalnyi-plan-samoobrazovaniya-v-computer-science-za-15-goda',
+      'https://www.youtube.com/watch?v=-bMRxQbLUlg',
+      'https://www.e-flux.com',
+      'https://www.smallvictori.es',
+      'https://seance.ru/blog/esse/bruce_weber/?utm_source=vk&utm_medium=social&utm_campaign=targetings&utm_content=instant#0_8___1680_204236137',
+      'https://thngs.co/things/10657',
+      'https://thngs.co/things/10687',
+      'https://thngs.co/things/9753',
+      'https://thngs.co/things/10333',
+      'https://thngs.co/things/10249',
+      'https://thngs.co/things/9475',
+      'https://thngs.co/things/10678',
+      'https://www.itsnicethat.com/features/ones-to-watch-2019-introducing-250219',
+      'https://56.digital/'
     ]
-
-    # Errors
-    # Net::HTTPServerException
-    # LinkThumbnailer::HTTPError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known) / SocketError: Failed to open TCP connection to talents.6nomads.cm:443 (getaddrinfo: Name or service not known)
 
     links.each do |link|
       create_link(link)

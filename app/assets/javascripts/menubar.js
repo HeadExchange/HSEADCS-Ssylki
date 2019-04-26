@@ -1,20 +1,21 @@
 $(function() {
 
   $('.menubar .image_avatar').click(function() {
-    $('.menu-dropdown_edit').addClass('menu-dropdown_shown')
+    $('.menu-dropdown_settings').addClass('menu-dropdown_shown')
     $('.menu-dropdown_add').removeClass('menu-dropdown_shown')
+    $('.menu-dropdown_settigns').removeClass('menu-dropdown_shown')
   })
 
   $('.icon_add').click(function() {
     $('.menu-dropdown_add').addClass('menu-dropdown_shown')
-    $('.menu-dropdown_edit').removeClass('menu-dropdown_shown')
+    $('.menu-dropdown_settigns').removeClass('menu-dropdown_shown')
   })
 
   $('.menu-dropdown_add').mouseleave(function() {
     $(this).removeClass('menu-dropdown_shown')
   })
 
-  $('.menu-dropdown_edit').mouseleave(function() {
+  $('.menu-dropdown_settings').mouseleave(function() {
     $(this).removeClass('menu-dropdown_shown')
   })
 
@@ -27,17 +28,6 @@ $(function() {
     event.stopPropagation()
   })
 
-  // $(".menubar_middle div").hover(function() {
-  //   $(this).siblings(".menubar_middle div").addClass("hovered")
-  // }, function() {
-  //   $(this).siblings(".menubar_middle div").removeClass("hovered");
-  // })
-
-  $(".menubar_middle div").click(function() {
-    $(this).addClass("active")
-    $(this).siblings(".menubar_middle div").removeClass("active")
-  }, function() {
-    $(this).siblings(".menubar_middle div").removeClass("active")
-  })
+  $(".menubar_middle__item:not(:has(a))").addClass("active")
 
 })

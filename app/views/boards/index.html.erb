@@ -1,6 +1,16 @@
 <main class="main index_board">
 
   <section id="boardsPage">
+    <section class="section_board">
+      <section class="header_board">
+        <h1 class="section_board__title">Без роду без имени</h1>
+      </section>
+      <div class="container_preview">
+        <%= render 'links/newlink' %>
+        <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
+        </div>
+      </div>
+    </section>
     <%= render 'board' %>
   </section>
 

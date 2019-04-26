@@ -1,24 +1,20 @@
 <header class="menubar nav-down">
 
   <div class="menubar_left">
-
-    <%# if user_signed_in? %>
-      <%= link_to boards_path do %>
-        <%= image_tag "logosmall.svg", class: "link_logo" %>
-      <% end %>
-    <%# end %>
-
+    <%= link_to boards_path do %>
+      <%#= image_tag "logosmall.svg", class: "link_logo" %>
+      <div style="font-family: Inter; font-weight: bold; font-size: 22px"  class:="link_logo">SSYLKI</div>
+    <% end %>
   </div>
 
   <div class="menubar_middle">
-    <div><%=link_to "Все", :controller => "boards"%></div>
-    <div><%=link_to "Личные", :controller => "boards", :query => "private" %></div>
-    <div><%=link_to "Публичные", :controller => "boards", :query => "published" %></div>
-    <div><%=link_to "Общий доступ", :controller => "boards", :query => "collaborative" %></div>
+    <div class="menubar_middle__item"><%= link_to "Все", :controller => "boards" %></div>
+    <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
+    <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
+    <div class="menubar_middle__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
   </div>
 
   <div class="menubar_right">
-
     <% if user_signed_in? %>
 
     <%= render "search" %>
@@ -27,7 +23,6 @@
       <%= image_tag "plus_black.svg", class: "icon_add" %>
     </div>
     <div class="menu-dropdown menu-dropdown_add menu">
-      <div class="menu-dropdown__username">Создать</div>
       <div class="menu-dropdown__list">
         <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
         <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
@@ -45,7 +40,7 @@
             <%= render "application/avatar" %>
           <% end %>
         </div>
-        <div class="menu-dropdown menu-dropdown_edit menu">
+        <div class="menu-dropdown menu-dropdown_settings menu">
           <span class="menu-dropdown__caret"></span>
           <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
           <div class="menu-dropdown__list">
