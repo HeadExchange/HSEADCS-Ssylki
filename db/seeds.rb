@@ -6,129 +6,115 @@ Rake::Task['db:drop'].invoke
 Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
 
+@users = [
+  'admin@admin.admin', 'artisinternal@yandex.ru', 'katyanikitina@yandex.ru'
+]
+
+@boards = [
+  [ "Артефакты", "Объекты материального мира" ],
+  [ "Дизайн", "Шрифты, люди, сетки и стеки" ],
+  [ "Учёба", "React stuff etc." ],
+  [ "Статьи", "Список для чтения" ],
+  [ "Философия", "Мысли великих людей" ],
+  [ "Вечеринка", ":)" ],
+  [ "Мусор", "Всякое" ],
+]
+
+@links = [
+  'https://www.apple.com/iphone-xr',
+  'https://busedu.hse.ru',
+  'https://events.yandex.ru/events/ds/16-feb-2019',
+  'https://research.yandex.com/publications/154',
+  'https://reactjs.org/docs/react-dom.html',
+  'http://www.eliequintard.com/prod/HAINS_DEX_2',
+  'https://ony.ru',
+  'https://moscowmusicschool.ru',
+  'https://minimalissimo.com/less-but-better'
+  'https://pl.wikipedia.org/wiki/Logika',
+  'https://www.readingdesign.org/index-1',
+  'https://www.stockholmdesignlab.se',
+  'http://www.generative-gestaltung.de/2',
+  'https://canary---yellow.com',
+  'https://opensourcerover.jpl.nasa.gov/#!/home',
+  'https://www.e-flux.com',
+  'https://www.smallvictori.es',
+]
+
 def seed_data
-  create_admin
   create_users
-  create_boards
-  create_links
-end
 
-def create_admin
-  password = 'testtest'
+  10.times do
+    create_boards
+  end
 
-  admin = User.create(
-    email: "admin@admin.admin",
-    nickname: 'admin',
-    admin: true,
-    password: password,
-    password_confirmation: password
-  )
+  10.times do
+    create_links
+  end
 
-  puts "Admin with email #{ admin.email } was created"
+  10.times do
+    create_shared_board
+  end
 end
 
 def create_users
-  10.times do |i|
-    nickname = "user" + i.to_s
+  @users.each do |user|
+  random = Faker::Verb.base
+  admin = user == 'admin@admin.admin' ? true : false
+  u = create_user(user, random, admin)
+end
+
+10.times do |i|
+    random = Faker::Verb.base
+    nickname = "user" + random + i.to_s
     email = nickname + "@" + nickname + "." + nickname
-    create_user(email, nickname)
+    create_user(email, nickname, false)
   end
 end
 
-def create_user(email, nickname)
+def create_user(email, nickname, admin)
   password = 'testtest'
 
-  user = User.create(
-    email: email,
-    nickname: nickname,
-    admin: false,
-    password: password,
-    password_confirmation: password
-  )
+  u = User.create!(
+  email: email,
+  nickname: nickname,
+  admin: admin,
+  password: password,
+  password_confirmation: password
+)
 
-  puts "User with email #{ user.email } was created"
-end
-
-def random_user_id
-  User.all.reject { |user| user.admin == true }.sample.id
-end
-
-def random_board_id
-  User.all.sample.id
+  puts "User with email #{ u.email } was created"
+  puts "And he is an admin" if admin
 end
 
 def create_boards
-  10.times do
-    board = Board.create(
-      title: Faker::Color.color_name,
-      description: Faker::GreekPhilosophers.quote,
-      user_id: random_user_id
-    )
+  @boards.each do |board|
+    user = User.all.sample
+    board = user.boards.create!(title: board[0], description: board[1])
 
-    puts "Board #{ board.title} was created"
+    puts "Board with title #{ board.title } just created"
   end
-
-  # boards = [
-  #   [ "Артефакты", "Объекты материального мира" ],
-  #   [ "Дизайн", "Шрифты, люди, сетки и стеки" ],
-  #   [ "Учёба", "React stuff etc." ],
-  #   [ "Статьи", "Список для чтения" ],
-  #   [ "Философия", "Мысли великих людей" ],
-  #   [ "Вечеринка", ":)" ],
-  #   [ "Мусор", "Всякое" ],
-  # ]
-  #
-  # boards.each do |name, description|
-  #   Board.create( name: name, description: description )
-  # end
-
 end
 
 def create_links
-    links = [
-      'https://www.apple.com/iphone-xr',
-      'https://busedu.hse.ru',
-      'https://events.yandex.ru/events/ds/16-feb-2019',
-      'https://research.yandex.com/publications/154',
-      'https://reactjs.org/docs/react-dom.html',
-      'http://www.eliequintard.com/prod/HAINS_DEX_2',
-      'https://ony.ru',
-      'https://moscowmusicschool.ru',
-      'https://minimalissimo.com/less-but-better'
-      'https://ru.wikipedia.org/wiki/Утопление',
-      'https://ru.wikipedia.org/wiki/Повешение',
-      'https://ru.wikipedia.org/wiki/Яд',
-      'http://www.generative-gestaltung.de/2',
-      'https://vk.com/@physics_math-detalnyi-plan-samoobrazovaniya-v-computer-science-za-15-goda',
-      'https://www.youtube.com/watch?v=-bMRxQbLUlg',
-      'https://www.e-flux.com',
-      'https://www.smallvictori.es',
-      'https://seance.ru/blog/esse/bruce_weber/?utm_source=vk&utm_medium=social&utm_campaign=targetings&utm_content=instant#0_8___1680_204236137',
-      'https://thngs.co/things/10657',
-      'https://thngs.co/things/10687',
-      'https://thngs.co/things/9753',
-      'https://thngs.co/things/10333',
-      'https://thngs.co/things/10249',
-      'https://thngs.co/things/9475',
-      'https://thngs.co/things/10678',
-      'https://www.itsnicethat.com/features/ones-to-watch-2019-introducing-250219',
-      'https://56.digital/'
-    ]
+  @links.each do |link|
+    board = Board.all.sample
+    user = User.find(board.user_id)
+    l = user.links.create!(url: link, board_id: board.id)
 
-    links.each do |link|
-      create_link(link)
-    end
-
-    puts "Links were created"
+    puts "Link with title #{ l.title } just created"
+  end
 end
 
-def create_link(link)
-  board = Board.all.sample
-  user = User.find(board.user_id)
+def create_shared_board
+  user = User.all.sample
+  collaborator = User.all.sample
 
-  l = Link.create(url: link, board_id: board.id, user_id: user.id)
+  if user.id != collaborator.id
+    board = user.boards.sample
+    collaboration = collaborator.collaborations.create!(board_id: board.id)
 
-  puts "Link #{l.title} created"
+    puts "Collaborator with email #{collaborator.email} just added to the board with title #{board.title}"
+  end
 end
 
 seed_data
