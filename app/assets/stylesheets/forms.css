@@ -66,16 +66,12 @@ input.form-link {
   font-size: 34px;
   line-height: 1.2em;
   padding: 15px 0;
-  border-bottom: 2px solid #E5E5E5;
+  border-bottom: 2px solid #999;
   transition: border-bottom .2s ease;
 }
 
-input.form-link:focus {
-  border-bottom: 2px solid #272727;
-}
-
 .container_form .field {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .actions input,
@@ -86,13 +82,14 @@ input.form-link:focus {
   border: 2px transparent;
   color: #fff;
   background-color: #272727;
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all .2s ease;
   cursor: pointer;
+  margin: 0;
 }
 
 .actions input:hover {
@@ -104,8 +101,8 @@ input.form-link:focus {
 .button_back {
   border: none;
   font-weight: 500;
-  color: #ccc;
-  font-size: 18px;
+  color: #999;
+  font-size: 16px;
   width: 176px;
   height: 50px;
   display: flex;
@@ -122,7 +119,7 @@ input.form-link:focus {
 
 .form-board__buttons {
   display: flex;
-  margin: 40px 0 60px;
+  margin-top: 40px;
 }
 
 .form-board__buttons a {
@@ -137,10 +134,10 @@ select {
 }
 
 .select2 {
-  width: 474px !important;
+  width: 494px !important;
   height: 40px !important;
   outline: none;
-  border: 1px solid #ссс;
+  border: none;
   font-size: 22px;
   background: transparent !important;
 }
@@ -162,7 +159,8 @@ select {
 
 .select2-dropdown {
   font-size: 16px;
-  border: 1px solid #E5E5E5 !important;
+  border: none;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.05);
 }
 
 .select2-link_board_id-container {
@@ -178,12 +176,14 @@ select {
   height: 40px;
   width: 670px;
   line-height: 40px;
-  font-size: 24px;
+  font-size: 20px;
   border: none !important;
+  font-weight: 300px;
+  font-family: "Graphik Kinopoisk LC"
 }
 
 option {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -216,14 +216,21 @@ b {
   padding-right: 30px !important;
 }
 
+
+.select2-selection__placeholder {
+  color: #636363 !important;
+  padding-left: 10px !important;
+}
+
 .select2-results__option {
-  font-size: 22px !important;
-  color: #888888 !important;
-  transition: color .3s ease;
+  font-size: 20px !important;
+  color: #272727 !important;
+  transition: opacity .2s ease;
+  padding: 10px;
 }
 
 .select2-results__option:hover {
-  color: #272727 !important;
+  opacity: .3 !important;
 }
 
 .select2-results__option--highlighted {
@@ -235,12 +242,16 @@ b {
   background-color: #f5f5f5 !important;
 }
 
+.select2-selection__placeholder {
+  font-size: 20px;
+}
+
 /* New Link Popup */
 
 .popup_link-form {
   position: absolute;
-  width: 956px;
-  height: 420px;
+  width: 100%;
+  height: 70%;
   background: transparent;
   margin: auto;
   border-radius: 2px;
@@ -251,7 +262,24 @@ b {
 }
 
 .popup_link-form ::placeholder {
-  color: #636363;
+  color: #888;
+}
+
+.popup__header {
+  margin: auto;
+  animation: bounces 4s infinite ease-in-out;
+}
+
+@keyframes bounces {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .form__link form {
@@ -264,8 +292,7 @@ b {
 }
 
 .menubar.underpopup {
-  /* opacity: 0; */
-  opacity: .2;
+  opacity: 0;
   filter: blur(10px);
 }
 
@@ -274,8 +301,8 @@ body.underpopup {
   overflow-y: hidden;
 }
 
-.index_board.underpopup {
-  opacity: .3;
+.main.underpopup {
+  opacity: 0;
   filter: blur(10px);
   pointer-events: none;
 }
@@ -314,8 +341,19 @@ form.new_user input,
 form.edit_user input {
   width: 474px;
   border: none;
-  border-bottom: 2px solid #E5E5E5;
-  padding-bottom: 5px;
+
+  /* background: #fff;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.05);
+  height: 40px;
+  padding: 10px; */
+
+
+
+
+  border-bottom: 2px solid #e9e9e9;
+  padding: 10px;
   margin-top: 10px;
   font-size: 22px;
   transition: border-bottom .2s ease;
@@ -323,7 +361,8 @@ form.edit_user input {
 }
 
 form.new_user input:focus,
-form.edit_user input:focus {
+form.edit_user input:focus,
+input.form-link:focus {
   border-bottom: 2px solid #272727;
 }
 

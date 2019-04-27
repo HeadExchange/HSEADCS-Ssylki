@@ -170,18 +170,42 @@ hr {
  /* Media Queries */
 
  /*
-   ##Device = Tablets, Ipads (portrait)
-   ##Screen = B/w 768px to 1024px
+   Device = Tablets, Ipads (portrait)
+   Screen = B/w 768px to 1024px
  */
 
  @media (min-width: 768px) and (max-width: 1024px) {
 
+  .menubar {
+    padding: 0 20px;
+  }
 
+  .menubar_middle {
+    width: 480px;
+    margin: auto 30px;
+  }
+
+  .menubar_middle__item,
+  .menubar a {
+    font-size: 12px;
+  }
+
+
+  .container_preview {
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container_preview .link__item,
+  .link__item_newlink {
+    width: 342px;
+    height: 270px;
  }
 
  /*
-   ##Device = Tablets, Ipads (landscape)
-   ##Screen = B/w 768px to 1024px
+  Device = Tablets, Ipads (landscape)
+  Screen = B/w 768px to 1024px
  */
 
  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -190,21 +214,70 @@ hr {
  }
 
  /*
-   ##Device = Low Resolution Tablets, Mobiles (Landscape)
-   ##Screen = B/w 481px to 767px
+  Device = Low Resolution Tablets, Mobiles (Landscape)
+  Screen = B/w 481px to 767px
  */
 
  @media (min-width: 481px) and (max-width: 767px) {
 
+  .menubar {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+   /* Убрать слова из меню */
+
+  .menubar_middle {
+    width: 450px;
+    margin: auto 30px;
+  }
+
+  .menubar_middle__item {
+    display: none;
+  }
+
+  .menubar a,
+  .menubar a:visited,
+  div.menubar_middle__item {
+    line-height: 50px;
+  }
 
  }
 
  /*
-   ##Device = Most of the Smartphones Mobiles (Portrait)
-   ##Screen = B/w 320px to 479px
+   Device = Most of the Smartphones Mobiles (Portrait)
+   Screen = B/w 320px to 479px
  */
 
  @media (min-width: 320px) and (max-width: 480px) {
+
+  .menubar {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .menubar a,
+  .menubar a:visited,
+  div.menubar_middle__item {
+    line-height: 50px;
+  }
+
+   /* Убрать слова из меню */
+
+  .menubar_middle__item {
+    display: none;
+  }
+
+  .container_preview {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  #containerPreview {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
 
 
  }

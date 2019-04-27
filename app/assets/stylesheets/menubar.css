@@ -156,8 +156,8 @@ form.edit_user .image_avatar {
   display: flex;
   flex-direction: row;
   z-index: 1000;
-  margin-top: 12px;
-  margin-right: -10px;
+  margin-top: 14px;
+  margin-right: -5px;
   position: relative;
 }
 

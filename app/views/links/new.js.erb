@@ -1,19 +1,19 @@
 $("body").append("<%= j render partial: 'popuplinkform', link: Link.new %>")
 
 $('#link_board_id').select2({
-  placeholder: "Выберите подборку",
+  placeholder: "Выберите доску...",
   allowClear: true
 })
 
 $("body").addClass("underpopup")
 $(".menubar").addClass("underpopup")
-$(".index_board").addClass("underpopup")
+$(".main").addClass("underpopup")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
   $("body").removeClass("underpopup")
   $(".menubar").removeClass("underpopup")
-  $(".index_board").removeClass("underpopup")
+  $(".main").removeClass("underpopup")
 })
 
 $(".menu-dropdown_add").remove()

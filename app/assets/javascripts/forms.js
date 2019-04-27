@@ -25,4 +25,9 @@ $(function() {
   //   }
   // })
 
+
+  $('.popup__header').hover(function() {
+    $('body').css("color", "red");
+  })
+
 })

@@ -1,16 +1,17 @@
 <div class="popup_link-form">
   <section class="container_form form__link">
 
+    <h1 class="popup__header">🔗</h1>
+
   <%= form_with(model: @link, local: true ) do |form| %>
 
   <div class="field">
-    <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "URL" %>
+    <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "https://..." %>
   </div>
 
   <div class="field">
     <% @boards = Board.all %>
-    <option></option>
-    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", class: "dropdownLinkClass",  placeholder: "Выберите подборку" %>
+    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", placeholder: "Выберите доску", :include_blank => "Placeholder"%>
   </div>
 
   <div class="form-board__buttons">
