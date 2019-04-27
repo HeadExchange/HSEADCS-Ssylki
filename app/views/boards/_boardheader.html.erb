@@ -23,8 +23,15 @@
 
       </div>
         <div class="container_bookmark">
-        <%= image_tag "bookmark.svg", class: "icon icon__bookmark"%>
-        <%#= render "application/hint" %>
+          <% if board.favourited == true %>
+            <%= link_to favourite_board_path(board) do %>
+              <%= image_tag "blackbookmark.svg", class: "icon icon__bookmark" %>
+            <% end %>
+          <% else %>
+            <%= link_to favourite_board_path(board) do %>
+              <%= image_tag "bookmark.svg", class: "icon icon__bookmark" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :boards do
     member do
       get "publish"
+      get "favourite"
     end
     resources :links
     resources :collaborations
