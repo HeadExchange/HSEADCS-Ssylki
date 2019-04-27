@@ -18,6 +18,7 @@ class Board < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :my, -> { where(published: false) }
+  scope :favourited, -> { where(favourited: true) }
   scope :ordered_by_title, -> { reorder(title: :asc) }
 
   def to_param

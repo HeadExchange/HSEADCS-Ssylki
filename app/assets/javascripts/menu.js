@@ -49,14 +49,12 @@ $(function() {
 
   $('.icon__bookmark').click(function() {
 
-    const bookmarktoggle = $(".icon__bookmark")
-
-    if (bookmarktoggle.src="/assets/bookmark.svg") {
-      bookmarktoggle.src="/assets/blackbookmark.svg"
-    }
-
-    else if (bookmarktoggle.src="/assets/blackbookmark.svg") {
-      bookmarktoggle.src="/assets/bookmark.svg"
+    if (!$(this).hasClass('active')) {
+      $(this).attr('src', '/assets/blackbookmark.svg')
+      $(this).addClass("active")
+    } else {
+        $(this).attr('src', '/assets/bookmark.svg')
+        $(this).removeClass("active")
     }
   })
 

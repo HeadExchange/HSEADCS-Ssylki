@@ -1,7 +1,8 @@
 $("body").append("<%= j render partial: 'popuplinkform', link: Link.new %>")
 
 $('#link_board_id').select2({
-  placeholder: "Выберите подборку"
+  placeholder: "Выберите подборку",
+  allowClear: true
 })
 
 $("body").addClass("underpopup")

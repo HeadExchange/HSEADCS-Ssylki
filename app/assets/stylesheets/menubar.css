@@ -74,7 +74,7 @@ div.menubar_middle__item {
 }
 
 .menubar_middle {
-  width: 474px;
+  width: 550px;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
@@ -99,12 +99,12 @@ div.menubar_middle__item a {
 
 .icon-wrapper {
   margin: auto;
-  padding: 5px;
-  height: 24px;
-  width: 24px;
-  border-radius: 4px;
-  transition: background-color .2s ease-out;
-  margin-right: 10px;
+  width: 50px;
+}
+
+.icon_add {
+  display: flex;
+  margin: auto;
 }
 
 .icon-wrapper:hover {
@@ -157,6 +157,7 @@ form.edit_user .image_avatar {
   flex-direction: row;
   z-index: 1000;
   margin-top: 12px;
+  margin-right: -10px;
   position: relative;
 }
 

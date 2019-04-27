@@ -12,6 +12,7 @@
     <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
+    <div class="menubar_middle__item"><%= link_to_unless_current("Избранные", :controller => "boards", :query => "favourited")%></div>
   </div>
 
   <div class="menubar_right">
@@ -22,6 +23,7 @@
     <div class="icon-wrapper">
       <%= image_tag "plus_black.svg", class: "icon_add" %>
     </div>
+    
     <div class="menu-dropdown menu-dropdown_add menu">
       <div class="menu-dropdown__list">
         <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>

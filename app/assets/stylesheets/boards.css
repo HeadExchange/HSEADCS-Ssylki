@@ -79,6 +79,14 @@
   display: block;
 }
 
+.icon__bookmark.active {
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  
+}
+
 .container_bookmark {
   position: relative;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_143629) do
+ActiveRecord::Schema.define(version: 2019_04_26_104052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_143629) do
     t.boolean "published", default: false
     t.string "url"
     t.string "share_url"
+    t.boolean "favourited", default: false
   end
 
   create_table "collaborations", force: :cascade do |t|

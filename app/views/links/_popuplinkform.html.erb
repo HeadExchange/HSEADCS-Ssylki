@@ -9,7 +9,8 @@
 
   <div class="field">
     <% @boards = Board.all %>
-    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", placeholder: "Выберите подборку" %>
+    <option></option>
+    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", class: "dropdownLinkClass",  placeholder: "Выберите подборку" %>
   </div>
 
   <div class="form-board__buttons">

@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   require 'securerandom'
   before_action :authenticate_user!
-  before_action :set_board, only: [:index, :show, :edit, :update, :publish, :destroy]
+  before_action :set_board, only: [:index, :show, :edit, :update, :publish, :favourite, :destroy]
   load_and_authorize_resource
 
   # GET /boards
@@ -13,10 +13,14 @@ class BoardsController < ApplicationController
       if params[:query] == "my"
         @boards = Board.my.order('title ASC')
         else
+          if params[:query] == "favourited"
+            @boards = Board.favourited.order('title ASC')
+          else
           @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
           respond_to do |format|
             format.html
             format.js
+          end
         end
       end
     end
@@ -100,6 +104,20 @@ class BoardsController < ApplicationController
     if @board.share_url == nil || @board.share_url == ""
       @board.share_url = SecureRandom.uuid
     end
+
+    respond_to do |format|
+      if @board.save
+        format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
+        format.json { render :show, status: :ok, location: @board }
+      else
+        format.html { render :new }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def favourite
+    @board.favourited = !@board.favourited
 
     respond_to do |format|
       if @board.save
