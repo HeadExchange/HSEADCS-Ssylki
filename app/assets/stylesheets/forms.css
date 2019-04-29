@@ -267,10 +267,10 @@ b {
 
 .popup__header {
   margin: auto;
-  animation: bounces 4s infinite ease-in-out;
+  /* animation: bounces 4s infinite ease-in-out; */
 }
 
-@keyframes bounces {
+/* @keyframes bounces {
   0% {
     transform: translateY(0px);
   }
@@ -280,7 +280,7 @@ b {
   100% {
     transform: translateY(0px);
   }
-}
+} */
 
 .form__link form {
   margin: auto;

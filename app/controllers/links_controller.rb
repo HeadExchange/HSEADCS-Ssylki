@@ -5,6 +5,7 @@ class LinksController < ApplicationController
 
   # GET /links
   # GET /links.json
+
   def index
     if params[:board_id]
       @board = Board.find(params[:board_id])
@@ -12,6 +13,9 @@ class LinksController < ApplicationController
     else
       @links = Link.order(:position)
     end
+    # else
+    #   @links = Link.backlog
+    # end
 
     respond_to do |format|
       # format.html

@@ -13,6 +13,8 @@ class Link < ApplicationRecord
   validates :url, :format => URI::regexp(%w(http https))
   validates :board_id, presence: true
 
+  scope :backlog, -> { where(board_id: nil) }
+
   mount_uploader :image, ImageUploader
 
   default_scope { order(position: :asc) }
