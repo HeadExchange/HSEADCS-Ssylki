@@ -11,7 +11,7 @@ class Link < ApplicationRecord
   acts_as_list scope: :board
 
   validates :url, :format => URI::regexp(%w(http https))
-  validates :board_id, presence: true
+  # validates :board_id, presence: true
 
   scope :backlog, -> { where(board_id: nil) }
 

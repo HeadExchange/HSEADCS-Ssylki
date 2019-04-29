@@ -1,21 +1,19 @@
-<% @boards.each do |board| %>
-  <section class="section_board" id="board_<%= board.id  %>">
-    <%= render 'boardheader', board: board %>
+<section class="section_board" id="board_<%= board.id  %>">
+  <%= render 'boardheader', board: board %>
 
-    <div class="container_preview">
-      <%= render 'links/newlink' %>
-      <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
-        <% board.links[0..4].each do |link| %>
-          <%= render link %>
-        <% end %>
-      </div>
+  <div class="container_preview">
+    <%= render 'links/newlink' %>
+    <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
+      <% board.links[0..4].each do |link| %>
+        <%= render link %>
+      <% end %>
     </div>
+  </div>
 
-  <%# <%= link_to board_path(board), class: "button_show-all" do %>
-    <!-- <span>Показать все</span> -->
-    <!-- <span><%#= "(" + board.links.count.to_s + ")" %></span> -->
-    <%#= image_tag "chevron-right.svg", class: "icon_chevron-right" %>
-  <%# end %>
+<%# <%= link_to board_path(board), class: "button_show-all" do %>
+  <!-- <span>Показать все</span> -->
+  <!-- <span><%#= "(" + board.links.count.to_s + ")" %></span> -->
+  <%#= image_tag "chevron-right.svg", class: "icon_chevron-right" %>
+<%# end %>
 
-  </section>
-<% end %>
+</section>
