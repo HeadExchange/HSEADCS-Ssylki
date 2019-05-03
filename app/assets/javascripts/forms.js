@@ -1,5 +1,7 @@
 $(function() {
 
+  $("#emailFieldMultiple").multiple = true;
+
   $('#togglePasswordVisibility').click(function() {
 
     let toggle = document.getElementById("togglePasswordVisibility")
@@ -18,6 +20,8 @@ $(function() {
 
   /* Disable Button */
 
+
+
   $(':input[type="submit"]').prop('disabled', true);
   $('input[type!="submit"]').keyup(function() {
     if($(this).val() != '') {
@@ -25,9 +29,15 @@ $(function() {
     }
   })
 
-
-  $('.popup__header').hover(function() {
-    $('body').css("color", "red");
-  })
+  // $(':input[type="submit"]').prop('disabled', true);
+  // $('input[type!="submit"]').keyup(function(e) {
+  //   if ($(':input[type="submit"]').prop('disabled') == true) {
+  //     e.preventDefault()
+  //   } else {
+  //     if($(this).val() != '') {
+  //        $(':input[type="submit"]').prop('disabled', false);
+  //     }
+  //   }
+  // })
 
 })

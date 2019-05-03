@@ -27,16 +27,17 @@ class CollaborationsController < ApplicationController
   # POST /collaborations
   # POST /collaborations.json
   def create
-    safe_params = collaboration_params
-    @collaboration = Collaboration.new(safe_params)
+    @board = Board.find(params[:board_id])
+    collaborator = User.find_by_email(collaboration_params[:user_email])
+    @collaboration = @board.collaborations.new(user_id: collaborator.id)
 
     respond_to do |format|
       if @collaboration.save
-        format.html { redirect_to @collaboration, notice: 'Collaboration was successfully created.' }
-        format.json { render :show, status: :created, location: @collaboration }
+        format.html { redirect_to @board, notice: 'Collaboration was successfully created.' }
+        # format.json { render :show, status: :created, location: @collaboration }
       else
         format.html { render :new }
-        format.json { render json: @collaboration.errors, status: :unprocessable_entity }
+        # format.json { render json: @collaboration.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -75,7 +76,7 @@ class CollaborationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collaboration_params
-      params.require(:collaboration).permit(:board_id, :email)
+      params.require(:collaboration).permit(:board_id, :user_email)
     end
 
 end

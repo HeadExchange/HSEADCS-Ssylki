@@ -20,6 +20,10 @@
   margin-bottom: 40px;
 }
 
+.popup__header {
+  cursor: not-allowed
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -109,7 +113,6 @@ input.form-link {
   align-items: center;
   justify-content: center;
   opacity: 1;
-  transition: opacity .2s ease;
   cursor: pointer;
 }
 
@@ -204,7 +207,7 @@ b {
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   border-style: transparent;
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -384,12 +387,14 @@ form.edit_user input[type="submit"] {
 
 input:disabled {
   border: 2px solid #ccc !important;
-  background-color: #fff;
-  color: #ccc;
+  background-color: #fff !important;
+  color: #ccc !important;
+  cursor: not-allowed;
 }
 
 input:disabled:hover {
   color: #ccc !important;
+  cursor: not-allowed;
 }
 
 form.new_user input[type="submit"]:hover,
@@ -423,4 +428,74 @@ form.edit_user input[type="submit"]:hover {
 
 input[type="file"] {
   display: none;
+}
+
+/* Collaboration form */
+
+.popup_collaboration-form {
+
+}
+
+.popup_collaboration-form input,
+.popup_collaboration-form textarea {
+  border: none;
+  font-size: 16px;
+}
+
+.popup_collaboration-form input[type="email"] {
+  height: 24px;
+  min-width: 30px;
+  line-height: 24px;
+  width: 400px;
+  background: transparent;
+  /* position: absolute;
+  left: 1px;
+  top: 0px; */
+  /* border: 1px #DDDDDD solid; */
+  border: none;
+  /* border-radius: 2px; */
+  padding: 2px 5px;
+}
+
+.popup_collaboration-form textarea {
+  width: 351px;
+  height: 56px;
+  resize: none;
+  line-height: 30px;
+}
+
+.popup_collaboration-form .form-collaboration__buttons {
+  display: flex;
+  font-size: 15px;
+  color: #000;
+}
+
+.popup_collaboration-form .button_ok,
+.popup_collaboration-form .button_back {
+  border: none;
+  color: #000;
+  background: none;
+  width: auto;
+  cursor: pointer;
+}
+
+.popup_collaboration-form input:disabled {
+  color: #888888 !important;
+  border: none !important;
+}
+
+.popup_collaboration-form .button_back {
+  color: #C8C7CC;
+  font-size: 15px;
+  transform: translateY(1px);
+}
+
+.popup_collaboration-form .button_ok:hover,
+.popup_collaboration-form .button_back:hover {
+  border: none;
+  opacity: 1;
+}
+
+.popup_collaboration-form .button_ok {
+  margin-right: 17px;
 }

@@ -19,21 +19,6 @@ class BoardsController < ApplicationController
       @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
     end
 
-    # if params[:query] == "published"
-    #   @boards = Board.published.order('title ASC')
-    # else
-    #   if params[:query] == "my"
-    #     @boards = Board.my.order('title ASC')
-    #   else
-    #     if params[:query] == "favourited"
-    #       @boards = Board.favourited.order('title ASC')
-    #     else
-    #
-    #       @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
-    #     end
-    #   end
-    # end
-
     respond_to do |format|
       format.html
       format.js

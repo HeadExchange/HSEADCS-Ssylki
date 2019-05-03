@@ -92,6 +92,10 @@
   box-shadow: -3px -3px 5px -3px rgba(0, 0, 0, 0.05);
 }
 
+.menu-dropdown.menu-dropdown_edit-link:before {
+  display: none;
+}
+
 .menu-dropdown_settings:before {
   left: calc(70% - 10px);
 }
@@ -172,14 +176,18 @@
 .container__menu-privacy {
   position: relative;
   width: 400px;
-  height: 175px;
+  /* min-height: 175px; */
   border-radius: 3px;
+  top: 200px;
+  left: 300px;
 }
 
 .menu-privacy__content {
   padding: 18px 25px;
   display: flex;
   justify-content: space-between;
+  height: 135px;
+  flex-direction: column;
 }
 
 .menu-privacy__list {
@@ -188,7 +196,7 @@
 
 .menu-privacy__list li {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 350px;
   height: 21px;
   margin-bottom: 25px;
@@ -199,32 +207,67 @@
   cursor: pointer;
 }
 
+.menu-privacy__item {
+  cursor: text;
+}
+
 .menu-privacy__icon {
   margin-right: 12px;
+}
+
+.menu-privacy__toggle {
+  position: absolute;
+  right: 25px;
 }
 
 .toggle__body {
   width: 36px;
   height: 21px;
-  background: #2C4CFB;
+  background: #DDDDDD;
   border-radius: 37px;
-  position: absolute;
+  position: relative;
 }
 
 .toggle__circle {
-  position: relative;
+  position: absolute;
   left: 2px;
   top: 2px;
   width: 17px;
   height: 17px;
   border-radius: 50%;
   background: #fff;
+  transition: all .2s ease-out;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active .toggle__body {
+  /* background: #2C4CFB; */
+  /* background: #00E500; */
+  background: #000;
+}
+
+.active .toggle__circle {
+  right: 2px;
+  top: 2px;
+  transform: translateX(15px);
 }
 
 .menu-privacy__buttons {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-privacy__buttons a {
+  color: #888888 !important; /*disable*/
+  transition: all .2s ease;
+}
+
+.menu-privacy__buttons a:hover,
+.menu-privacy__buttons a.active
+ {
+  color: #000 !important;
 }
 
 /*
@@ -239,7 +282,7 @@
   height: 30px;
   width: 400px;
   padding: 5px;
-  margin-left: 20px;
+  margin-left: 30px;
   display: flex;
   /* position: relative; */
   position: absolute;
@@ -247,6 +290,8 @@
   justify-content: space-around;
   opacity: 0;
   border-radius: 4px;
+  background: #fff;
+  z-index: 239;
 }
 
 .container__share-url_shown {

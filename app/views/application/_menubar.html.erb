@@ -6,8 +6,10 @@
     <% end %>
   </div>
 
+  <% if user_signed_in? %>
+
   <div class="menubar_middle">
-    <div class="menubar_middle__item"><%= link_to "Все", :controller => "boards" %></div>
+    <div class="menubar_middle__item"><%= link_to_unless_current("Все", :controller => "boards", :query => "" )%></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
@@ -15,7 +17,6 @@
   </div>
 
   <div class="menubar_right">
-    <% if user_signed_in? %>
 
     <%= render "search" %>
 

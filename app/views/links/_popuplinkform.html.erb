@@ -1,22 +1,22 @@
 <div class="popup_link-form">
   <section class="container_form form__link">
 
-    <h1 class="popup__header">🔗</h1>
+  <h1 class="popup__header">🔗</h1>
 
-  <%= form_with(model: @link, local: true ) do |form| %>
+  <%= form_with(model: @link, local: true) do |form| %>
 
   <div class="field">
-    <%= form.text_field :url, :autofocus => "autofocus", :autocomplete => "off", :class => "form-link", :placeholder => "https://..." %>
+    <%= form.text_field :url, autofocus: false, autocomplete: "off", placeholder: "https://...", class: "form-link"%>
   </div>
 
   <div class="field">
     <% @boards = Board.all %>
-    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", placeholder: "Выберите доску", :include_blank => "Placeholder"%>
+    <%= form.select :board_id, options_from_collection_for_select(@boards, "id", "title"), id: "dropdown link_board_id", placeholder: "Выберите доску", :include_blank => "Placeholder" %>
   </div>
 
   <div class="form-board__buttons">
     <div class="actions">
-      <%= form.submit value="Добавить", :class => "button_ok" %>
+      <%= form.submit value="Добавить", :class => "button_ok button_disabled"%>
     </div>
     <a class="button_back" data-remote="true">Отменить</a>
   </div>
