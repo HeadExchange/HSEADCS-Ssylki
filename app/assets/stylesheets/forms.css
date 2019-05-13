@@ -30,7 +30,7 @@ form {
 }
 
 .form-board form {
-  margin-bottom: 60px;
+  margin: 100px 0 60px;
 }
 
 label {
@@ -58,9 +58,18 @@ input.section_board__description:focus::placeholder {
 }
 
 input.form-board {
-  height: 50px;
   width: 640px;
   border: none;
+  color: #ddd;
+  padding: 0;
+}
+
+.form-board .icon_privacy {
+  opacity: .2;
+}
+
+.form-board.section_board__title {
+  font-size: 21px;
 }
 
 input.form-link {
@@ -78,8 +87,7 @@ input.form-link {
   margin-bottom: 60px;
 }
 
-.actions input,
-.popup_link-form input.button_ok {
+.popup_link-form .button_ok {
   width: 176px;
   height: 50px;
   border-radius: 2px;
@@ -96,13 +104,13 @@ input.form-link {
   margin: 0;
 }
 
-.actions input:hover {
+.popup_link-form .button_ok:hover {
   background-color: #fff;
   color: #000;
   border: 2px solid #272727;
 }
 
-.button_back {
+.popup_link-form .button_back {
   border: none;
   font-weight: 500;
   color: #999;
@@ -116,18 +124,38 @@ input.form-link {
   cursor: pointer;
 }
 
-.button_back:hover {
+.popup_link-form .button_back:hover {
   opacity: .6;
 }
 
+
+/* Board Buttons */
+
 .form-board__buttons {
   display: flex;
-  margin-top: 40px;
+  align-items: baseline;
+  width: 132px;
+  justify-content: space-between;
 }
 
-.form-board__buttons a {
-  font-size: 16px;
+.form-board__buttons .actions {
+  font-size: 12px;
   margin-right: 20px;
+}
+
+.button_small {
+  font-size: 12px;
+  height: 20px;
+  border: none;
+}
+
+.button_ok.button_small {
+  font-weight: 500;
+  color: #000;
+}
+
+.button_back.button_small {
+  color: #D8D8D8;
 }
 
 /* Select 2 */
@@ -252,16 +280,17 @@ b {
 /* New Link Popup */
 
 .popup_link-form {
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  background: transparent;
-  margin: auto;
+  position: fixed;
+  width: 50%;
+  height: 60%;
+  background: #fff;
+  margin: 0 auto;
   border-radius: 2px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  z-index: 10;
 }
 
 .popup_link-form ::placeholder {

@@ -9,6 +9,11 @@
   margin-top: 0;
 }
 
+.container_backlog {
+  flex-wrap: wrap !important;
+  width: 1440px;
+}
+
 .header_board {
   margin-bottom: 40px;
 }
@@ -39,7 +44,7 @@
   text-align: center;
   border: 1px solid #DEDEDE;
   border-radius: 4px;
-  padding: 2px 14px;
+  padding: 2px 14px 1px;
   margin-left: 30px;
 }
 
@@ -58,8 +63,9 @@
   color: #636363;
 }
 
-.button__edit {
+.button_edit {
   font-size: 11px;
+  transform: translateY(4px);
 }
 
 .button_show-all {
@@ -107,6 +113,7 @@
 
 .container_bookmark {
   position: relative;
+  transform: translateY(4px);
 }
 
 /* Search Preview */

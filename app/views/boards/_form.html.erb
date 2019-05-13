@@ -12,21 +12,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.text_field :title, :placeholder => "Untitled", :class => "section_board__title form-board", :autofocus => "autofocus", :autocomplete => "off" %>
-  </div>
+  <div class="section_board__heading header_over-line">
+    <div class="section_board__heading_left">
 
-  <div class="field">
-    <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "section_board__description form-board", :autocomplete => "off"%>
-  </div>
+      <% if board.published %>
+        <%= image_tag "link.svg", class: "icon icon_privacy" %>
+      <% else %>
+        <%= image_tag "lock.svg", class: "icon icon_privacy" %>
+      <% end %>
 
-  <div class="form-board__buttons">
-    <div class="actions">
-      <%= form.submit value="Готово", :class => "button_ok" %>
-      <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+      <%# if collaborations.board_id == current_board.id %>
+        <%#= image_tag "collab.svg", class: "icon icon_privacy" %>
+      <%# end %>
+
+      <div class="field">
+        <a><%= form.text_field :title, :placeholder => "Untitled", :class => "section_board__title form-board", :autofocus => "autofocus", :autocomplete => "off" %></a>
+      </div>
+
+      </div>
     </div>
-    <a class="button_back">Отменить</a>
+
+  <hr>
+
+  <div class="header_under-line">
+    <div class="field">
+      <%= form.text_field :description, :placeholder => "Введите описание подборки...", :class => "section_board__description form-board", :autocomplete => "off"%>
+    </div>
+    <div class="form-board__buttons">
+      <div class="actions">
+        <%= form.submit value="Сохранить", :class => "button_ok button_small" %>
+        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+      </div>
+      <a class="button_back button_small">Отменить</a>
+    </div>
   </div>
+
 
   <% end %>
 </div>

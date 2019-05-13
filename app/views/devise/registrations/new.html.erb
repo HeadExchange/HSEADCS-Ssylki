@@ -8,12 +8,12 @@
 
   <div class="field">
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: false, autocomplete: "off", placeholder: "ted@nelson.com" %>
+    <%= f.email_field :email, autofocus: false, autocomplete: "on", placeholder: "ted@nelson.com" %>
   </div>
 
   <div class="field">
     <%= f.label value="Никнейм" %>
-    <%= f.text_field :nickname, autofocus: false, autocomplete: "off", placeholder: "tednelson" %>
+    <%= f.text_field :nickname, autofocus: false, autocomplete: "on", placeholder: "tednelson" %>
   </div>
 
   <div class="field" style="margin-bottom: 10px;">
@@ -21,7 +21,7 @@
       <% if @minimum_password_length %>Пароль (не менее <%= @minimum_password_length %> символов)
       <% end %>
     <% end %>
-    <%= f.password_field :password, autocomplete: "off", placeholder: "••••••", id: "password"  %>
+    <%= f.password_field :password, autocomplete: "on", placeholder: "••••••", id: "password"  %>
     <%= image_tag "eye.svg", id: "togglePasswordVisibility" %>
   </div>
 

@@ -90,6 +90,7 @@
   transform: rotate(45deg);
   background-color: #fff;
   box-shadow: -3px -3px 5px -3px rgba(0, 0, 0, 0.05);
+  z-index: -2;
 }
 
 .menu-dropdown.menu-dropdown_edit-link:before {
@@ -107,9 +108,10 @@
 
 .menu-dropdown_edit-link {
   font-size: 12px;
-  width: 80px;
-  border: none;
-  background: transparent;
+  width: 140px;
+  height: auto;
+  z-index: 134;
+  border-radius: 0 2.8px 0 4px !important;
 }
 
 .menu-dropdown_shown {
@@ -117,11 +119,12 @@
   position: absolute;
   right: 3px;
   top: 63px;
+  border-radius: 4px;
 }
 
 .menu-dropdown_shown.menu-dropdown_edit-link {
-  top: -50px;
-  right: -10px;
+  top: 0px;
+  right: 0px;
 }
 
 .menu-dropdown__username {
@@ -140,35 +143,77 @@
 
 .menu-dropdown__list {
   overflow: hidden;
-  margin: 10px 0;
+  z-index: 234;
+  /* margin: 5px 0; */
 }
 
 .menu-dropdown__list li {
-  padding: 6px 0;
-  height: 24px;
+  padding: 0px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  transition: all .1s ease;
 }
 
+.menu-dropdown_edit-link .menu-dropdown__list li:first-child {
+  padding-top: 0px;
+  border-radius: 0px 2.8px 0px 0px;
+}
+
+.menu-dropdown_edit-link .menu-dropdown__list li:last-child {
+  border-radius: 0px 0px 0px 4px !important;
+}
+
+.menu-dropdown__list li:last-child {
+  border-radius: 0px 0px 4px 4px;
+}
+
+.menu-dropdown__list li:hover {
+  background: #FAFF00;
+}
+
+/* .menu-dropdown__list li:last-child:hover {
+  background: #fff;
+}
+
+.menu-dropdown__list li:last-child:hover > a {
+  color: #FF3D00;
+} */
+
 .menu-dropdown__list a {
-  padding: 5px 12px;
-  line-height: 24px !important;
+  margin-left: 10px;
+  line-height: 35px !important;
   font-size: 14px !important;
   display: block;
   white-space: nowrap;
+  transition: all .2s ease;
 }
 
 .menu-dropdown_edit-board li,
 .menu-dropdown_edit-link li {
-  height: 24px;
+  height: 35px;
   font-weight: normal;
 }
 
 .menu-dropdown_edit-board a,
 .menu-dropdown_edit-link a {
-  line-height: 24px !important;
+  line-height: 30px !important;
 }
 
-.menu-dropdown__list li>a:hover {
-  color: #272727;
+/* Add Menu */
+
+.menu-dropdown_add {
+
+}
+
+.menu-dropdown_add .menu-dropdown__list li:first-child {
+  border-radius: 2.8px 2.8px 0px 0px;
+}
+
+/* Settings Menu (on Avatar) */
+
+.menu-dropdown_settings {
+
 }
 
 /* Privacy Menu */
@@ -310,4 +355,8 @@
 .share_url__button_copy:hover {
   opacity: .6;
   cursor: pointer;
+}
+
+.icon_trash {
+  transform: translateY(-1px);
 }

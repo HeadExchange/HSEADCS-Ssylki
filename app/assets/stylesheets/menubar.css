@@ -44,7 +44,7 @@ div.menubar_middle__item {
   border: none;
 }
 
-.menubar a:hover {
+.menubar_middle__item:hover {
   background-color: none;
   opacity: .3;
 }

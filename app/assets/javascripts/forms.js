@@ -20,8 +20,6 @@ $(function() {
 
   /* Disable Button */
 
-
-
   $(':input[type="submit"]').prop('disabled', true);
   $('input[type!="submit"]').keyup(function() {
     if($(this).val() != '') {

@@ -1,0 +1,18 @@
+$("#link_<%= @link.id %>").replaceWith("<%= escape_javascript(render partial: 'popuplinkform', link: @link) %>")
+
+$('#link_board_id').select2({
+  placeholder: "Без доски",
+  allowClear: true,
+  minimumResultsForSearch: Infinity
+})
+
+$("body").addClass("underpopup")
+
+$(".popup_link-form .button_back").on("click", function() {
+  $(".popup_link-form").remove()
+  $("body").removeClass("underpopup")
+})
+
+$(".button_back").on("click", function() {
+  $('.popup_link-form').remove()
+})

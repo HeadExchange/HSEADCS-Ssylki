@@ -3,12 +3,11 @@ $(function() {
   $('.menubar .image_avatar').click(function() {
     $('.menu-dropdown_settings').addClass('menu-dropdown_shown')
     $('.menu-dropdown_add').removeClass('menu-dropdown_shown')
-    $('.menu-dropdown_settigns').removeClass('menu-dropdown_shown')
   })
 
   $('.icon_add').click(function() {
     $('.menu-dropdown_add').addClass('menu-dropdown_shown')
-    $('.menu-dropdown_settigns').removeClass('menu-dropdown_shown')
+    $('.menu-dropdown_settings').removeClass('menu-dropdown_shown')
   })
 
   $('.menu-dropdown_add').mouseleave(function() {

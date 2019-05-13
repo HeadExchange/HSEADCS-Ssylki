@@ -13,13 +13,19 @@
           <%= image_tag "lock.svg", class: "icon icon_privacy" %>
       <% end %>
 
+      <%# if collaborations.board_id == current_board.id %>
+        <%#= image_tag "collab.svg", class: "icon icon_privacy" %>
+      <%# end %>
+
       <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
 
       <% label = board.published ? "Публичная" : "Приватная" %>
       <div class="section_board__label"><%= label %></div>
 
-      <%# labelCollaborative = "" %>
-      <!-- <div class="section_board__label"><%#= labelCollaborative %></div> -->
+      <%# if collaborations.board_id == current_board.id %>
+        <%# labelCollaborative = "Общая" %>
+        <!-- <div class="section_board__label"><%#= labelCollaborative %></div> -->
+      <%# end %>
 
       </div>
         <div class="container_bookmark">
@@ -39,7 +45,7 @@
 
       <div class="header_under-line">
         <p class="section_board__description"><%= board.description %></p>
-        <div class="button__edit"><%= link_to 'Изменить', edit_board_path(board), remote: true %></div>
+        <div class="button_edit"><%= link_to 'Изменить', edit_board_path(board), remote: true %></div>
       </div>
 
 </section>
