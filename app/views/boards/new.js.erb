@@ -1,10 +1,8 @@
 $('form').trigger('reset')
 $(".index_board").prepend("<%= j (render 'form', board: Board.new) %>");
-$(".section_board").addClass("hovered");
 
 $(".form-board .button_back").on("click", function() {
   $(".form-board").remove()
-  $(".section_board").removeClass("hovered");
 })
 
 $(".menu-dropdown_add").remove();

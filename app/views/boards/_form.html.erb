@@ -1,4 +1,4 @@
-<div class="form-board" id="board_<%= board.id %>">
+<div class="form__board" id="board_<%= board.id %>">
   <%= form_with(model: board) do |form| %>
   <% if board.errors.any? %>
     <div id="error_explanation">
@@ -30,6 +30,13 @@
       </div>
 
       </div>
+
+      <div class="container_bookmark">
+        <%= link_to board, method: :delete, data: { confirm: 'Вы уверены?' } do %>
+          <%= image_tag "trash.svg", class: "icon icon__bookmark" %>
+        <% end %>
+      </div>
+
     </div>
 
   <hr>

@@ -55,6 +55,13 @@
   justify-content: space-between;
 }
 
+.header_under-line_right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 150px;
+}
+
 .section_board__description {
   font-size: 15px;
   line-height: 1.5;
@@ -66,6 +73,7 @@
 .button_edit {
   font-size: 11px;
   transform: translateY(4px);
+  cursor: pointer;
 }
 
 .button_show-all {
@@ -116,7 +124,7 @@
   transform: translateY(4px);
 }
 
-/* Search Preview */
+/* Board Search Preview */
 
 .boardSearchPreview .link__content {
   margin: auto;

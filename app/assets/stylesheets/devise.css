@@ -1,0 +1,104 @@
+/* Sign in Form */
+
+.form__header {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+/* Registration */
+
+form.new_user {
+  width: 474px;
+  margin: auto;
+}
+
+form.new_user .field,
+.popup_link-form .field,
+form.edit_user .field {
+  width: 474px;
+}
+
+form.new_user label {
+  padding-bottom: 6px;
+  transition: all .2s ease;
+}
+
+form.new_user input,
+.popup_link-form input,
+form.edit_user input {
+  width: 474px;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 22px;
+  transition: border-bottom .3s ease;
+  background: transparent;
+}
+
+form.new_user input:focus,
+form.edit_user input:focus,
+input.form-link:focus {
+  border-bottom: 2px solid #272727;
+}
+
+form.new_user input[type="checkbox"] {
+  border: none;
+}
+
+form.new_user .actions {
+  margin: 30px 0;
+}
+
+form.new_user input[type="submit"],
+form.edit_user input[type="submit"] {
+  border: 2px solid transparent;
+  width: 176px;
+  transition: all .2s ease;
+  margin: auto;
+}
+
+input:disabled {
+  border: 2px solid #ccc !important;
+  background-color: #fff !important;
+  color: #ccc !important;
+  cursor: not-allowed;
+}
+
+input:disabled:hover {
+  color: #ccc !important;
+  cursor: not-allowed;
+}
+
+form.new_user input[type="submit"]:hover,
+.popup_link-form input[type="submit"]:hover,
+form.edit_user input[type="submit"]:hover {
+  border: 2px solid #272727;
+}
+
+.registrations.new input[type="submit"] {
+  width: 264px;
+}
+
+.link_new-action {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#togglePasswordVisibility {
+  position: relative;
+  right: -450px;
+  top: -30px;
+  transition: all .2s ease;
+}
+
+#togglePasswordVisibility:hover {
+  cursor: pointer;
+  fill: #272727;
+}
+
+/* File Uploader */
+
+input[type="file"] {
+  display: none;
+}

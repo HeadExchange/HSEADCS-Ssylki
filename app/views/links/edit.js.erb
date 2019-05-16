@@ -7,12 +7,19 @@ $('#link_board_id').select2({
 })
 
 $("body").addClass("underpopup")
+$(".menubar").addClass("underpopup")
+$(".mask").addClass("underpopup")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
   $("body").removeClass("underpopup")
+  $(".menubar").removeClass("underpopup")
+  $(".mask").removeClass("underpopup")
 })
 
 $(".button_back").on("click", function() {
   $('.popup_link-form').remove()
+  $("body").removeClass("underpopup")
+  $(".menubar").removeClass("underpopup")
+  $(".mask").removeClass("underpopup")
 })

@@ -8,20 +8,20 @@
           <%= image_tag "link-smaller.svg", class: "icon icon_privacy icon_published" %>
         </div>
         <div class="menu-privacy__item">Доступ по ссылке</div>
-        <div class="menu-privacy__toggle toggle toggle_sharelink">
-          <%# if @board.shared == true %>
-            <%#= link_to share_board_path(@board) do %>
+        <%# if @board.shared == true %>
+          <%#= link_to share_board_path(@board) do %>
+            <div class="menu-privacy__toggle toggle toggle_sharelink">
               <div class="toggle__body">
                 <div class="toggle__circle"></div>
               </div>
-            <%# end %>
+            </div>
           <%# end %>
-        </div>
+        <%# end %>
       </li>
 
       <li>
         <div class="menu-privacy__icon">
-          <%= image_tag "collab2.svg", class: "icon icon_privacy icon_shared" %>
+          <%= image_tag "collab.svg", class: "icon icon_privacy icon_shared" %>
         </div>
         <div class="menu-privacy__item">Совместный доступ</div>
         <div class="menu-privacy__toggle toggle toggle_collab">
@@ -33,9 +33,21 @@
 
     </div>
 
-    <div class="menu-privacy__buttons">
-      <a class="button_add button">Добавить коллаборатора</a>
-      <a class="button_copy button">Скопировать ссылку</a>
+    <div class="menu-privacy__footer">
+
+      <div class="menu-privacy__buttons">
+        <%= link_to 'Добавить коллаборатора', new_board_collaboration_path(board), class: "button_add button", remote: true %>
+        <!-- <a class="button_copy button">Скопировать ссылку</a> -->
+        <% if board.published %>
+
+            <div class="share-url"><%= link_to shared_board_url(board.share_url), shared_board_url(board.share_url)%></div>
+            <div class="share_url__button_copy button_copy button">Скопировать ссылку</div>
+
+          <% else %>
+            <%= link_to "Скопировать ссылку", publish_board_path(board), class: "share_url__button_copy button_copy button" %>
+        <% end %>
+      </div>
+
     </div>
 
   </div>

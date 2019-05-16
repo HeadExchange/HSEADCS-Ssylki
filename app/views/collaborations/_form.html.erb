@@ -1,6 +1,6 @@
 <div class="popup_collaboration-form">
 
-  <%= form_with(model: [ :board, @collaboration ], local: true) do |form| %>
+  <%= form_with(model: [ :board, @collaboration ], remote: true) do |form| %>
 
     <% if collaboration.errors.any? %>
       <div id="error_explanation">
@@ -15,14 +15,14 @@
     <% end %>
 
       <div class="field">
-        <%= form.email_field :user_email, autofocus: false, autocomplete: "off", placeholder: "Введите адрес или никнейм коллаборатора...", id: "emailFieldMultiple" %>
+        <%= form.email_field :user_email, autofocus: "autofocus", autocomplete: "off", placeholder: "Введите адрес или никнейм коллаборатора...", id: "emailFieldMultiple" %>
       </div>
 
       <div class="form-collaboration__buttons">
         <div class="actions">
-          <%= form.submit value="Добавить", :class => "button_ok button_disabled" %>
+          <%= form.submit value="Добавить", :class => "button_ok button" %>
         </div>
-        <a class="button_back" data-remote="true">Отменить</a>
+        <a class="button_back button" data-remote="true">Отменить</a>
       </div>
 
     <% end %>

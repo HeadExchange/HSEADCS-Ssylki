@@ -219,19 +219,21 @@
 /* Privacy Menu */
 
 .container__menu-privacy {
-  position: relative;
+  position: absolute;
   width: 400px;
-  /* min-height: 175px; */
   border-radius: 3px;
-  top: 200px;
-  left: 300px;
+  top: 36px;
+  left: 36px;
+  z-index: 9999;
+  display: none;
+  border: .5px #F5F5F5 solid;
 }
 
 .menu-privacy__content {
   padding: 18px 25px;
   display: flex;
   justify-content: space-between;
-  height: 135px;
+  height: 155px;
   flex-direction: column;
 }
 
@@ -250,6 +252,10 @@
 
 .menu-privacy__list li:hover {
   cursor: pointer;
+}
+
+.menu-privacy__list li:last-child {
+  margin-bottom: 0;
 }
 
 .menu-privacy__item {
@@ -313,48 +319,6 @@
 .menu-privacy__buttons a.active
  {
   color: #000 !important;
-}
-
-/*
-.menu-privacy__list li:hover + .menu-privacy__description {
-  opacity: 1;
-} */
-
-/* Share Url */
-
-.container__share-url {
-  font-size: 14px;
-  height: 30px;
-  width: 400px;
-  padding: 5px;
-  margin-left: 30px;
-  display: flex;
-  /* position: relative; */
-  position: absolute;
-  align-items: center;
-  justify-content: space-around;
-  opacity: 0;
-  border-radius: 4px;
-  background: #fff;
-  z-index: 239;
-}
-
-.container__share-url_shown {
-  opacity: 1;
-}
-
-.share_url__button_copy {
-  font-size: 13px;
-  font-weight: 500;
-  margin-left: 20px;
-  opacity: 1;
-  transition: opacity .2s ease;
-  cursor: pointer;
-}
-
-.share_url__button_copy:hover {
-  opacity: .6;
-  cursor: pointer;
 }
 
 .icon_trash {

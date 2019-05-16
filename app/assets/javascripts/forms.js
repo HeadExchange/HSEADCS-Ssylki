@@ -27,15 +27,4 @@ $(function() {
     }
   })
 
-  // $(':input[type="submit"]').prop('disabled', true);
-  // $('input[type!="submit"]').keyup(function(e) {
-  //   if ($(':input[type="submit"]').prop('disabled') == true) {
-  //     e.preventDefault()
-  //   } else {
-  //     if($(this).val() != '') {
-  //        $(':input[type="submit"]').prop('disabled', false);
-  //     }
-  //   }
-  // })
-
 })

@@ -19,6 +19,7 @@ function copyToClipboard() {
   }
 
   console.log(elWithValue.attr('href'))
+  alert("Ссылка скопирована!")
 }
 
 $(function() {

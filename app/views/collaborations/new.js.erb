@@ -1,0 +1,11 @@
+$('form').trigger('reset')
+$(".menu-privacy__footer").prepend("<%= j (render 'form', collaboration: Collaboration.new) %>");
+
+$(".menu-privacy__buttons > .button").hide()
+$(".toggle_collab").addClass("active")
+
+$(".popup_collaboration-form .button_back").on("click", function() {
+  $(".popup_collaboration-form").remove()
+  $(".menu-privacy__buttons > .button").show()
+  $(".toggle_collab").removeClass("active")
+})

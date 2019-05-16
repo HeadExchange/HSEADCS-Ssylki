@@ -4,3 +4,45 @@
   height: 100%;
   flex-flow: row wrap;
 }
+
+/* Search */
+
+.search {
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  margin-top: 14px;
+  margin-right: -5px;
+  position: relative;
+}
+
+.search__submit {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+}
+
+.search__submit:hover {
+  cursor: pointer;
+}
+
+.search__textfield {
+  background-color: #fff;
+  height: 30px;
+  width: 0px;
+  border: none;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 40px;
+  transition: all .2s ease;
+}
+
+.search__textfield:focus {
+  width: 260px;
+}
+
+.search__textfield_opened {
+  width: 260px;
+}

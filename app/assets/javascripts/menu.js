@@ -84,4 +84,16 @@ $(function() {
     evt.preventDefault()
   })
 
+  $('.button_privacy').click(function() {
+    if (!$('.container__menu-privacy').hasClass("opened")) {
+      $(this).parent().find('.container__menu-privacy').show()
+      $(this).parent().find('.container__menu-privacy').addClass("opened")
+      $(".container__menu-privacy.opened .share-url").addClass("opened")
+    } else {
+      $(this).parent().find('.container__menu-privacy').hide()
+      $(this).parent().find('.container__menu-privacy').removeClass("opened")
+      $(".container__menu-privacy.opened .share-url").removeClass("opened")
+    }
+  })
+
 })

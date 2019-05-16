@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
     elsif params[:query] == "favourited"
       @boards = Board.favourited.order('title ASC')
     else
-      @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(15)
+      @boards = current_user.boards.all.order('title ASC').page(params[:page]).per(100)
     end
 
     respond_to do |format|
@@ -29,7 +29,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @links = @board.links.all.page(params[:page]).per(100)
+    @links = @board.links.all.page(params[:page]).per(100000)
 
     respond_to do |format|
       format.html
@@ -72,7 +72,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
+        format.html { redirect_to @board }
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new }
@@ -87,7 +87,7 @@ class BoardsController < ApplicationController
   def update
     respond_to do |format|
       if @board.update(board_params)
-        format.html { redirect_to @board, notice: 'Board was successfully updated.' }
+        format.html { redirect_to @board }
         format.json { render :show, status: :ok, location: @board }
         format.js
       else
@@ -106,7 +106,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
+        format.html { redirect_to board_url(@board) }
         format.json { render :show, status: :ok, location: @board }
       else
         format.html { render :new }
@@ -120,7 +120,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to board_url(@board), notice: 'Board was successfully updated.' }
+        format.html { redirect_to board_url(@board) }
         format.json { render :show, status: :ok, location: @board }
       else
         format.html { render :new }
@@ -134,23 +134,19 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
+      format.html { redirect_to boards_url }
       format.json { head :no_content }
     end
   end
 
   def authorize_user
-    redirect_to boards_url, notice: "Упс вы не можете управлять этим бордом" if @board.user_id != current_user.id
+    redirect_to boards_url, notice: "Упс вы не можете управлять этой доской" if @board.user_id != current_user.id
   end
 
   private
 
     def set_board
-      # if @board.public
-      #    @board = Board.find_by_share_url(params[:id]) || @board = Board.find_by_url(params[:id])
-      # else
         @board = Board.find_by_url(params[:id])
-      # end
     end
 
     def board_params
