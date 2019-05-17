@@ -1,12 +1,12 @@
 <div class="popup_link-form">
   <section class="form__link">
 
-  <h1 class="popup__header">🔗</h1>
+  <!-- <h1 class="popup__header">🔗</h1> -->
 
   <%= form_with(model: @link, local: true) do |form| %>
 
   <div class="field">
-    <%= form.text_field :url, autofocus: false, autocomplete: "off", placeholder: "https://...", class: "form-link"%>
+    <%= form.text_area :url, autofocus: false, autocomplete: "off", placeholder: "https://...", class: "form-link" %>
   </div>
 
   <div class="field">
@@ -16,7 +16,7 @@
 
   <div class="form-board__buttons">
     <div class="actions">
-      <%= form.submit value="Добавить", :class => "button_ok button_disabled"%>
+      <%= form.submit value="Добавить", :class => "button_ok"%>
     </div>
     <a class="button_back" data-remote="true">Отменить</a>
   </div>

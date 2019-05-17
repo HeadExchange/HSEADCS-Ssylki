@@ -24,7 +24,6 @@ form.new_user label {
 }
 
 form.new_user input,
-.popup_link-form input,
 form.edit_user input {
   width: 474px;
   border: none;

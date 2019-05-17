@@ -21,6 +21,7 @@ input, textarea {
   background-color: white;
   -webkit-rtl-ordering: logical;
   cursor: text;
+  border: none;
 }
 
 textarea {
@@ -67,7 +68,7 @@ input.form__board {
 }
 
 .button_small {
-  font-size: 12px;
+  font-size: 11px !important;
   height: 20px;
   border: none;
   cursor: pointer;
@@ -76,10 +77,12 @@ input.form__board {
 .button_ok.button_small {
   font-weight: 500;
   color: #000;
+  /* font-size: 15px !important; */
 }
 
 .button_back.button_small {
   color: #D8D8D8;
+  /* font-size: 15px !important; */
 }
 
 /* Link Form */
@@ -107,6 +110,23 @@ input.form__board {
   /* border: .5px #F5F5F5 solid;
   border-radius: 4px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.05); */
+}
+
+.popup_link-form textarea {
+  width: 474px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: normal;
+  transition: border-bottom .3s ease;
+  background: transparent;
+  resize: none;
+}
+
+.popup_link-form textarea:focus {
+  border-bottom: 2px solid #272727;
 }
 
 .popup_link-form ::placeholder {
@@ -145,8 +165,8 @@ input.form__link {
   height: 50px;
   border-radius: 2px;
   border: 2px transparent;
-  color: #fff;
-  background-color: #272727;
+  color: #000;
+  background-color: #FAFF00;
   font-size: 16px !important;
   font-weight: 500;
   display: flex;
@@ -212,7 +232,6 @@ body.underpopup {
 .mask.underpopup {
   display: block;
 }
-
 
 /* Collaboration form */
 
@@ -299,7 +318,7 @@ select {
   height: 40px !important;
   outline: none;
   border: none;
-  font-size: 22px;
+  font-size: 18px;
   background: transparent !important;
 }
 
@@ -337,14 +356,14 @@ select {
   height: 40px;
   width: 670px;
   line-height: 40px;
-  font-size: 20px;
+  font-size: 18px;
   border: none !important;
   font-weight: 300px;
   font-family: "Graphik Kinopoisk LC"
 }
 
 option {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -360,7 +379,7 @@ option {
 b {
   border-left: 6px solid transparent !important;
   border-right: 6px solid transparent !important;
-  border-top: 6px solid #272727 !important;
+  border-top: 7px solid #272727 !important;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
@@ -384,7 +403,7 @@ b {
 }
 
 .select2-results__option {
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: #272727 !important;
   transition: opacity .2s ease;
   padding: 10px;
@@ -400,9 +419,9 @@ b {
 }
 
 .select2-results__option[aria-selected=true] {
-  background-color: #f5f5f5 !important;
+  background-color: #FAFF00 !important;
 }
 
 .select2-selection__placeholder {
-  font-size: 20px;
+  font-size: 18px;
 }
