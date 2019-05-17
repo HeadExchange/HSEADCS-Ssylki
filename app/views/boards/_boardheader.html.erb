@@ -9,19 +9,18 @@
         <%= image_tag "lock.svg", class: "icon icon_privacy" %>
       <% end %>
 
-      <%# if collaborations.board_id == current_board.id %>
-        <%#= image_tag "collab.svg", class: "icon icon_privacy" %>
-      <%# end %>
+      <% if board.collaborations.any? %>
+        <%= image_tag "collab.svg", class: "icon icon_privacy" %>
+      <% end %>
 
       <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
 
       <% label = board.published ? "Публичная" : "Приватная" %>
       <div class="section_board__label"><%= label %></div>
 
-      <%# if collaborations.board_id == current_board.id %>
-        <%# labelCollaborative = "Общая" %>
-        <!-- <div class="section_board__label"><%#= labelCollaborative %></div> -->
-      <%# end %>
+      <% if board.collaborations.any? %>
+        <div class="section_board__label">Общая</div>
+      <% end %>
 
       </div>
         <div class="container_bookmark">

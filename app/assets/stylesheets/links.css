@@ -100,7 +100,25 @@
   opacity: 0;
 }
 
-.link__item:hover > .link__settings {
+.link__number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: opacity .2s ease;
+  opacity: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  line-height: 32px;
+
+}
+
+.link__item:hover > .link__settings,
+.link__item:hover > .link__number {
   opacity: 1;
 }
 
