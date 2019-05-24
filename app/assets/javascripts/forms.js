@@ -27,11 +27,4 @@ $(function() {
     }
   })
 
-  $('textarea').prop('disabled', true);
-  $('textarea').keyup(function() {
-    if($(this).val() != '') {
-      $('textarea').prop('disabled', false);
-    }
-  })
-
 })
