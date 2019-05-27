@@ -2,7 +2,7 @@
 
   <div class="menubar_left">
     <%= link_to boards_path do %>
-      <div style="font-family: Inter; font-weight: bold; font-size: 26px" class: "link_logo">Ssylki</div>
+      <%= image_tag "logo.svg", style: "transform: translateY(13px);" %>
     <% end %>
   </div>
 
@@ -21,7 +21,7 @@
     <%= render "search" %>
 
     <div class="icon-wrapper">
-      <%= image_tag "plus.svg", class: "icon_add" %>
+      <%= image_tag "23px.svg", class: "icon_add" %>
     </div>
 
     <div class="menu-dropdown menu-dropdown_add menu">

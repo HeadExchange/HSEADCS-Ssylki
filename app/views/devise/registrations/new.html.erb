@@ -1,4 +1,4 @@
-<section class="container_form" style="margin-top: 50px;">
+<section class="container_form" style="margin-top: 10px;">
 
 <h1 class="form__header">Создайте аккаунт WebPapers</h1>
 <div class="form__subtitle"></div>
@@ -21,7 +21,7 @@
       <% if @minimum_password_length %>Пароль (не менее <%= @minimum_password_length %> символов)
       <% end %>
     <% end %>
-    <%= f.password_field :password, autocomplete: "on", placeholder: "••••••", id: "password"  %>
+    <%= f.password_field :password, autocomplete: "on", placeholder: "••••••••", id: "password"  %>
     <%= image_tag "eye.svg", id: "togglePasswordVisibility" %>
   </div>
 
