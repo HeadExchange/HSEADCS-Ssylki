@@ -29,4 +29,28 @@ $(function() {
 
   $(".menubar_middle__item:not(:has(a))").addClass("active")
 
+  $('.icon_burger').click(function() {
+    $(this).removeClass('shown_element')
+    $('.menu-dropdown_burger').toggleClass('menu-dropdown_shown')
+    $('.icon_close').addClass('shown_element')
+  })
+
+  $('.icon_close').click(function() {
+    $(this).removeClass('shown_element')
+    $('.menu-dropdown_burger').toggleClass('menu-dropdown_shown')
+    $('.icon_burger').addClass('shown_element')
+  })
+
+  $('.icon_search').click(function() {
+    $(this).removeClass('shown_element')
+    $('.menu-dropdown_search').toggleClass('menu-dropdown_shown')
+    $('.cancel').addClass('shown_element')
+  })
+
+  $('.cancel').click(function() {
+    $(this).removeClass('shown_element')
+    $('.menu-dropdown_search').toggleClass('menu-dropdown_shown')
+    $('.icon_search').addClass('shown_element')
+  })
+
 })

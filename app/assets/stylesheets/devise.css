@@ -57,6 +57,15 @@ form.edit_user input[type="submit"] {
   margin: auto;
 }
 
+.sessions .container_form,
+.registrations .container_form {
+  margin: auto;
+  width: 474px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 input:disabled {
   border: 2px solid #ccc !important;
   background-color: #fff !important;
