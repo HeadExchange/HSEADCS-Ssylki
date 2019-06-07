@@ -8,7 +8,7 @@ set :application, "ssylki"
 set :repo_url, "git@github.com:HeadExchange/HSEADCS-Ssylki.git"
 
 # Default branch is :master
-set :branch, "deploy"
+set :branch, "master"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deployer/apps/#{fetch :application}"
