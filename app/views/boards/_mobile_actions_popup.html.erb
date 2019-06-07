@@ -1,0 +1,19 @@
+<div class="actions">
+  <p><%= link_to 'Добавить ссылку', new_link_path(board), class: "button_new-link", remote: true %></p>
+  <p><%= link_to 'Редактировать доску', edit_board_path(board), remote: true %></p>
+
+  <p>Настройки доступа</p>
+  <p>Скопировать ссылку</p>
+
+
+  <p>
+    <% link_text = board.favourited ? "Убрать из сохранённых" : "Добавить в сохранённые" %>
+    <%= link_to link_text, favourite_board_path(board), remote: true %>
+  </p>
+
+  <p>Удалить доску<%#= link_to 'Удалить доску', destroy_board_path(board), remote: true %></p>
+</div>
+
+<div class="close">
+  <p>Закрыть</p>
+</div>

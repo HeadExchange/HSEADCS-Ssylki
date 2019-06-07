@@ -8,7 +8,7 @@
 
   <% if user_signed_in? %>
 
-  <div class="menubar_middle">
+  <div class="menubar_middle desktop">
     <div class="menubar_middle__item"><%= link_to_unless_current("Все", :controller => "boards", :query => "" )%></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
     <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
@@ -68,7 +68,7 @@
     <%= image_tag "closepopup.svg", class: "icon_close" %>
   </div>
 
-  <div class="menu-dropdown menu-dropdown_burger">
+  <div class="menu-dropdown burger_menu">
 
     <% if user_signed_in? %>
       <div class="menu-dropdown__avatar">
@@ -95,21 +95,28 @@
   </div>
 
 
-  <div>
+  <div class="logomobile">
     <%= link_to boards_path do %>
-      <div style="font-family: Inter; font-weight: bold; font-size: 22px" class="link_logo">ССЫЛКИ</div>
+      <%= image_tag "logo.svg", style: "transform: translateY(13px);" %>
     <% end %>
   </div>
 
   <div class="icon-wrapper">
     <%= image_tag "search.svg", class: "icon_search shown_element" %>
-    <div class="cancel">Отменить</div>
+    <div class="search_close">Отменить</div>
   </div>
 
   <div class="menu-dropdown menu-dropdown_search">
     <%= form_tag results_path, method: :get, role: 'search' do %>
       <%= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "search__textfield" %>
-      <%= image_tag "search.svg", name: nil, :class => "search__submit" %>
+      <%#= image_tag "search.svg", name: nil, :class => "search__submit" %>
+      <%= image_tag "search.svg" %>
     <% end %>
   </div>
 </header>
+
+<section class="menubar_bottom mobile">
+  <% if user_signed_in? %>
+    <%= render "menubar_bottom_mobile" %>
+  <% end %>
+</section>

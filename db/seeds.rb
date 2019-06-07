@@ -29,7 +29,7 @@ Rake::Task['db:migrate'].invoke
   'http://www.eliequintard.com/prod/HAINS_DEX_2',
   'https://ony.ru',
   'https://moscowmusicschool.ru',
-  'https://minimalissimo.com/less-but-better'
+  'https://minimalissimo.com/less-but-better',
   'https://pl.wikipedia.org/wiki/Logika',
   'https://www.readingdesign.org/index-1',
   'https://www.stockholmdesignlab.se',
@@ -37,7 +37,7 @@ Rake::Task['db:migrate'].invoke
   'https://canary---yellow.com',
   'https://opensourcerover.jpl.nasa.gov/#!/home',
   'https://www.e-flux.com',
-  'https://www.smallvictori.es',
+  'https://www.smallvictori.es'
 ]
 
 def seed_data

@@ -1,7 +1,7 @@
 <section class="section_board" id="board_<%= board.id  %>">
   <%= render 'boardheader', board: board %>
 
-  <div class="container_preview">
+  <div class="container_preview desktop">
     <%= render 'links/newlink' %>
     <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
       <% board.links[0..4].each do |link| %>

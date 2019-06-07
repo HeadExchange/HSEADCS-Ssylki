@@ -8,7 +8,8 @@
   width: 1218px;
   height: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .link__section .link__item_newlink {
@@ -27,7 +28,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 70px;
-  margin-right: 36px;
+  margin-right: 20px;
   cursor: pointer;
   transition: box-shadow .2s ease;
 }
@@ -92,44 +93,40 @@
   text-overflow: ellipsis;
 }
 
-.link__settings {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  transition: opacity .2s ease;
-  opacity: 0;
+/* DESKTOP */
+ @media (min-width: 1024px) and (max-width: 1440px) {
+
+  .link__settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: opacity .2s ease;
+    opacity: 0;
+  }
+
+  .link__number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: opacity .2s ease;
+    opacity: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+  }
 }
 
-.link__number {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  transition: opacity .2s ease;
-  opacity: 0;
-  border-radius: 50%;
-  background: #fff;
-  color: #999;
-  text-align: center;
-  font-size: 14px;
-  width: 30px;
-  height: 30px;
-  line-height: 32px;
-
-}
-
-.link__item:hover > .link__settings,
-.link__item:hover > .link__number {
-  opacity: 1;
-}
+  .link__item:hover > .link__settings,
+  .link__item:hover > .link__number {
+    opacity: 1;
+  }
 
 /* Links Preview */
-
-.container_preview {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
- }
 
 .container_preview .link__item {
   width: 228px;
@@ -144,6 +141,7 @@
 }
 
 .link__item_newlink {
+  display: inline-block;
   border: 1px dashed #adb5bd !important;
   box-shadow: none !important;
   position: relative;
@@ -151,6 +149,19 @@
 
 .link__item_newlink:hover {
   background-color: #fdfdfd;
+}
+
+.container_preview,
+.container_preview_sortable {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+} {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .container_preview .link__image img {
@@ -188,6 +199,40 @@
   text-overflow: ellipsis;
   display: block;
 }
+
+/* MOBILE AND TABLET */
+@media (min-width: 481px) and (max-width: 1023px), (min-width: 320px) and (max-width: 480px) {
+
+  .link__number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 1;
+    border-radius: 50%;
+    background: #fff;
+    color: #999;
+    text-align: center;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .link__settings img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+
+}
+
+@media all {
+
+}
+
 
 
 /* LINK WITH NO IMAGE ничё не работает нужно как-то иначе или вообще лучше создать другой блок с описанием во всю высоту да и его показывать отличная идея только сейчас я пошла мыть голову а не этими вещами заниматься спасибо */

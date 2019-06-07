@@ -236,7 +236,7 @@ body.underpopup {
 /* Collaboration form */
 
 .popup_collaboration-form {
-  z-index: 9999;
+  z-index: 1000;
 }
 
 .popup_collaboration-form .field {
