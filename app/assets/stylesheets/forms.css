@@ -160,27 +160,33 @@ input.form__link {
   margin-bottom: 60px;
 }
 
-.popup_link-form .button_ok {
-  width: 176px;
-  height: 50px;
-  border-radius: 2px;
-  border: 2px transparent;
-  color: #000;
-  background-color: #FAFF00;
-  font-size: 16px !important;
-  font-weight: 500;
+.popup_link-form .button_ok,
+form.new_user input[type="submit"],
+form.edit_user input[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all .2s ease;
-  cursor: pointer;
   margin: 0;
+  font-size: 18px;
+  line-height: 55px;
+  font-weight: 500;
+  width: 200px;
+  background: #14AAFF;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  transition: all .3s ease;
+  cursor: pointer;
 }
 
-.popup_link-form .button_ok:hover {
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #272727;
+.popup_link-form .button_ok:hover,
+form.new_user input[type="submit"]:hover,
+form.edit_user input[type="submit"]:hover {
+  background: #fff;
+  color: #14AAFF;
+  border: 2px solid #14AAFF;
 }
 
 .popup_link-form .button_back {
