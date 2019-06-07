@@ -1,33 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require select2
- *= require_tree .
- *= require_self
- */
-
-@font-face {
-  font-family: "Graphik Kinopoisk LC";
-  font-weight: normal;
-  src: url('Graphik Kinopoisk LC-Regular.woff') format('woff'),
-  url('<%= asset_path("Graphik Kinopoisk LC-Regular.woff") %>'), format('woff');
-}
-
-@font-face {
- font-family: "Graphik Kinopoisk LC";
- font-weight: 100;
- src: url('Graphik Kinopoisk LC-Light.woff') format('woff'),
- url('<%= asset_path("Graphik Kinopoisk LC-Light.woff") %>'), format('woff');
-}
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require select2
+*= require_tree .
+*= require_self
+*/
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -67,20 +53,18 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   background-color: rgba(0, 255, 255, .4) !important;
 }
 
-ol, ul, li{
+ol, ul, li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-a,
-a:visited {
+a, a:visited {
   color: #272727;
   text-decoration: none;
 }
 
-a,
-a:visited:hover {
+a, a:visited:hover {
   background-color: none;
 }
 
@@ -106,12 +90,9 @@ hr {
   filter: blur(10px);
   opacity: .6;
 }
+/* Dark Mode */
 
- /* Dark Mode */
-
-
-.dark-mode,
-.dark-mode .menubar {
+.dark-mode, .dark-mode .menubar {
   background-color: #000;
   color: #fff;
 }
@@ -166,118 +147,84 @@ hr {
   text-align: center;
   letter-spacing: -0.3px;
 }
+/* Media Queries */
+/*
+ Device = Tablets, Ipads (portrait)
+ Screen = B/w 768px to 1024px
+*/
 
- /* Media Queries */
-
- /*
-   Device = Tablets, Ipads (portrait)
-   Screen = B/w 768px to 1024px
- */
-
- @media (min-width: 768px) and (max-width: 1024px) {
-
+@media (min-width: 768px) and (max-width: 1024px) {
   .menubar {
     padding: 0 20px;
   }
-
   .menubar_middle {
     width: 480px;
     margin: auto 30px;
   }
-
-  .menubar_middle__item,
-  .menubar a {
+  .menubar_middle__item, .menubar a {
     font-size: 12px;
   }
-
-
   .container_preview {
     width: 80%;
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .container_preview .link__item,
-  .link__item_newlink {
+  .container_preview .link__item, .link__item_newlink {
     width: 342px;
     height: 270px;
- }
+  }
+}
+/*
+Device = Tablets, Ipads (landscape)
+Screen = B/w 768px to 1024px
+*/
 
- /*
-  Device = Tablets, Ipads (landscape)
-  Screen = B/w 768px to 1024px
- */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+/*
+Device = Low Resolution Tablets, Mobiles (Landscape)
+Screen = B/w 481px to 767px
+*/
 
- @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-
- }
-
- /*
-  Device = Low Resolution Tablets, Mobiles (Landscape)
-  Screen = B/w 481px to 767px
- */
-
- @media (min-width: 481px) and (max-width: 767px) {
-
+@media (min-width: 481px) and (max-width: 767px) {
   .menubar {
     height: 50px;
     padding: 0 10px;
   }
-
-   /* Убрать слова из меню */
-
+  /* Убрать слова из меню */
   .menubar_middle {
     width: 450px;
     margin: auto 30px;
   }
-
   .menubar_middle__item {
     display: none;
   }
-
-  .menubar a,
-  .menubar a:visited,
-  div.menubar_middle__item {
+  .menubar a, .menubar a:visited, div.menubar_middle__item {
     line-height: 50px;
   }
+}
+/*
+ Device = Most of the Smartphones Mobiles (Portrait)
+ Screen = B/w 320px to 479px
+*/
 
- }
-
- /*
-   Device = Most of the Smartphones Mobiles (Portrait)
-   Screen = B/w 320px to 479px
- */
-
- @media (min-width: 320px) and (max-width: 480px) {
-
+@media (min-width: 320px) and (max-width: 480px) {
   .menubar {
     height: 50px;
     padding: 0 10px;
   }
-
-  .menubar a,
-  .menubar a:visited,
-  div.menubar_middle__item {
+  .menubar a, .menubar a:visited, div.menubar_middle__item {
     line-height: 50px;
   }
-
-   /* Убрать слова из меню */
-
+  /* Убрать слова из меню */
   .menubar_middle__item {
     display: none;
   }
-
   .container_preview {
     flex-direction: column;
     flex-wrap: wrap;
   }
-
   #containerPreview {
     flex-direction: column;
     flex-wrap: wrap;
   }
-
-
-
- }
+}
