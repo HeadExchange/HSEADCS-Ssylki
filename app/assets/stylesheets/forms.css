@@ -161,26 +161,28 @@ input.form__link {
 }
 
 .popup_link-form .button_ok {
-  width: 176px;
-  height: 50px;
-  border-radius: 2px;
-  border: 2px transparent;
-  color: #000;
-  background-color: #FAFF00;
-  font-size: 16px !important;
-  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all .2s ease;
-  cursor: pointer;
   margin: 0;
+  font-size: 18px;
+  line-height: 55px;
+  font-weight: 500;
+  width: 200px;
+  background: #14AAFF;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  transition: all .3s ease;
+  cursor: pointer;
 }
 
 .popup_link-form .button_ok:hover {
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #272727;
+  background: #fff;
+  color: #14AAFF;
+  border: 2px solid #14AAFF;
 }
 
 .popup_link-form .button_back {

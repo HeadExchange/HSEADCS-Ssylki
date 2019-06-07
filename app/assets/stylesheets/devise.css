@@ -79,7 +79,6 @@ input:disabled:hover {
 }
 
 form.new_user input[type="submit"]:hover,
-.popup_link-form input[type="submit"]:hover,
 form.edit_user input[type="submit"]:hover {
   border: 2px solid #272727;
 }
