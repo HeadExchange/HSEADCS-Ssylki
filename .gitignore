@@ -32,3 +32,4 @@
 /public/uploads
 .DS_Store
 HEX-Railsbox
+/config/credentials.yml.enc
