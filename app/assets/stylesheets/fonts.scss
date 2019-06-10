@@ -9,3 +9,15 @@
   font-weight: 100;
   src: asset-url('Graphik_Kinopoisk_LC-Light.woff') format('woff');
 }
+
+@font-face {
+  font-family: "Graphik Kinopoisk LC";
+  font-weight: 500;
+  src: asset-url('Graphik_Kinopoisk_LC-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Graphik Kinopoisk LC";
+  font-weight: 600;
+  src: asset-url('Graphik_Kinopoisk_LC-Semibold.woff') format('woff');
+}
