@@ -1,19 +1,26 @@
 <div class="actions">
-  <p><%= link_to 'Добавить ссылку', new_link_path(board), class: "button_new-link", remote: true %></p>
-  <p><%= link_to 'Редактировать доску', edit_board_path(board), remote: true %></p>
+  <div class="action_item"><%= link_to 'Добавить ссылку', new_link_path(@board), class: "button_new-link", remote: true %></div>
+  <div class="divider_mobile"></div>
+  <div class="action_item"><%= link_to 'Редактировать доску', edit_board_path(@board), remote: true %></div>
+  <div class="divider_mobile"></div>
 
-  <p>Настройки доступа</p>
-  <p>Скопировать ссылку</p>
+  <div class="action_item privacy_settings">Настройки доступа</div>
+  <div class="divider_mobile"></div>
+
+  <% if board.published %>
+    <div class="action_item share_url__button_copy">Скопировать ссылку</div>
+    <div class="divider_mobile"></div>
+  <% end %>
 
 
-  <p>
+  <div class="action_item">
     <% link_text = board.favourited ? "Убрать из сохранённых" : "Добавить в сохранённые" %>
     <%= link_to link_text, favourite_board_path(board), remote: true %>
-  </p>
+  </div>
 
-  <p>Удалить доску<%#= link_to 'Удалить доску', destroy_board_path(board), remote: true %></p>
+  <div class="divider_mobile"></div>
+
+  <div class="action_item">Удалить доску<%#= link_to 'Удалить доску', destroy_board_path(board), remote: true %></div>
 </div>
 
-<div class="close">
-  <p>Закрыть</p>
-</div>
+<div class="actions_close">Закрыть</div>

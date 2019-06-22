@@ -1,0 +1,5 @@
+<div class="menubar_bottom__item"><%= link_to_unless_current("Все", :controller => "boards", :query => "" )%></div>
+<div class="menubar_bottom__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
+<div class="menubar_bottom__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
+<div class="menubar_bottom__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
+<div class="menubar_bottom__item"><%= link_to_unless_current("Избранное", :controller => "boards", :query => "favourited")%></div>

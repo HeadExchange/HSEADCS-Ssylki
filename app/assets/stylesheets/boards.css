@@ -1,8 +1,8 @@
 @media (min-width: 1024px) and (max-width: 1440px) {
 
   .main {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .section_board {
@@ -191,11 +191,21 @@
 
 @media (min-width: 481px) and (max-width: 1023px) {
 
+  .main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
 }
 
 /* M O B I L E */
 
-@media (min-width : 320px) and (max-width : 480px) {
+@media (min-width : 320px) and (max-width : 501px) {
+
+  .main {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 
   .section_board, .header_board {
     width: 339px; /* width for iphone 6-8*/
@@ -210,6 +220,14 @@
   .section_board__description {
     font-size: 15px;
   }
+
+  /*.board_show_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }*/
 
   /*board search preview*/
 
