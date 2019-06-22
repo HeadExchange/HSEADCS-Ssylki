@@ -1,57 +1,44 @@
 <main class="landing">
 
   <section class="cover">
-    <div class="cover__video">
-      <%= image_tag "covervideo.gif" %>
-    </div>
     <div class="cover__content">
-      <%= image_tag "logolanding.svg", class: "landinglogo" %>
+      <%= image_tag "landinglogo.svg", class: "landinglogo" %>
       <p>Обменивайтесь знаниями с&nbsp;помощью&nbsp;онлайн-библиотеки</p>
       <a class="button_landing" href="#about">Подробнее</a>
     </div>
+    <%= image_tag "star.svg", class: "star" %>
+    <%= image_tag "letters.svg", class: "letters" %>
+    <%= image_tag "pin.svg", class: "pin" %>
+    <%= image_tag "cap.svg", class: "cap" %>
+    <%= image_tag "pencil.svg" , class: "pencil" %>
   </section>
 
-  <section class="section grey" style="min-height: 1100px;" id="about">
+  <section class="section" style="min-height: 150px;" id="about">
     <div class="section__content_center" style="margin: auto">
       <h2>Что такое Ssylki?</h2>
-      <p>Мы проводим так много времени в интернете, что забываем о&nbsp;том, что браузер это приложение. Несмотря на массовое развитие и изменение приложений, веб-браузеры остаются почти неизменными. Наша задача – упростить сохранение и&nbsp;систематизацию ресурсов из интернета.</p>
+      <p>Мы проводим так много времени в интернете, что забываем о&nbsp;том, что браузер это приложение. Наша задача – упростить сохранение и&nbsp;систематизацию ресурсов из интернета.</p>
     </div>
-
-    <div class="section__pages">
-      <div class="area"></div>
-      <a class="button_landing button__clear">Убрать</a>
-      <%= image_tag "page1.png", class: "page", id: "page1" %>
-      <%= image_tag "page2.png", class: "page", id: "page2" %>
-      <%= image_tag "page3.png", class: "page", id: "page3" %>
-      <%= image_tag "page4.png", class: "page", id: "page4" %>
-      <%= image_tag "page5.png", class: "page" %>
-      <%= image_tag "page6.png", class: "page" %>
+    <div class="section__content_center content_center_autowidth">
+      <%= image_tag "browser.png" %>
     </div>
   </section>
 
-
-  <section class="section" style="min-height: 600px;">
+  <section class="section" style="min-height: 400px;">
     <div class="flex__qualities">
       <div>
-        <div class="icon">
-          <%= image_tag "landingprivate.svg", class: "icon_landing" %>
-        </div>
+          <%= image_tag "landingprivate.svg", class: "landingicon" %>
         <h3>Личное пространство</h3>
         <p>Вы можете собрать коллекцию ссылок, которые будут доступны только&nbsp;вам. Для&nbsp;единоличного использования.</p>
       </div>
 
       <div>
-        <div class="icon">
-          <%= image_tag "landingshare.svg", class: "icon_landing" %>
-        </div>
+        <%= image_tag "landingshare.svg", class: "landingicon" %>
         <h3>Просмотр коллекции</h3>
         <p>Просматривайте чужие подборки по&nbsp;ссылке доступа. Получайте инсайты от&nbsp;людей, которые готовы поделиться знаниями.</p>
       </div>
 
       <div>
-        <div class="icon">
-          <%= image_tag "landingcollab.svg", class: "icon_landing" %>
-        </div>
+        <%= image_tag "landingcollab.svg", class: "landingicon" %>
         <h3>Работайте вместе</h3>
         <p>Собирайте коллекции вместе с&nbsp;друзьями и&nbsp;коллегами. Эффективный способ совместной работы. </p>
       </div>
@@ -61,16 +48,17 @@
   <section>
     <div class="section__content_left">
       <h2>Дисциплинированный веб</h2>
+      <%#= image_tag "curl.svg", class: "curl" %>
       <hr>
       <div class="twocolumns">
-        <p>Мы создали визуально удобный интерфейс, в&nbsp;котором удобно ориентироваться. Вы&nbsp;можете изменять и удалять коллекции, не&nbsp;перемещаясь внутрь коллекции. Все&nbsp;сохраненные ссылки находятся перед&nbsp;глазами&nbsp;в виде превью. </p>
-        <p>Добавить новую ссылку можно сразу же в&nbsp;необходимую подборку, кликнув на&nbsp;область добавления с&nbsp;плюсом. Если вы пока не знаете, для&nbsp;чего вам нужна&nbsp;та&nbsp;или иная ссылка, она останется в&nbsp;разделе “Без папки” наверху – до&nbsp;тех&nbsp;пор, пока&nbsp;вы&nbsp;не&nbsp;определите её&nbsp;в&nbsp;коллекцию. </p>
+        <p>Мы создали визуально удобный интерфейс, в&nbsp;котором удобно ориентироваться. Вы&nbsp;можете изменять и удалять коллекции, не&nbsp;перемещаясь внутрь.</p>
+        <p>Если вы пока не знаете, для&nbsp;чего вам нужна&nbsp;та&nbsp;или иная ссылка, она останется в&nbsp;разделе “Без папки” наверху – до&nbsp;тех&nbsp;пор, пока&nbsp;вы&nbsp;не&nbsp;определите её&nbsp;в&nbsp;коллекцию. </p>
       </div>
     </div>
 
     <div class="section__content_center content_center_autowidth">
-      <%= image_tag "web.svg" %>
-      <a class="button_landing">Присоединиться</a>
+      <%= image_tag "web.png" %>
+      <a class="button_landing" style="margin-top: 60px;">Присоединиться</a>
     </div>
   </section>
 
@@ -87,12 +75,11 @@
             <h3>Больше, чем просто закладка</h3>
             <p>Вместо списков и потока слов, в Ssylki мы&nbsp;автоматически формируем превью, состоящее из картинки, названия и дополнительного текста. Так&nbsp;вы&nbsp;сможете легко отличить даже ссылки с&nbsp;одного сайта.  </p>
           </div>
-          <%= image_tag "interface1.svg" %>
-
+          <%= image_tag "landinglink.png" %>
         </div>
 
         <div class="flex__component">
-          <%= image_tag "interface4.png" %>
+          <%= image_tag "interface2.png" %>
           <div>
             <h3>Без хаоса</h3>
             <p>В заголовке находятся иконки. Они&nbsp;помогают сразу понять, как именно вы&nbsp;работаете с&nbsp;этой коллекцией, а&nbsp;короткое описание поясняет, что объединяет все собранные ссылки. </p>
@@ -108,7 +95,7 @@
         </div>
 
         <div class="flex__component">
-          <%= image_tag "interface2.png" %>
+          <%= image_tag "interface4.png" %>
           <div>
             <h3>Всего важней</h3>
             <p>Самые интересные и необходимые коллекции мы предлагаем отмечать флажком. Они попадают в раздел избранное, где найти их не составляет труда.</p>
@@ -123,25 +110,50 @@
       <div class="section__content_left">
       <h2>Всегда оставайтесь в курсе</h2>
       <hr>
-      <div class="twocolumns">
+      <!-- <div class="twocolumns">
         <p>Ssylki адаптированы под любые носители. Это&nbsp;значит, что вы можете работать с&nbsp;приложением в любое время, вне зависимости от&nbsp;обстоятельств. Все элементы подстраиваются под&nbsp;разрешение вашего устройства и&nbsp;образуют ясную структуру.</p>
         <p>Просмотр с&nbsp;планшета или лента на&nbsp;экране мобильного телефона – все это, так или&nbsp;иначе, ориентировано на&nbsp;комфорт и&nbsp;наглядность использования. Часто, у&nbsp;нас не&nbsp;бывает возможности изучить что-то&nbsp;в&nbsp;течение дня, но&nbsp;с&nbsp;Ssylki есть возможность это&nbsp;сохранить. </p>
-      </div>
-      <img src="" alt="">
+      </div> -->
     </div>
 
     <div class="section__content_center content_center_autowidth">
-      <%= image_tag "web.svg" %>
-      <a class="button_landing">Присоединиться</a>
+      <%= image_tag "adaptive.svg" %>
+      <!-- <a class="button_landing">Присоединиться</a> -->
     </div>
     </section>
 
-    <!-- <section class="section__content_center grey">
-      <div class="section__content_center">
-        <h2>Как можно использовать Ssylki?</h2>
+    <footer class="section__content_center content_center_autowidth">
+      <div>
+        <h1>Начните пользоваться Ssylki</h1>
+        <a class="button_landing">Попробовать бесплатно</a>
       </div>
-    </section> -->
+      <%= image_tag "arrows.svg", class: "arrows" %>
+      <!-- <a class="button_clear button_landing" id="buttonClear">Расставить</a> -->
+    </footer>
 
-  <!-- <footer></footer> -->
+    <section class="animation-wrapper">
+
+
+      <div class="section__pages">
+        <%= image_tag "page1.png", class: "page" %>
+        <%= image_tag "page2.png", class: "page" %>
+        <%= image_tag "page3.png", class: "page" %>
+        <%= image_tag "page4.png", class: "page" %>
+        <%= image_tag "page5.png", class: "page" %>
+        <%= image_tag "page6.png", class: "page" %>
+      </div>
+
+      <div class="section__cards">
+        <%= image_tag "card1.png", class: "card" %>
+        <%= image_tag "card2.png", class: "card" %>
+        <%= image_tag "card3.png", class: "card" %>
+        <%= image_tag "card4.png", class: "card" %>
+        <%= image_tag "card5.png", class: "card" %>
+        <%= image_tag "card6.png", class: "card" %>
+      </div>
+
+      <a class="button_landing button_refresh" id="buttonRefresh">Заново</a>
+
+    </section>
 
 </main>

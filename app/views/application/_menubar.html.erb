@@ -54,8 +54,8 @@
   <% else %>
     <%= image_tag "logo.svg", style: "margin: auto", class: "logo" %>
     <div class="menubar_right">
-    <div class="menubar_right__button">Войти</div>
-    <div class="menubar_right__button">Зарегистрироваться</div>
+      <div class="menubar_right__button">Войти</div>
+      <div class="menubar_right__button">Зарегистрироваться</div>
     </div>
 
     <%#= link_to "Войти", new_session_path(resource_name) %>
@@ -73,8 +73,8 @@
 <header class="menubar nav-down mobile">
 
   <div class="icon-wrapper">
-    <%= image_tag "menu.svg", class: "icon_burger shown_element" %>
-    <%= image_tag "closepopup.svg", class: "icon_close" %>
+    <%#= image_tag "menu.svg", class: "icon_burger shown_element" %>
+    <%#= image_tag "closepopup.svg", class: "icon_close" %>
   </div>
 
   <div class="menu-dropdown menu-dropdown_burger">
@@ -104,21 +104,21 @@
   </div>
 
 
-  <div>
+  <%# <div>
     <%= link_to boards_path do %>
-      <div style="font-family: Inter; font-weight: bold; font-size: 22px" class="link_logo">ССЫЛКИ</div>
-    <% end %>
-  </div>
+      <%# <div style="font-family: Inter; font-weight: bold; font-size: 22px" class="link_logo">ССЫЛКИ</div> %>
+    <%# end %>
+  <%# </div> %>
 
-  <div class="icon-wrapper">
-    <%= image_tag "search.svg", class: "icon_search shown_element" %>
-    <div class="cancel">Отменить</div>
-  </div>
+  <%# <div class="icon-wrapper"> %>
+    <%#= image_tag "search.svg", class: "icon_search shown_element" %>
+    <%# <div class="cancel">Отменить</div> %>
+  <%# </div> %>
 
-  <div class="menu-dropdown menu-dropdown_search">
-    <%= form_tag results_path, method: :get, role: 'search' do %>
-      <%= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "search__textfield" %>
-      <%= image_tag "search.svg", name: nil, :class => "search__submit" %>
-    <% end %>
-  </div>
+  <%# <div class="menu-dropdown menu-dropdown_search"> %>
+    <%#= form_tag results_path, method: :get, role: 'search' do %>
+      <%#= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "search__textfield" %>
+      <%#= image_tag "search.svg", name: nil, :class => "search__submit" %>
+    <%# end %>
+  <%# </div> %>
 </header>

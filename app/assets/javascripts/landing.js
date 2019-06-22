@@ -9,4 +9,13 @@ $(function() {
       }, 1000);
     });
   });
+
+  $('#buttonClear').click(function() {
+    $('.section__pages').addClass('clear')
+    $('.page').addClass('clear')
+    $('.card').addClass('active')
+    $('#buttonClear').hide()
+    $('#buttonRefresh').display()
+  })
+
 });
