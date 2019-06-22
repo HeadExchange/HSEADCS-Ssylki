@@ -1,4 +1,4 @@
-<section class="header_board">
+<section class="header_board desktop">
 
   <div class="section_board__heading header_over-line">
     <div class="section_board__heading_left">
@@ -23,6 +23,7 @@
       <% end %>
 
       </div>
+
         <div class="container_bookmark">
           <% if board.favourited == true %>
             <%= link_to favourite_board_path(board) do %>
@@ -34,7 +35,7 @@
             <% end %>
           <% end %>
         </div>
-      </div>
+    </div>
 
       <hr>
 
@@ -45,5 +46,12 @@
           <div class="button_edit"><%= link_to 'Изменить', edit_board_path(board), remote: true %></div>
 
         <%= render 'application/privacymenu', board: board  %>
+
+</section>
+
+<section class="header_board mobile">
+  <h1 class="section_board__title"><%= link_to board.title, board_path(board) %></h1>
+  <p class="section_board__description"><%= board.description %></p>
+  <div class="divider_mobile"></div>
 
 </section>

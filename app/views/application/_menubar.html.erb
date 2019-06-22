@@ -1,67 +1,55 @@
 <header class="menubar nav-down desktop">
 
-  <% if user_signed_in? %>
-
   <div class="menubar_left">
     <%= link_to boards_path do %>
       <%= image_tag "logo.svg" %>
     <% end %>
   </div>
 
-  <div class="menubar_middle">
-    <div class="menubar_middle__item"><%= link_to_unless_current("Все", :controller => "boards", :query => "" )%></div>
-    <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
-    <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
-    <div class="menubar_middle__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
-    <div class="menubar_middle__item"><%= link_to_unless_current("Избранное", :controller => "boards", :query => "favourited")%></div>
-  </div>
+  <% if user_signed_in? %>
 
-  <div class="menubar_right">
-
-    <%= render "search" %>
-
-    <div class="icon-wrapper">
-      <%= image_tag "23px.svg", class: "icon_add" %>
+    <div class="menubar_middle desktop">
+      <div class="menubar_middle__item"><%= link_to_unless_current("Все", :controller => "boards", :query => "" )%></div>
+      <div class="menubar_middle__item"><%= link_to_unless_current("Личные", :controller => "boards", :query => "my") %></div>
+      <div class="menubar_middle__item"><%= link_to_unless_current("Публичные", :controller => "boards", :query => "published")%></div>
+      <div class="menubar_middle__item"><%= link_to_unless_current("Общий доступ", :controller => "boards", :query => "collaborative")%></div>
+      <div class="menubar_middle__item"><%= link_to_unless_current("Избранное", :controller => "boards", :query => "favourited")%></div>
     </div>
 
-    <div class="menu-dropdown menu-dropdown_add menu">
-      <div class="menu-dropdown__list">
-        <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
-        <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
-      </div>
-    </div>
+    <div class="menubar_right">
 
-    <div class="avatar">
-      <div class="image_avatar">
-        <% if current_user.avatar? %>
-          <%= image_tag(current_user.avatar_url) %>
-        <% else %>
-          <%= render "application/avatar" %>
-        <% end %>
+      <%= render "search" %>
+
+      <div class="icon-wrapper">
+        <%= image_tag "23px.svg", class: "icon_add" %>
       </div>
-      <div class="menu-dropdown menu-dropdown_settings menu">
-        <span class="menu-dropdown__caret"></span>
-        <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+
+      <div class="menu-dropdown menu-dropdown_add menu">
         <div class="menu-dropdown__list">
-          <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
-          <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
+          <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
         </div>
       </div>
+
+      <div class="avatar">
+        <div class="image_avatar">
+          <% if current_user.avatar? %>
+            <%= image_tag(current_user.avatar_url) %>
+          <% else %>
+            <%= render "application/avatar" %>
+          <% end %>
+        </div>
+        <div class="menu-dropdown menu-dropdown_settings menu">
+          <span class="menu-dropdown__caret"></span>
+          <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+          <div class="menu-dropdown__list">
+            <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
+            <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-  </div>
-
-  <% else %>
-    <%= image_tag "logo.svg", style: "margin: auto", class: "logo" %>
-    <div class="menubar_right">
-      <div class="menubar_right__button">Войти</div>
-      <div class="menubar_right__button">Зарегистрироваться</div>
-    </div>
-
-    <%#= link_to "Войти", new_session_path(resource_name) %>
-    <%#= link_to "Зарегистрироваться", new_registration_path(resource_name) %>
-
-  <% end %>
 
 
 </header>
@@ -77,32 +65,33 @@
     <%#= image_tag "closepopup.svg", class: "icon_close" %>
   </div>
 
-  <div class="menu-dropdown menu-dropdown_burger">
+  <div class="menu-dropdown burger_menu">
 
     <% if user_signed_in? %>
-      <div class="menu-dropdown__avatar">
+      <div class="user_string">
+        <div class="menu-dropdown__avatar">
           <% if current_user.avatar? %>
             <%= image_tag(current_user.avatar_url) %>
           <% else %>
             <%= render "application/avatar" %>
           <% end %>
-      </div>
-      <% end %>
-
-      <% if user_signed_in? %>
-        <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
-
-        <div class="menu-dropdown__list">
-          <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
-          <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
-        <span class= "divider_mobile"></span>
-          <li><%= link_to 'Редактировать профиль', edit_user_by_nickname_path(current_user.nickname) %></li>
-          <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
         </div>
-      <% end %>
+
+        <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+      </div>
+
+      <div class="menu-dropdown__list">
+        <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
+        <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
+        <span class="divider_mobile"></span>
+        <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
+        <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+      </div>
+    <% end %>
 
   </div>
 
+<<<<<<< HEAD
 
   <%# <div>
     <%= link_to boards_path do %>
@@ -121,4 +110,25 @@
       <%#= image_tag "search.svg", name: nil, :class => "search__submit" %>
     <%# end %>
   <%# </div> %>
+=======
+  <div class="logomobile">
+    <%= link_to boards_path do %>
+      <%= image_tag "logo.svg", style: "transform: translateY(13px);" %>
+    <% end %>
+  </div>
+
+  <div class="icon-wrapper">
+    <%= image_tag "search.svg", class: "icon_search shown_element" %>
+    <div class="search_close">Отменить</div>
+  </div>
+
+  <div class="menu-dropdown menu-dropdown_search">
+    <div class="search_section_field">
+      <%= form_tag results_path, method: :get, role: 'search' do %>
+        <%= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "mobile_search__textfield"%>
+        <div class="search_image"><%= image_tag "search.svg", name: nil, :class => "mobile_search__submit" %></div>
+      <% end %>
+    </div>
+  </div>
+>>>>>>> origin/merge_branch
 </header>

@@ -1,8 +1,48 @@
-<main class="main">
+<script>
+  if (!window.boards)
+    window.boards = {};
+  window.boards["<%= @board.id %>"] = {
+    published:  <%= @board.published.to_s %>,
+    favourited: <%= @board.favourited.to_s %>
+  };
+</script>
+
+<main class="main desktop">
 
   <%= render 'boardheader', board: @board %>
 
   <section class="section_links container_preview_sortable" id="linksPage" data-url="<%= sort_links_path %>">
+    <%= render 'links/newlink' %>
+    <%= render @links %>
+  </section>
+
+  <div id="loadMoreBoards"></div>
+
+</main>
+
+<main class="main mobile">
+
+  <div class="popup_blackout"></div>
+
+  <h1 class="section_board__title"><%= @board.title %></h1>
+  <a href="#" class="js-ellipsis" data-id="<%= @board.id %>">
+    <%= image_tag "ellipsis.svg", class: "icon-ellipsis" %>
+  </a>
+
+
+  <div class="board_actions_popup" id="<%= "board_#{ @board.id }" %>">
+    <%= render "mobile_actions_popup", board: @board %>
+  </div>
+
+
+  <div class="board_actions_privacy">
+    <%= render 'application/privacymenu', board: @board %>
+  </div>
+
+  <p class="section_board__description"><%= @board.description %></p>
+  <div class="divider_mobile"></div>
+
+  <section class="section_links">
     <%= render 'links/newlink' %>
     <%= render @links %>
   </section>
