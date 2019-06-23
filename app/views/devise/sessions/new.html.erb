@@ -1,6 +1,7 @@
-<section class="container_form" style="margin-top: 120px;">
+<section class="container_form">
 
-<h1 class="form__header">Войти в аккаунт</h1>
+<%= image_tag "pin.svg" %>
+<h1 class="form__header">Войти в аккаунт Ssylki</h1>
 <div class="form__subtitle"></div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -10,7 +11,7 @@
     <%= f.email_field :email, autofocus: false, autocomplete: "on", placeholder: "ted@nelson.com" %>
   </div>
 
-  <div class="field" style="margin-bottom: 10px;">
+  <div class="field">
     <%= f.label value="Пароль" %>
     <%= f.password_field :password, autocomplete: "on", placeholder: "••••••", id: "password" %>
     <%= image_tag "eye.svg", id: "togglePasswordVisibility", class: "svg" %>
@@ -20,6 +21,11 @@
     <div class="actions">
       <%= f.submit value="Войти", :class => "button_ok" %>
       <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+    </div>
+    <div>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <div><%= link_to "Зарегистрироваться", new_registration_path(resource_name) %></div>
+      <% end -%>
     </div>
   </div>
 
