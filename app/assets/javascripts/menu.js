@@ -33,9 +33,23 @@ $(function() {
     $(this).parent().find('.menu-dropdown').addClass('menu-dropdown_shown')
   })
 
-  $('.link__item').mouseleave(function() {
-    $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
-  })
+  if($(window).width() < 481) {
+    $('.edit_close').click(function() {
+      $('.link__item').find('.menu-dropdown').removeClass('menu-dropdown_shown')
+    })
+  } else {
+    $('.link__item').mouseleave(function() {
+      $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
+    })
+  }
+
+  //$('.link__item').mouseleave(function() {
+  //  $(this).find('.menu-dropdown').removeClass('menu-dropdown_shown')
+  //})
+
+  //$('.edit_close').click(function() {
+  //  $('.link__item').find('.menu-dropdown').removeClass('menu-dropdown_shown')
+  //})
 
   $('.icon_privacy').click(function() {
     $(this).parent().find('.container__share-url').addClass('container__share-url_shown')

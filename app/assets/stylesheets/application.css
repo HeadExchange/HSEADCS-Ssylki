@@ -14,9 +14,17 @@
  *= require_tree .
  *= require_self
  */
+@media screen and (min-width: 1441px) {
+
+  body {
+    max-width: 1440px;
+    margin-left: calc((100% - 1440px) / 2);
+    margin-right: calc((100% - 1440px) / 2);
+  }
+}
 
 /* DESKTOP */
- @media (min-width: 1024px) and (max-width: 1440px) {
+ @media (min-width: 1024px) and (max-width: 1440px), screen and (min-width: 1441px) {
   .mobile,
   .menubar_bottom,
   .divider_mobile {
@@ -33,7 +41,6 @@
   .desktop {
     display: none;
   }
-
 }
 
 /* MOBILE */
@@ -71,8 +78,6 @@
     font-family: "Graphik Kinopoisk LC", "Helvetica", sans-serif;
     color: #272727;
     background-color: #fff;
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
     padding-top: 60px;
 

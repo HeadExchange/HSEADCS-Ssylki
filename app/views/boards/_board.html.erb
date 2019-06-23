@@ -1,10 +1,11 @@
 <section class="section_board" id="board_<%= board.id  %>">
+  <div class="divider_mobile"></div>
   <%= render 'boardheader', board: board %>
 
   <div class="container_preview desktop">
-    <div id="containerPreview" class="container_preview_sortable" data-url="<%= sort_links_path %>" style="display: flex;">
+    <div id="containerPreview" class="container_preview_sortable five" data-url="<%= sort_links_path %>" style="display: flex;">
       <%= render 'links/newlink' %>
-      <% board.links[0..4].each do |link| %>
+      <% board.links[0..3].each do |link| %>
         <%= render link %>
       <% end %>
     </div>

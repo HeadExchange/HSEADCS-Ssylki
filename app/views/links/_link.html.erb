@@ -23,10 +23,12 @@
 
     <div class="menu-dropdown menu-dropdown_edit-link menu">
       <div class="menu-dropdown__list">
-        <li><span style="font-size: 25px; transform: translateX(-5px)"></span><%= link_to 'Изменить', edit_link_path(link), remote: true %></li>
-        <li><span><%#= image_tag "trash.svg", class: "icon icon_trash" %></span><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' }, style: color="red" %></li>
+        <li><%= link_to 'Изменить', edit_link_path(link), remote: true %></li>
+        <li><%= link_to 'Удалить', link, method: :delete, data: { confirm: 'Вы уверены?' }, style: color="red" %></li>
+        <div class="edit_close mobile">Закрыть</div>
       </div>
     </div>
+
   <% end %>
 
 </div>
