@@ -8,19 +8,25 @@
           <%= image_tag "link-smaller.svg", class: "icon icon_privacy icon_published" %>
         </div>
         <div class="menu-privacy__item">Доступ по ссылке</div>
-        <%= link_to publish_board_path(board) do %>
 
-            <div class="menu-privacy__toggle toggle toggle_sharelink">
-              <div class="toggle__body">
-                <div class="toggle__circle"></div>
+          <% if board.published == true %>
+            <%= link_to publish_board_path(board), remote: true do %>
+              <div class="menu-privacy__toggle toggle toggle_sharelink active">
+                <div class="toggle__body">
+                  <div class="toggle__circle"></div>
+                </div>
               </div>
-          <% end %>
-            </div>
-
-
-            <% if board.published %>
-
             <% end %>
+          <% else %>
+            <%= link_to publish_board_path(board), remote: true do %>
+              <div class="menu-privacy__toggle toggle toggle_sharelink">
+                <div class="toggle__body">
+                  <div class="toggle__circle"></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
       </li>
 
       <li>
@@ -45,7 +51,7 @@
         <%= link_to 'Добавить коллаборатора', new_board_collaboration_path(board), class: "button_add button", remote: true %>
 
         <% if board.published %>
-          <div class="share-url"><%= link_to shared_board_url(board.share_url), shared_board_url(board.share_url)%></div>
+          <div class="share-url", style="display: none;"><%= link_to shared_board_url(board.share_url), shared_board_url(board.share_url)%></div>
           <div class="share_url__button_copy button_copy button">Скопировать ссылку</div>
         <% else %>
           <%= link_to "Скопировать ссылку", publish_board_path(board), class: "share_url__button_copy button_copy button" %>
