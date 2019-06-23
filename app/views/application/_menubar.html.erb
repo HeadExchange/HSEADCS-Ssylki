@@ -61,6 +61,8 @@
 
 <header class="menubar nav-down mobile">
 
+  <% if user_signed_in? %>
+
   <div class="icon-wrapper">
     <%= image_tag "menu.svg", class: "icon_burger shown_element" %>
     <%= image_tag "closepopup.svg", class: "icon_close" %>
@@ -113,5 +115,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </header>
