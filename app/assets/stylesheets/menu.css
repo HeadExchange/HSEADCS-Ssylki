@@ -171,7 +171,7 @@
   }
 
   .menu-dropdown__list li:hover {
-    background: #FAFF00;
+    background: #F9F9F9;
   }
 
   /* .menu-dropdown__list li:last-child:hover {
@@ -248,6 +248,10 @@
   .menu-dropdown_edit-board a,
   .menu-dropdown_edit-link a {
     line-height: 30px !important;
+  }
+
+  .link__item  .menu-dropdown {
+    width: 120px;
   }
 
 }
