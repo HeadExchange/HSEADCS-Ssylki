@@ -94,7 +94,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: 150px;
+    width: 160px;
   }
 
   .section_board__description {
@@ -106,7 +106,7 @@
   }
 
   .button_edit {
-    font-size: 11px;
+    font-size: 12px;
     transform: translateY(4px);
     cursor: pointer;
   }
