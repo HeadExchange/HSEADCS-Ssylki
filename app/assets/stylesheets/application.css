@@ -51,20 +51,6 @@
 
 @media all {
 
-  @font-face {
-    font-family: "Graphik Kinopoisk LC";
-    font-weight: normal;
-    src: url('Graphik Kinopoisk LC-Regular.woff') format('woff'),
-    url('<%= asset_path("Graphik Kinopoisk LC-Regular.woff") %>'), format('woff');
-  }
-
-  @font-face {
-   font-family: "Graphik Kinopoisk LC";
-   font-weight: 100;
-   src: url('Graphik Kinopoisk LC-Light.woff') format('woff'),
-   url('<%= asset_path("Graphik Kinopoisk LC-Light.woff") %>'), format('woff');
-  }
-
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -75,7 +61,6 @@
     padding: 0;
     overflow-x: hidden;
     padding-top: 60px;
-
   }
 
   .turbolinks-progress-bar {
@@ -170,64 +155,4 @@
       opacity: 0.4;
     }
   }
-
-   /* Dark Mode
-
-
-  .dark-mode,
-  .dark-mode .menubar {
-    background-color: #000;
-    color: #fff;
-  }
-
-  .darkmode .menubar a {
-    color: #fff !important;
-  }
-
-  .dark-mode a {
-    color: #fff;
-  }
-
-  .dark-mode .section_board__description {
-    color: #afafaf;
-  }
-
-  .icon:hover {
-    cursor: pointer;
-  }
-
-  .hint {
-    background-color: #000;
-    border-radius: 3px;
-    width: 105px;
-    height: 27px;
-    position: absolute;
-    display: none;
-    bottom: 45px;
-    left: -45px;
-  }
-
-  .hint.opened {
-    display: block;
-  }
-
-  .hint::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    bottom: -5px;
-    left: 47.5px;
-    transform: rotate(45deg);
-    background-color: #000;
-  }
-
-  .hint__text {
-    color: #fff;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 27px;
-    text-align: center;
-    letter-spacing: -0.3px;
-  }*/
 }
