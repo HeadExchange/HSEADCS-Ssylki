@@ -2,7 +2,7 @@
 
   <div class="menubar_left">
     <%= link_to boards_path do %>
-      <%= image_tag "logo.svg" %>
+    <%= image_tag "logo.svg" %>
     <% end %>
   </div>
 
@@ -33,15 +33,15 @@
 
       <div class="avatar">
         <div class="image_avatar">
-          <% if current_user.avatar? %>
-            <%= image_tag(current_user.avatar_url) %>
-          <% else %>
-            <%= render "application/avatar" %>
-          <% end %>
+        <% if current_user.avatar? %>
+          <%= image_tag(current_user.avatar_url) %>
+        <% else %>
+          <%= render "application/avatar" %>
+        <% end %>
         </div>
         <div class="menu-dropdown menu-dropdown_settings menu">
-          <span class="menu-dropdown__caret"></span>
-          <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+        <span class="menu-dropdown__caret"></span>
+        <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
           <div class="menu-dropdown__list">
             <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
             <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
@@ -51,69 +51,52 @@
 
     </div>
 
+  <% end %>
 
 </header>
 
-<!-- T A B L E T -->
+<!-- T A B L E T  -->
 
-<!-- M O B I L E -->
+<!-- M O B I L E  -->
 
 <header class="menubar nav-down mobile">
 
   <div class="icon-wrapper">
-    <%#= image_tag "menu.svg", class: "icon_burger shown_element" %>
-    <%#= image_tag "closepopup.svg", class: "icon_close" %>
+    <%= image_tag "menu.svg", class: "icon_burger shown_element" %>
+    <%= image_tag "closepopup.svg", class: "icon_close" %>
   </div>
 
   <div class="menu-dropdown burger_menu">
 
+  <div class="user_string">
+
     <% if user_signed_in? %>
-      <div class="user_string">
-        <div class="menu-dropdown__avatar">
-          <% if current_user.avatar? %>
-            <%= image_tag(current_user.avatar_url) %>
-          <% else %>
-            <%= render "application/avatar" %>
-          <% end %>
-        </div>
-
-        <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
-      </div>
-
-      <div class="menu-dropdown__list">
-        <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
-        <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
-        <span class="divider_mobile"></span>
-        <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
-        <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+      <div class="menu-dropdown__avatar">
+        <% if current_user.avatar? %>
+          <%= image_tag(current_user.avatar_url) %>
+        <% else %>
+          <%= render "application/avatar" %>
+        <% end %>
       </div>
     <% end %>
 
+    <div class="menu-dropdown__username">@<%= current_user.nickname %></div>
+
   </div>
 
-<<<<<<< HEAD
+  <div class="menu-dropdown__list">
+    <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
+    <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
+    <span class= "divider_mobile"></span>
+    <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
+    <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+  </div>
 
-  <%# <div>
-    <%= link_to boards_path do %>
-      <%# <div style="font-family: Inter; font-weight: bold; font-size: 22px" class="link_logo">ССЫЛКИ</div> %>
-    <%# end %>
-  <%# </div> %>
+  </div>
 
-  <%# <div class="icon-wrapper"> %>
-    <%#= image_tag "search.svg", class: "icon_search shown_element" %>
-    <%# <div class="cancel">Отменить</div> %>
-  <%# </div> %>
-
-  <%# <div class="menu-dropdown menu-dropdown_search"> %>
-    <%#= form_tag results_path, method: :get, role: 'search' do %>
-      <%#= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "search__textfield" %>
-      <%#= image_tag "search.svg", name: nil, :class => "search__submit" %>
-    <%# end %>
-  <%# </div> %>
-=======
   <div class="logomobile">
     <%= link_to boards_path do %>
-      <%= image_tag "logo.svg", style: "transform: translateY(13px);" %>
+      <%= image_tag "logo.svg" %>
     <% end %>
   </div>
 
@@ -130,5 +113,5 @@
       <% end %>
     </div>
   </div>
->>>>>>> origin/merge_branch
+  
 </header>
