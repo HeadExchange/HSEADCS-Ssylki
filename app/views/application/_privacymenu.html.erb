@@ -8,15 +8,19 @@
           <%= image_tag "link-smaller.svg", class: "icon icon_privacy icon_published" %>
         </div>
         <div class="menu-privacy__item">Доступ по ссылке</div>
-        <%# if @board.shared %>
-          <%#= link_to share_board_path(@board) do %>
+        <%= link_to publish_board_path(board) do %>
+
             <div class="menu-privacy__toggle toggle toggle_sharelink">
               <div class="toggle__body">
                 <div class="toggle__circle"></div>
               </div>
+          <% end %>
             </div>
-          <%# end %>
-        <%# end %>
+
+
+            <% if board.published %>
+
+            <% end %>
       </li>
 
       <li>
