@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -21,6 +22,108 @@
     margin-left: calc((100% - 1440px) / 2);
     margin-right: calc((100% - 1440px) / 2);
   }
+=======
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require select2
+*= require_tree .
+*= require_self
+*/
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Graphik Kinopoisk LC", "Helvetica", sans-serif;
+  color: #272727;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.turbolinks-progress-bar {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::placeholder {
+  color: #e5e5e5;
+}
+
+*::-moz-selection {
+  background: #fff;
+  color: #FF21E9;
+}
+
+*::selection {
+  background: #fff;
+  color: #FF21E9;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: rgba(0, 255, 255, .4) !important;
+}
+
+ol, ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited {
+  color: #272727;
+  text-decoration: none;
+}
+
+a, a:visited:hover {
+  background-color: none;
+}
+
+hr {
+  border: .5px #F5F5F5 solid;
+  margin: 15px 0 10px 0;
+}
+
+.main {
+  width: 1218px;
+  margin: 70px 0px 0px 121px;
+}
+
+.section_links-wrapper {
+  margin-top: 70px;
+}
+
+.blur-filter {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  opacity: .6;
+}
+/* Dark Mode */
+
+.dark-mode, .dark-mode .menubar {
+  background-color: #000;
+  color: #fff;
+}
+
+.darkmode .menubar a {
+  color: #fff !important;
+>>>>>>> master
 }
 
 /* DESKTOP */
@@ -56,6 +159,7 @@
   }
 }
 
+<<<<<<< HEAD
 @media all {
 
   @font-face {
@@ -235,4 +339,94 @@
     text-align: center;
     letter-spacing: -0.3px;
   }*/
+=======
+.hint__text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+/* Media Queries */
+/*
+ Device = Tablets, Ipads (portrait)
+ Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menubar {
+    padding: 0 20px;
+  }
+  .menubar_middle {
+    width: 480px;
+    margin: auto 30px;
+  }
+  .menubar_middle__item, .menubar a {
+    font-size: 12px;
+  }
+  .container_preview {
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container_preview .link__item, .link__item_newlink {
+    width: 342px;
+    height: 270px;
+  }
+}
+/*
+Device = Tablets, Ipads (landscape)
+Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+/*
+Device = Low Resolution Tablets, Mobiles (Landscape)
+Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .menubar {
+    height: 50px;
+    padding: 0 10px;
+  }
+  /* Убрать слова из меню */
+  .menubar_middle {
+    width: 450px;
+    margin: auto 30px;
+  }
+  .menubar_middle__item {
+    display: none;
+  }
+  .menubar a, .menubar a:visited, div.menubar_middle__item {
+    line-height: 50px;
+  }
+}
+/*
+ Device = Most of the Smartphones Mobiles (Portrait)
+ Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .menubar {
+    height: 50px;
+    padding: 0 10px;
+  }
+  .menubar a, .menubar a:visited, div.menubar_middle__item {
+    line-height: 50px;
+  }
+  /* Убрать слова из меню */
+  .menubar_middle__item {
+    display: none;
+  }
+  .container_preview {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #containerPreview {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+>>>>>>> master
 }
