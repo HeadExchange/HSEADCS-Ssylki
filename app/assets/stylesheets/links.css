@@ -11,7 +11,7 @@
 .link__item {
   position: relative;
   background-color: #fff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #EBEBEB;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -326,17 +326,3 @@
   }
 
 }
-
-
-
-
-/* LINK WITH NO IMAGE ничё не работает нужно как-то иначе или вообще лучше создать другой блок с описанием во всю высоту да и его показывать отличная идея только сейчас я пошла мыть голову а не этими вещами заниматься спасибо */
-
-/* .link__item:hover .link__content {
-  transform: translateY(-120px);
-}
-
-.link__item:hover .link__description {
-  height: 180px;
-  -webkit-line-clamp: 9;
-} */

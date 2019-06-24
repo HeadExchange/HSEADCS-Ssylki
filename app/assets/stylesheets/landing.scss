@@ -3,6 +3,14 @@
   padding: 0;
   font-family: "Steinbeck";
 
+  body {
+    padding-top: 0px !important;
+  }
+
+  .landing {
+    margin-top: -100px;
+  }
+
   a {
     transition: color .2s ease;
 
@@ -28,6 +36,10 @@
     margin: 0 0 30px 0;
   }
 
+  .menubar.nav-down.mobile {
+    display: none;
+  }
+
   .menubar {
     padding: 30px 90px 0 0;
     border: none;
@@ -39,16 +51,25 @@
       display: none;
     }
 
-    .menubar_right {
+    .menubar_left,
+    .menubar_middle,
+    .menubar_right,
+    .menubar_middle__item {
+      display: none;
+    }
+
+    .menubar_right_landing {
+      display: flex;
       position: absolute;
       right: 65px;
       top: 30px;
-      color: white;
+      color: #000;
 
       .menubar_right__button {
         margin-right: 30px;
         font-size: 16px;
         font-weight: 500;
+        line-height: normal;
       }
 
       .menubar_right__button:last-child {
@@ -144,7 +165,7 @@
     }
 
     .letters {
-      transform: translate(-200px, -230px) scale(.9);
+      transform: translate(-200px, -230px) scale(.8);
     }
 
     .pin {
@@ -152,7 +173,7 @@
     }
 
     .cap {
-      transform: translate(200px, -700px);
+      transform: translate(200px, -650px) scale(.9);
     }
 
     .pencil {
@@ -253,17 +274,32 @@
   }
 
   .button_clear {
-    // position: absolute;
-    // z-index: 10000;
-    // left: 50%;
-    // top: 65%;
-    // transform: translate(-50%, -50%);
-    // z-index: 998;
-    margin-top: -60px;
+    position: absolute;
+    z-index: 99999;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: #000;
+    font-size: 30px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 7px 10px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    color: #fff;
+    background: #000;
+    transition: all .3s ease;
+
+    &:hover {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+    }
   }
 
   #buttonRefresh {
-    /* display: none; */
+    display: none;
   }
 
   #buttonRefresh.active {
@@ -458,7 +494,6 @@
     // box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
 
     div {
-      // color: #fff;
       text-align: center;
       padding-top: 20px;
     }
@@ -467,7 +502,7 @@
       font-weight: 400;
       font-size: 40px;
       line-height: 130% !important;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     a {
@@ -479,7 +514,7 @@
     }
 
     img.arrows {
-      margin-top: 20px;
+      margin-top: -60px;
     }
   }
 

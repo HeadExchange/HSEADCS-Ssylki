@@ -49,7 +49,7 @@ $(function() {
       privacyContainer.hide().removeClass("opened")
       $(".container__menu-privacy.opened .share-url").removeClass("opened")
     }
-    
+
     $('body').css('overflow','hidden');
     $('.board_actions_popup').hide();
 

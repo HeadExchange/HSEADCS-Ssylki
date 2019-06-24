@@ -71,18 +71,18 @@ $(function() {
     evt.preventDefault()
   })
 
-  $('.button_copy').click(function(evt) {
-
-    if (!$('.menu-privacy__toggle.toggle_sharelink').hasClass('active')) {
-      $('.menu-privacy__toggle.toggle_sharelink').addClass('active')
-      $(this).addClass('active')
-    } else {
-        $('.menu-privacy__toggle.toggle_sharelink').removeClass("active")
-        $(this).removeClass('active')
-    }
-
-    evt.preventDefault()
-  })
+  // $('.button_copy').click(function(evt) {
+  //
+  //   if (!$('.menu-privacy__toggle.toggle_sharelink').hasClass('active')) {
+  //     $('.menu-privacy__toggle.toggle_sharelink').addClass('active')
+  //     $(this).addClass('active')
+  //   } else {
+  //       $('.menu-privacy__toggle.toggle_sharelink').removeClass("active")
+  //       $(this).removeClass('active')
+  //   }
+  //
+  //   evt.preventDefault()
+  // })
 
   $('.button_privacy').click(function() {
     if (!$('.container__menu-privacy').hasClass("opened")) {

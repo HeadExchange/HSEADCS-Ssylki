@@ -338,4 +338,8 @@
   .menubar_bottom__item:last-child {
     margin-right: 0px;
   }
+
+  .menubar_right_landing {
+    display: none;
+  }
 }

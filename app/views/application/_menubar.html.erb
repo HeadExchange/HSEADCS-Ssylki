@@ -45,11 +45,17 @@
           <div class="menu-dropdown__list">
             <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
             <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "О нас", welcome_index_path %></li>
           </div>
         </div>
       </div>
 
     </div>
+
+  <div class="menubar_right_landing">
+    <%= link_to "Войти", new_user_session_path, :class => "menubar_right__button" %>
+    <div class="menubar_right__button">Зарегистрироваться</div>
+  </div>
 
   <% end %>
 
@@ -114,6 +120,11 @@
         <div class="search_image"><%= image_tag "search.svg", name: nil, :class => "mobile_search__submit" %></div>
       <% end %>
     </div>
+  </div>
+
+  <div class="menubar_right_landing">
+    <div class="menubar_right__button">Войти</div>
+    <div class="menubar_right__button">Зарегистрироваться</div>
   </div>
 
   <% end %>

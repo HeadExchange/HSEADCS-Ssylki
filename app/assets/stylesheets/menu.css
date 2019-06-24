@@ -265,8 +265,8 @@
     position: absolute;
     width: 400px;
     border-radius: 3px;
-    top: 50px;
-    left: 150px;
+    top: -10px;
+    right: 250px;
     z-index: 1002;
     display: none;
     border: .5px #F5F5F5 solid;

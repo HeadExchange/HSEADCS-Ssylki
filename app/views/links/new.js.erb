@@ -6,22 +6,24 @@ $('#link_board_id').select2({
   minimumResultsForSearch: Infinity
 })
 
-$(':input[type="submit"]').prop('disabled', true);
-$('input[type!="submit"]').keyup(function() {
-  if($(this).val() != '') {
-     $(':input[type="submit"]').prop('disabled', false);
-  }
-})
+// $(':input[type="submit"]').prop('disabled', true);
+// $('input[type!="submit"]').keyup(function() {
+//   if($(this).val() != '') {
+//      $(':input[type="submit"]').prop('disabled', false);
+//   }
+// })
 
 $("body").addClass("underpopup")
 $(".menubar").addClass("underpopup")
 $(".main").addClass("underpopup")
+$(".mask").addClass("underpopup")
 
 $(".popup_link-form .button_back").on("click", function() {
   $(".popup_link-form").remove()
   $("body").removeClass("underpopup")
   $(".menubar").removeClass("underpopup")
   $(".main").removeClass("underpopup")
+  $(".mask").removeClass("underpopup")
 })
 
 $(".menu-dropdown_add").remove()

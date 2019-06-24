@@ -14,9 +14,9 @@
   </section>
 
   <section class="section" style="min-height: 150px;" id="about">
-    <div class="section__content_center" style="margin: auto">
+    <div class="section__content_center" style="margin: -100px auto 100px">
       <h2>Что такое Ssylki?</h2>
-      <p>Мы проводим так много времени в интернете, что забываем о&nbsp;том, что браузер это приложение. Наша задача – упростить сохранение и&nbsp;систематизацию ресурсов из интернета.</p>
+      <p>Жизнь становится проще, когда всё расставлено по&nbsp;своим местам. В&nbsp;реальности существует порядок, пока интернет всё ещё остается местом хаоса. Наша задача – закрыть пробел в&nbsp;функциональности, упростив систематизацию ресурсов из&nbsp;интернета. </p>
     </div>
     <div class="section__content_center content_center_autowidth">
       <%= image_tag "browser.png" %>
@@ -73,7 +73,7 @@
         <div class="flex__component">
           <div>
             <h3>Больше, чем просто закладка</h3>
-            <p>Вместо списков и потока слов, в Ssylki мы&nbsp;автоматически формируем превью, состоящее из картинки, названия и дополнительного текста. Так&nbsp;вы&nbsp;сможете легко отличить даже ссылки с&nbsp;одного сайта.  </p>
+            <p>Вместо списков и потока слов, мы&nbsp;автоматически формируем превью, состоящее из картинки, названия и дополнительного текста. Так&nbsp;вы&nbsp;сможете легко отличить даже ссылки с&nbsp;одного сайта.  </p>
           </div>
           <%= image_tag "landinglink.png" %>
         </div>
@@ -118,21 +118,20 @@
 
     <div class="section__content_center content_center_autowidth">
       <%= image_tag "adaptive.svg" %>
-      <!-- <a class="button_landing">Присоединиться</a> -->
     </div>
     </section>
 
-    <footer class="section__content_center content_center_autowidth">
+    <footer class="section__content_center content_center_autowidth" style="height: 500px;">
       <div>
         <h1>Начните пользоваться Ssylki</h1>
-        <a class="button_landing">Попробовать бесплатно</a>
+        <a class="button_landing" style="width: 270px">Попробовать бесплатно</a>
       </div>
-      <%= image_tag "arrows.svg", class: "arrows" %>
-      <!-- <a class="button_clear button_landing" id="buttonClear">Расставить</a> -->
+      <%#= image_tag "arrows.svg", class: "arrows" %>
     </footer>
 
-    <section class="animation-wrapper">
+    <a class="button_clear" id="buttonClear">Посмотреть, как работает</a>
 
+    <section class="animation-wrapper">
 
       <div class="section__pages">
         <%= image_tag "page1.png", class: "page" %>
@@ -152,7 +151,7 @@
         <%= image_tag "card6.png", class: "card" %>
       </div>
 
-      <a class="button_landing button_refresh" id="buttonRefresh">Заново</a>
+      <!-- <a class="button_landing button_refresh" id="buttonRefresh">Заново</a> -->
 
     </section>
 
