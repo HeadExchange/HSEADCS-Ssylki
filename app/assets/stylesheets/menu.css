@@ -222,7 +222,7 @@
 }
 
 /* DESKTOP */
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px), screen and (min-width: 1441px)  {
   .menu-dropdown {
     font-size: 14px;
     line-height: 12px;
@@ -257,7 +257,7 @@
 }
 
 /* D E S K T O P AND T A B L E T*/
-@media (min-width: 502px) and (max-width: 1023px), (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 502px) and (max-width: 1023px), (min-width: 1024px) and (max-width: 1440px) , screen and (min-width: 1441px) {
 
   /* Privacy Menu */
 
@@ -450,7 +450,6 @@
 
   .search_image {
     width: 16px;
-    padding-left: calc(100% - 16px);
   }
 
   .search_image.mobile_search__submit img {
@@ -469,7 +468,20 @@
     box-shadow: none;
   }
 
+  .ellipsis {
+    position: absolute;
+    top: 60px;
+    left: auto;
+    right: 15px;
+  }
+
+  .icon-ellipsis img {
+    width: 16px;
+    height: 16px;
+  }
+
   .board_actions_popup {
+    border-radius: 4px;
     z-index: 1001;
     background-color: #FFFFFF;
     position: absolute;
@@ -477,6 +489,7 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
+    box-shadow: -3px -3px 5px -3px rgba(0, 0, 0, 0.05);
   }
 
   .actions {
@@ -486,7 +499,11 @@
     justify-content: center;
   }
 
-  .action_item li a, .actions_close {
+  .action_item .divider_mobile {
+    width: 480px;
+  }
+
+  .action_item, .actions_close {
     height: 50px;
     font-size: 18px;
     line-height: 50px;
@@ -494,6 +511,7 @@
   }
 
   .actions_close {
+    background-color: #FFFFFF;
     margin-top: 10px;
   }
 
@@ -501,13 +519,41 @@
     border-radius: 4px;
   }
 
+  /*edit link*/
+
+  .menu-dropdown_edit-link {
+    z-index: 1001;
+    background-color: #FFFFFF;
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+    height: 150px;
+  }
+
+  .menu-dropdown_edit-link .menu-dropdown__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-dropdown_edit-link .menu-dropdown__list li, .edit_close {
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+
   /* Privacy Menu */
 
   .container__menu-privacy {
-    width: 100%;
-    ,margin-top: calc(100vh - 230px);
-    margin-bottom: 10px;
-    height: 220px;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    box-shadow: -3px -3px 5px -3px rgba(0, 0, 0, 0.05);
+    height: 270px;
+    border-radius: 4px;
     z-index: 1002;
     display: none;
   }

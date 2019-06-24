@@ -95,7 +95,7 @@
   <div class="menu-dropdown__list">
     <li><%= link_to 'Добавить подборку', new_board_path, class: "button_new-board", remote: true %></li>
     <li><%= link_to 'Добавить ссылку', new_link_path, class: "button_new-link", remote: true %></li>
-    <span class= "divider_mobile"></span>
+    <div class= "divider_mobile"></div>
     <li><%= link_to 'Настройки', edit_user_by_nickname_path(current_user.nickname) %></li>
     <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
   </div>
@@ -117,7 +117,6 @@
     <div class="search_section_field">
       <%= form_tag results_path, method: :get, role: 'search' do %>
         <%= text_field_tag :query, params[:query], :autocomplete => "off", :placeholder => "Поиск...", :class => "mobile_search__textfield"%>
-        <div class="search_image"><%= image_tag "search.svg", name: nil, :class => "mobile_search__submit" %></div>
       <% end %>
     </div>
   </div>

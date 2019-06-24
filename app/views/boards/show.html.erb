@@ -1,11 +1,4 @@
-<script>
-  if (!window.boards)
-    window.boards = {};
-  window.boards["<%= @board.id %>"] = {
-    published:  <%= @board.published.to_s %>,
-    favourited: <%= @board.favourited.to_s %>
-  };
-</script>
+
 
 <main class="main desktop">
 
@@ -25,13 +18,17 @@
   <div class="popup_blackout"></div>
 
   <h1 class="section_board__title"><%= @board.title %></h1>
-  <a href="#" class="js-ellipsis" data-id="<%= @board.id %>">
-    <%= image_tag "ellipsis.svg", class: "icon-ellipsis" %>
-  </a>
+
+  <div class="ellipsis">
+    <a href="#" class="js-ellipsis" data-id="<%= @board.id %>">
+      <%= image_tag "ellipsis.svg", class: "icon-ellipsis" %>
+    </a>
+  </div>
 
 
   <div class="board_actions_popup" id="<%= "board_#{ @board.id }" %>">
     <%= render "mobile_actions_popup", board: @board %>
+    <div class="actions_close">Закрыть</div>
   </div>
 
 

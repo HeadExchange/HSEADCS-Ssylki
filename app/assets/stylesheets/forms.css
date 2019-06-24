@@ -1,4 +1,4 @@
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px), screen and (min-width: 1441px)  {
 
   .select2-search--dropdown {
     padding: 5px !important;

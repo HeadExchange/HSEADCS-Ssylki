@@ -1,5 +1,15 @@
+
+@media screen and (min-width: 1441px) {
+
+  .menubar {
+    max-width: 1440px;
+    margin-left: calc((100% - 1440px) / 2);
+    margin-right: calc((100% - 1440px) / 2);
+  }
+}
+
 /* DESKTOP */
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px), screen and (min-width: 1441px) {
 
   .menubar {
     /*box-sizing: border-box;*/

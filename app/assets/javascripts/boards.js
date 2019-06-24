@@ -5,6 +5,7 @@ $( document ).ready(function() {
 $(function() {
   $('.actions_close').click(function() {
     $('.board_actions_popup').hide();
+    $('.board_actions_privacy').hide();
     $('body').css('overflow','auto');
   });
 
@@ -16,7 +17,7 @@ $(function() {
     var is_popup = $target.hasClass('board_actions_popup');
     var inside_popup = $target.parents('.board_actions_popup').length;
 
-    var $btn_show_popup = $target.hasClass('js-ellipsis') ? $target : $target.parents('.js-ellipsis');
+    var $btn_show_popup = $target.hasClass('ellipsis') ? $target : $target.parents('.ellipsis');
     var $popup = $btn_show_popup.parent().find('.board_actions_popup');
 
     if (!is_popup && !$btn_show_popup.length && !inside_popup)
