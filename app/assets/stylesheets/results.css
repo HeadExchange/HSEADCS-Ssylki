@@ -46,3 +46,11 @@
 .search__textfield_opened {
   width: 260px;
 }
+
+@media (min-width : 320px) and (max-width : 502px) {
+
+  .searchP {
+    margin-left: 15px;
+  }
+
+}

@@ -170,7 +170,7 @@
 }
 
 /* T A B L E T    A N D   M O B I L E */
-@media (min-width: 481px) and (max-width: 1023px), (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 502px) and (max-width: 1023px), (min-width: 320px) and (max-width: 501px) {
 
   /*.menubar {
     height: 40px;
@@ -218,7 +218,7 @@
 
 /* T A B L E T */
 
-@media (min-width: 481px) and (max-width: 1023px) {
+@media (min-width: 502px) and (max-width: 1023px) {
 
   .menubar_bottom {
     margin-left: 20px;
@@ -251,7 +251,7 @@
 
 /* M O B I L E */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 501px) {
 
   /*.menubar {
     height: 40px;

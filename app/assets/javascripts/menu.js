@@ -33,7 +33,7 @@ $(function() {
     $(this).parent().find('.menu-dropdown').addClass('menu-dropdown_shown')
   })
 
-  if($(window).width() < 481) {
+  if($(window).width() < 502) {
     $('.edit_close').click(function() {
       $('.link__item').find('.menu-dropdown').removeClass('menu-dropdown_shown')
     })
