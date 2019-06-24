@@ -58,7 +58,8 @@
 
     <div class="section__content_center content_center_autowidth">
       <%= image_tag "web.png" %>
-      <a class="button_landing" style="margin-top: 60px;">Присоединиться</a>
+      <!-- <a class="button_landing" style="margin-top: 60px;">Присоединиться</a> -->
+      <%= link_to "Присоединиться", new_user_session_path, class: "button_landing", style: "margin-top: 60px;" %>
     </div>
   </section>
 
@@ -124,7 +125,8 @@
     <footer class="section__content_center content_center_autowidth" style="height: 500px;">
       <div>
         <h1>Начните пользоваться Ssylki</h1>
-        <a class="button_landing" style="width: 270px">Попробовать бесплатно</a>
+        <!-- <a class="button_landing" style="width: 270px">Попробовать бесплатно</a> -->
+        <%= link_to "Попробовать бесплатно", new_user_session_path, class: "button_landing", style: "width: 270px" %>
       </div>
       <%#= image_tag "arrows.svg", class: "arrows" %>
     </footer>
