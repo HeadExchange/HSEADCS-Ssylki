@@ -8,7 +8,7 @@ set :application, "ssylki"
 set :repo_url, "git@github.com:HeadExchange/HSEADCS-Ssylki.git"
 
 # Default branch is :master
-set :branch, "master"
+set :branch, "polishing_merge"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deployer/apps/#{fetch :application}"
@@ -24,7 +24,7 @@ set :deploy_to, "/home/deployer/apps/#{fetch :application}"
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/master.key', 'config/puma.rb')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/master.key', 'config/credentials.yml.enc', 'config/puma.rb')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
