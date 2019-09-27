@@ -18,7 +18,7 @@ class BoardsTest < ApplicationSystemTestCase
     fill_in "Private", with: @board.private
     fill_in "Share Url", with: @board.share_url
     fill_in "Title", with: @board.title
-    fill_in "Used", with: @board.used_id
+    fill_in "Used", with: @board.user_id
     click_on "Create Board"
 
     assert_text "Board was successfully created"
@@ -33,7 +33,7 @@ class BoardsTest < ApplicationSystemTestCase
     fill_in "Private", with: @board.private
     fill_in "Share Url", with: @board.share_url
     fill_in "Title", with: @board.title
-    fill_in "Used", with: @board.used_id
+    fill_in "Used", with: @board.user_id
     click_on "Update Board"
 
     assert_text "Board was successfully updated"

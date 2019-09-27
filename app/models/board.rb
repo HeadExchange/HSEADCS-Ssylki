@@ -10,8 +10,9 @@ class Board < ApplicationRecord
   belongs_to :user
 
   has_many :links
+  
   has_many :collaborations
-  has_many :collaborators, class_name: "User", through: :collaborations
+  has_many :collaborative_boards, class_name: "User", through: :collaborations
 
   validates :title, presence: true
   validates :url, uniqueness: true

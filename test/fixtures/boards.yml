@@ -1,15 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyString
+private:
+  id: 1
+  title: Board 1
   description: MyText
-  used_id: 1
-  private: false
-  share_url: MyString
+  user_id: 1
+  url: private
+  share_url: http://rap.ru
 
-two:
-  title: MyString
+collaborative:
+  id: 2
+  title: Board 2
   description: MyText
-  used_id: 1
-  private: false
-  share_url: MyString
+  user_id: 1
+  url: collaborative
+  share_url: http://rap.ru
+
+will_be_collaborative:
+  id: 3
+  title: Board 3
+  description: MyText
+  user_id: 1
+  url: will_be_collaborative
+  share_url: http://rap.ru

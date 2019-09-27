@@ -1,7 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+user:
+  id: 1
+  email: user@test.com
+  encrypted_password: testtest
+  nickname: user
 
-one:
-  name: MyString
+collaborator:
+  id: 2
+  email: collaborator@test.com
+  encrypted_password: testtest
+  nickname: collaborator
 
-two:
-  name: MyString
+watcher:
+  id: 3
+  email: watcher@test.com
+  encrypted_password: testtest
+  nickname: watcher
